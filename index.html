@@ -21,7 +21,7 @@ label.o{display:inline-flex;align-items:center;gap:6px;margin:3px 14px 3px 0;pad
 label.o input{width:20px;height:20px}
 .row{border-top:1px dashed var(--line);padding:8px 0}
 .row:first-of-type{border-top:0}
-.gi{display:grid;grid-template-columns:1fr;gap:6px}.pg{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0}.pl{color:var(--mut);font-size:.85rem}.pill{margin:0;padding:6px 10px;font-size:.9rem;border-radius:16px}.pill.on{background:var(--acc);color:#fff}
+.gi{display:grid;grid-template-columns:1fr;gap:6px}.pg{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0}.pl{color:var(--mut);font-size:.85rem}.pill{margin:0;padding:6px 10px;font-size:.9rem;border-radius:16px}.pill.on{background:var(--acc);color:#fff}.pg input[type=text]{flex:1 1 140px;width:auto}
 .gi>span{grid-column:1/-1;font-weight:600}
 .sk{background:#e8eef4;border-radius:5px;padding:4px 8px;margin-bottom:6px}
 details{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin:8px 0}summary{font-weight:600;cursor:pointer}ul{margin:6px 0;padding-inline-start:20px}.gi input[type=text]{grid-column:1/-1}
@@ -60,24 +60,24 @@ button.p{background:var(--acc);color:#fff;font-weight:600}
 <h1>שאלון רקע לקראת אבחון נוירופסיכולוגי</h1>
 <div class="note intro calm"><b>אפשר להירגע:</b> אם השאלון מלחיץ, מציף או ארוך מדי, אפשר לעצור בכל רגע. אין חובה למלא אותו כדי להשתתף באבחון, ובמקסימום נעבור עליו יחד בפגישה.</div>
 <div class="intro how"><h2>איך זה עובד</h2><ul>
-<li><b>הפרטיות שלכם:</b> המידע נשאר רק בטלפון שלכם ולא נשלח לשום מקום.</li>
+<li><b>הפרטיות שלכם:</b> המידע נשאר רק במכשיר שלכם ולא נשלח לשום מקום.</li>
 <li><b>אין תשובות נכונות או שגויות.</b> אפשר לכתוב ״לא יודע/ת״.</li>
 <li><b>סעיף שקשה למלא?</b> סמנו ״אשלים סעיף זה בפגישה״ ועברו הלאה.</li>
-<li><b>אפשר לעצור ולהמשיך.</b> מומלץ למלא בכמה פעמים של 10-15 דקות. מה שמולא נשמר עד שסוגרים את הלשונית.</li>
+<li><b>אפשר לעצור ולהמשיך.</b> מומלץ למלא בכמה פעמים של 10-15 דקות. הטיוטה נשמרת רק במכשיר שלכם ונמחקת אוטומטית 7 ימים אחרי העדכון האחרון.</li>
 <li><b>★ בפס שבראש הדף</b> מסמן את הסעיפים החשובים ביותר. את השאר אפשר להשלים בפגישה.</li>
-<li><b>בסוף:</b> מפיקים PDF, שולחים אותו במייל או מביאים לפגישה, ומוחקים מהטלפון.</li>
-</ul></div>
+<li><b>בסוף:</b> מורידים קובץ Word, שולחים אותו אלינו במייל, ומוחקים אותו מהמכשיר.</li>
+</ul><p><button id="clr2" type="button">מחק את הטיוטה שלי עכשיו</button></p></div>
 <details class="intro"><summary>מהו אבחון נוירופסיכולוגי?</summary><p>אבחון נוירופסיכולוגי ממפה את היכולות הקוגניטיביות והרגשיות־התנהגותיות שלך, בהשוואה לרמה המצופה מבני אותו גיל ובהתייחס להיסטוריה האישית שלך. הוא עוזר להבין את מקור הקשיים ולהתאים להם המלצות.</p></details>
 <details class="intro"><summary>כיצד האבחון מתבצע?</summary><ul><li><b>ריאיון קליני:</b> כשעה. מטרתו היכרות, הבנת הקשיים הנוכחיים והערכת התפקוד לפני שהתחילו הקשיים.</li><li><b>מטלות אבחון:</b> סדרת מטלות הבוחנות תפקוד קוגניטיבי ורגשי, חלקן בדף ובעיפרון וחלקן ממוחשבות.</li><li><b>משך ותדירות:</b> 3–4 פגישות של כשלוש שעות כל אחת, פגישה אחת בשבוע בערך, עם הפסקות לפי הצורך.</li><li><b>דוח ומשוב:</b> דוח מפורט שצפוי להישלח גם לגורם המפנה, ופגישת משוב של כשעה.</li></ul></details>
 <details class="intro"><summary>הנחיות לקראת האבחון</summary><p>כמה צעדים קטנים לפני הפגישה יעזרו לנו לראות אותך במיטבך, וכך התוצאות והמלצות יתאימו בדיוק לך.</p><ul><li><b>שינה טובה בלילה שלפני:</b> מוח רענן נותן תמונה אמיתית של היכולות שלך.</li><li><b>תרופות קבועות:</b> ממשיכים ליטול אותן כרגיל, כדי שנראה אותך כמו בחיי היום-יום, אלא אם הרופא המטפל הנחה אחרת.</li><li><b>תרופות לקשב וריכוז:</b> אם אתם נוטלים תרופות לטיפול בקשב וריכוז, עדכנו את המאבחן מראש. נתייעץ יחד איך לנהוג ביום האבחון, כדי שנקבל תמונה מדויקת ככל האפשר.</li><li><b>יממה בלי אלכוהול וקנאביס:</b> כך התוצאות ישקפו את היכולות האמיתיות שלך.</li><li><b>מאמץ מרבי:</b> ההשקעה שלך היא מה שהופך את התוצאות למדויקות. אם יש עייפות, כאב או אי נוחות, תגידו לנו. אפשר לקחת הפסקה בכל שלב, וזה לגמרי בסדר.</li><li><b>לא חייבים להגיע לבד:</b> אם קשה לספר על הקשיים, אפשר להגיע עם בן משפחה או אדם קרוב. הוא יכול לעזור לנו לראות את התמונה המלאה.</li></ul></details>
 <details class="intro"><summary>מה להביא לפגישה?</summary><p>כדי שנכיר אותך באמת, כדאי להביא:</p><ul><li><b>תעודה מזהה.</b></li><li><b>אוכל ושתייה:</b> הפגישה נמשכת כשלוש שעות, ומי שאכל טוב מתרכז טוב יותר.</li><li><b>משקפיים או מכשיר שמיעה,</b> אם משתמשים, כדי שתראו ותשמעו בצורה הטובה ביותר.</li></ul><p><b>מסמכים רפואיים:</b> אלה היחידים החשובים באמת: סיכומי אשפוז, מסמכים נוירולוגיים או פסיכיאטריים, אבחונים קודמים ורשימת תרופות עדכנית. עדיף לשלוח אותם אלינו לפני הפגישה, כדי שנוכל להתכונן. אין צורך בקורות חיים או בתעודות, כי את הסיפור שלך נשמע ממך.</p></details>
 <div id="form"></div>
 <div id="pv"></div>
-<div id="end"><div class="bar"><button class="p" id="pdf">הפק PDF</button><button id="clr">נקה הכול</button></div>
-<div class="note">בטלפון: בחלון ההדפסה בוחרים ״שמור כ-PDF״. באייפון: שיתוף ← הדפסה, פותחים את התצוגה המקדימה בצביטה ושומרים בקבצים.</div></div>
+<div id="end"><div class="bar"><button class="p" id="wd" type="button">הורד קובץ Word</button><button id="pdf">הדפס או שמור כ-PDF</button><button id="clr">נקה הכול</button></div>
+<div class="note"><b>שליחה:</b> הקובץ יורד למכשיר (לתיקיית ההורדות, ובאייפון לאפליקציית ״קבצים״). מצרפים אותו להודעת מייל ושולחים אלינו, ואחר כך אפשר למחוק אותו. מי שמעדיף נייר או PDF יכול ללחוץ על ״הדפס או שמור כ-PDF״.</div></div>
 <div id="nav"><button id="prv" type="button">הקודם</button><span id="ptxt"></span><button id="nxt" class="p" type="button">הבא</button></div>
 <div id="toast"></div>
-<div id="dlg"><div><h2 style="margin-top:0">לפני ההדפסה</h2><p>בחלון שייפתח:</p><ul><li><b>אנדרואיד:</b> בחרו ״שמירה כ-PDF״ כיעד ולחצו על כפתור ההורדה.</li><li><b>אייפון:</b> פתחו את התצוגה המקדימה בצביטה עם שתי אצבעות, ואז שיתוף ושמירה בקבצים.</li><li><b>אם יש מדפסת:</b> אפשר להדפיס ישירות.</li></ul><p>את הקובץ אפשר לשלוח לנו במייל או להביא לפגישה.</p><div class="bar"><button class="p" id="go" type="button">פתח את חלון ההדפסה</button><button id="no" type="button">ביטול</button></div></div></div>
+<div id="dlg"><div><h2 style="margin-top:0">לפני ההדפסה</h2><p>בחלון שייפתח:</p><ul><li><b>מחשב:</b> בחרו יעד ״שמירה כ-PDF״ (Save as PDF) ולחצו על שמירה.</li><li><b>אנדרואיד:</b> בחרו ״שמירה כ-PDF״ כיעד ולחצו על כפתור ההורדה.</li><li><b>אייפון:</b> פתחו את התצוגה המקדימה בצביטה עם שתי אצבעות, ואז שיתוף ושמירה בקבצים.</li><li><b>אם יש מדפסת:</b> אפשר להדפיס ישירות.</li></ul><p>את הקובץ אפשר לשלוח לנו במייל או להביא לפגישה.</p><div class="bar"><button class="p" id="go" type="button">פתח את חלון ההדפסה</button><button id="no" type="button">ביטול</button></div></div></div>
 </main>
 <section id="out"></section>
 <script>
@@ -115,8 +115,12 @@ const D=[
  r('תרופות',[['שם התרופה'],['מינון'],['סיבה'],['מתי התחילה'],['שימוש',['קבוע','לפי צורך']]])]],
 ['5. ציר זמן: לימודים, שירות ותעסוקה',[
  {k:'n',t:'מלאו כל שלב לפי מה שהיה, וכתבו שנים ולא גילאים, למשל 2008-2012. אם אינכם זוכרים את השנה המדויקת, אפשר לכתוב בערך (למשל ״בערך 2010״). תחום שלא רלוונטי אפשר לדלג.'},
+ hd('בית ספר יסודי'),
+ {k:'n',t:'הוסיפו שורה לכל בית ספר או מסגרת. אם עברתם ממסגרת למסגרת, כתבו כל מסגרת בשורה נפרדת, כדי שנבין את המסלול.'},
+ r('מסגרות',[['שם בית הספר'],['שנים (אפשר בערך)'],['סוג מסגרת',['רגילה','חינוך מיוחד','אחר']],['איך הלך לימודית?',['מצוין','טוב','בינוני','קשה']],['איך הלך חברתית?',['מצוין','טוב','בינוני','קשה']],['איך הסתיים?',['סיים','עזב','עבר מסגרת']],['סיבת מעבר או קשיים']]),
  hd('תיכון'),
- f('שם בית הספר'),f('שנים (למשל 2008-2012, אפשר בערך)'),f('מגמה'),c('איך הלך בתיכון מבחינה לימודית?',['מצוין','טוב','בינוני','קשה']),c('איך הלך בתיכון מבחינה חברתית?',['מצוין','טוב','בינוני','קשה']),c('איך הסתיים?',['סיים','עזב','עבר מסגרת']),
+ {k:'n',t:'גם כאן שורה לכל בית ספר או מסגרת. אם עברתם מסגרת, כתבו כל אחת בנפרד.'},
+ r('מסגרות',[['שם בית הספר'],['שנים (אפשר בערך)'],['מגמה'],['סוג מסגרת',['רגילה','חינוך מיוחד','אחר']],['איך הלך לימודית?',['מצוין','טוב','בינוני','קשה']],['איך הלך חברתית?',['מצוין','טוב','בינוני','קשה']],['איך הסתיים?',['סיים','עזב','עבר מסגרת']],['סיבת מעבר או קשיים']]),
  c('בגרות',['מלאה','חלקית','ללא']),f('ממוצע בגרות'),m('התאמות בבחינות',['תוספת זמן','הקראה','בחינה בעל פה','אחר']),f('קשיים בתיכון','ta'),
  hd('שירות צבאי או לאומי'),
  c('שירות',['צבאי מלא','צבאי חלקי','לאומי','לא בוצע']),f('באילו שנים שירתת? (למשל 2012-2015, אפשר בערך)'),f('יחידה ותפקיד'),f('פרופיל'),c('איך הלך בשירות?',['מצוין','טוב','בינוני','קשה']),
@@ -179,14 +183,15 @@ const D=[
 ];
 const TL=D.findIndex(d=>d[0].includes('ציר זמן')),KEY=D.map(d=>/פרטים אישיים|סיבת הפנייה|היסטוריה רפואית|ציר זמן/.test(d[0]));
 const $=(t,a,k)=>{const e=document.createElement(t);Object.assign(e,a||{});(k||[]).forEach(x=>e.append(x));return e};
-let uid=0;
+let uid=0;const AH=/(^|\s)אחר$/;
 function pill(o,l){const w=$('div',{className:'pg'}),h=$('input',{type:'hidden'});h.dataset.l=l;w.append(h);if(l)w.append($('span',{className:'pl',textContent:l+':'}));
- o.forEach(x=>{const b=$('button',{type:'button',className:'pill',textContent:x});b.onclick=()=>{const on=h.value!=x;h.value=on?x:'';w.querySelectorAll('.pill').forEach(c=>c.classList.toggle('on',on&&c.textContent==x));w.dispatchEvent(new Event('input',{bubbles:true}))};w.append(b)});return w}
+ const d=$('input',{type:'text',placeholder:'פרטו'});d.dataset.l=(l||'')+' (פירוט)';d.style.display='none';
+ o.forEach(x=>{const b=$('button',{type:'button',className:'pill',textContent:x});b.onclick=()=>{const on=h.value!=x;h.value=on?x:'';d.style.display=AH.test(h.value)?'':'none';w.querySelectorAll('.pill').forEach(c=>c.classList.toggle('on',on&&c.textContent==x));w.dispatchEvent(new Event('input',{bubbles:true}))};w.append(b)});if(o.some(x=>AH.test(x)))w.append(d);return w}
 function ctl(t,l){
  if(Array.isArray(t))return pill(t,l);
  if(0){const s=$('select');s.append($('option',{value:'',textContent:l}));t.forEach(o=>s.append($('option',{value:o,textContent:o})));s.dataset.l=l;return s}
  const i=t=='ta'?$('textarea',{rows:2}):$('input',{type:t||'text'});i.placeholder=l;i.dataset.l=l;return i}
-function opts(o,type,name){return o.map(x=>{const i=$('input',{type,name});return $('label',{className:'o'},[i,document.createTextNode(x)])})}
+function opts(o,type,name){return o.flatMap(x=>{const i=$('input',{type,name}),L=$('label',{className:'o'},[i,document.createTextNode(x)]);if(!AH.test(x))return [L];const d=$('input',{type:'text',placeholder:'פרטו'});d._i=i;d.style.display='none';return [L,d]})}
 function build(q){
  const w=$('div',{className:'q'});w.dataset.l=q.l||'';
  if(q.k=='h')return $('h3',{textContent:q.t});
@@ -194,8 +199,7 @@ function build(q){
  if(q.k=='n'){w.className='note';w.textContent=q.t;w.dataset.skip=1;return w}
  if(q.l&&q.k!='f')w.append($('b',{textContent:q.l}));
  if(q.k=='f'){const i=ctl(q.t,q.l);i.removeAttribute('placeholder');w.append($('b',{textContent:q.l}),i)}
- if(q.k=='c')opts(q.o,'radio','r'+(++uid)).forEach(x=>w.append(x));
- if(q.k=='m')opts(q.o,'checkbox').forEach(x=>w.append(x));
+ if(q.k=='c'||q.k=='m'){opts(q.o,q.k=='c'?'radio':'checkbox',q.k=='c'?'r'+(++uid):'').forEach(x=>w.append(x));w.addEventListener('change',()=>w.querySelectorAll('input[type=text]').forEach(d=>d.style.display=d._i.checked?'':'none'))}
  if(q.k=='g'){
   const sk=$('input',{type:'checkbox',className:'skip'});sk.onchange=()=>w.classList.toggle('skd',sk.checked);w.append($('label',{className:'o sk'},[sk,document.createTextNode('אין קושי בתחום זה')]));
   q.i.forEach(n=>{const s=pill(q.s,'');
@@ -226,14 +230,17 @@ function stages(){const S={};let cur='';[...form.children].forEach(e=>{if(e.tagN
 function tl(){
  const S=stages(),g=(o,k)=>((o||{})[k]||'').trim(),R=[];
  const t=S['תיכון'],a=S['שירות צבאי או לאומי'],e=S['השכלה גבוהה ולימודים מקצועיים'],w=S['תעסוקה'],x=S['תקופות אחרות ושינוי בתפקוד'];
+ const full=r=>Object.values(r).some(v=>String(v).trim());
  const any=o=>o&&Object.entries(o).some(([k,v])=>k!='_r'&&String(v||'').trim());
  const J=(...a)=>a.filter(v=>v&&String(v).trim()).join(', ');
- if(any(t))R.push([g(t,'שנים (למשל 2008-2012, אפשר בערך)'),J('תיכון',g(t,'שם בית הספר')),g(t,'מגמה'),J(g(t,'איך הלך בתיכון מבחינה לימודית?')&&'לימודי: '+g(t,'איך הלך בתיכון מבחינה לימודית?'),g(t,'איך הלך בתיכון מבחינה חברתית?')&&'חברתי: '+g(t,'איך הלך בתיכון מבחינה חברתית?')),g(t,'איך הסתיים?'),g(t,'קשיים בתיכון')]);
+ const tp=r=>r['סוג מסגרת']=='אחר'?(r['סוג מסגרת (פירוט)']||'אחר'):(r['סוג מסגרת']||'');
+ const sch=(o,n)=>((o||{})._r||[]).filter(full).map(r=>[r['שנים (אפשר בערך)']||'',J(n,r['שם בית הספר']),J(tp(r),r['מגמה']),J(r['איך הלך לימודית?']&&'לימודי: '+r['איך הלך לימודית?'],r['איך הלך חברתית?']&&'חברתי: '+r['איך הלך חברתית?']),r['איך הסתיים?']||'',r['סיבת מעבר או קשיים']||'']);
+ sch(S['בית ספר יסודי'],'יסודי').concat(sch(t,'תיכון')).forEach(r=>R.push(r));
  if(any(a)&&g(a,'שירות')!='לא בוצע')R.push([g(a,'באילו שנים שירתת? (למשל 2012-2015, אפשר בערך)'),J('שירות',g(a,'שירות')),J(g(a,'יחידה ותפקיד'),g(a,'פרופיל')&&'פרופיל '+g(a,'פרופיל')),g(a,'איך הלך בשירות?'),g(a,'איך הסתיים?'),J(g(a,'סיבת שחרור מוקדם (אם רלוונטי)'),g(a,'חשיפה')&&'חשיפה לאירועי לחימה או לאירוע קשה',g(a,'קשיים בשירות'))]);
- const M=[],full=r=>Object.values(r).some(v=>v.trim());
+ const M=[];
  ((e||{})._r||[]).forEach(r=>{if(full(r))M.push([r['שנים (אפשר בערך)']||'',J('לימודים',r['מוסד']),J(r['תחום'],r['תואר או תעודה']),r['ממוצע או ציון סיום']?'ממוצע '+r['ממוצע או ציון סיום']:'',r['איך הסתיים?']||'',r['סיבה או הערות']||''])});
  ((w||{})._r||[]).forEach(r=>{if(full(r))M.push([r['שנים (אפשר בערך)']||'',J('עבודה',r['מעסיק או מקום עבודה']),J(r['תפקיד'],r['היקף']),r['איך הלך?']||'',r['איך הסתיים?']||'',r['סיבת סיום וקשיים']||''])});
- ((x||{})._r||[]).forEach(r=>{if(full(r))M.push([r['שנה (בערך)']||'','אירוע משמעותי: '+(r['סוג האירוע']||''),'','','',r['הערה קצרה (לא חובה)']||''])});
+ ((x||{})._r||[]).forEach(r=>{if(full(r))M.push([r['שנה (בערך)']||'','אירוע משמעותי: '+(r['סוג האירוע (פירוט)']||r['סוג האירוע']||''),'','','',r['הערה קצרה (לא חובה)']||''])});
  const n=M.map(r=>parseInt((r[0].match(/\d+/)||[''])[0]));
  if(M.length>1&&n.every(v=>v>0)&&n.every(v=>v>=1900))M.map((r,i)=>[n[i],r]).sort((p,q)=>p[0]-q[0]).forEach(([,r])=>R.push(r));else M.forEach(r=>R.push(r));
  const o=Object.entries(x||{}).find(([k,v])=>k.startsWith('תקופות אחרות')&&String(v).trim());
@@ -254,14 +261,15 @@ function show(i){cur=i;const L=D.length-1;[...form.children].forEach(e=>e.classL
  document.getElementById('pv').style.display=(i==TL||i==L)?'':'none';document.getElementById('end').style.display=i==L?'':'none';
  document.getElementById('prv').disabled=i==0;document.getElementById('nxt').style.display=i==L?'none':'';prog();scrollTo(0,0)}
 const SK='q1',touched=i=>[...form.children].filter(e=>e.dataset.s==i).some(e=>[...e.querySelectorAll('input,select,textarea')].some(x=>(x.type=='checkbox'||x.type=='radio')?x.checked:x.value));
-function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200)}
-function save(){try{sessionStorage.setItem(SK,JSON.stringify({vals:[...form.querySelectorAll('input,select,textarea')].map(x=>(x.type=='checkbox'||x.type=='radio')?+x.checked:x.value),rows:D.map(([t,qs])=>qs.filter(q=>q.k=='r').map(q=>q._e.querySelectorAll('.row').length)),cur}))}catch(e){}}
-function restore(){try{const j=sessionStorage.getItem(SK);if(!j)return 0;const d=JSON.parse(j);
+function toast(m,ms){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),ms||2200)}
+function save(){try{localStorage.setItem(SK,JSON.stringify({exp:Date.now()+6048e5,vals:[...form.querySelectorAll('input,select,textarea')].map(x=>(x.type=='checkbox'||x.type=='radio')?+x.checked:x.value),rows:D.map(([t,qs])=>qs.filter(q=>q.k=='r').map(q=>q._e.querySelectorAll('.row').length)),cur}))}catch(e){}}
+function restore(){try{const j=localStorage.getItem(SK);if(!j)return 0;const d=JSON.parse(j);if(!d.exp||d.exp<Date.now()){localStorage.removeItem(SK);return 0}
  D.forEach(([t,qs],i)=>qs.filter(q=>q.k=='r').forEach((q,k)=>{const want=d.rows[i][k],rs=()=>q._e.querySelectorAll('.row'),ad=[...q._e.querySelectorAll('button')].find(x=>x.textContent=='הוסף שורה');
   while(rs().length<want)ad.click();while(rs().length>want)rs()[rs().length-1].remove()}));
  const els=[...form.querySelectorAll('input,select,textarea')];if(els.length!=d.vals.length)return 0;
  els.forEach((x,j)=>{if(x.type=='checkbox'||x.type=='radio')x.checked=!!d.vals[j];else x.value=d.vals[j]});
- form.querySelectorAll('.pg').forEach(w=>{const v=w.querySelector('input').value;w.querySelectorAll('.pill').forEach(c=>c.classList.toggle('on',!!v&&c.textContent==v))});
+ form.querySelectorAll('.pg').forEach(w=>{const v=w.querySelector('input').value;w.querySelectorAll('.pill').forEach(c=>c.classList.toggle('on',!!v&&c.textContent==v));const dd=w.querySelector('input[type=text]');if(dd)dd.style.display=AH.test(v)?'':'none'});
+ form.querySelectorAll('input[type=text]').forEach(d=>{if(d._i)d.style.display=d._i.checked?'':'none'});
  form.querySelectorAll('.skip').forEach(k=>k.closest('.q').classList.toggle('skd',k.checked));
  return d.cur||0}catch(e){return 0}}
 const upd=()=>{pv();prog();save()};form.addEventListener('input',upd);form.addEventListener('change',upd);
@@ -277,7 +285,7 @@ function doc(out){
    if(q.k=='h'){out.append($('h3',{textContent:q.t}));return}
    if(q.k=='n'){out.append($('p',{className:'nt',textContent:q.t}));return}
    if(q.k=='f'){out.append(fr(q.l,e.querySelector('input,textarea').value,q.t=='ta'));return}
-   if(q.k=='c'||q.k=='m'){const ins=[...e.querySelectorAll('input')],p=$('p',{className:'opts'},[bd(q.l+': ')]);q.o.forEach((o,j)=>p.append($('span',{textContent:BX(ins[j].checked)+' '+o})));out.append(p);return}
+   if(q.k=='c'||q.k=='m'){const ins=[...e.querySelectorAll('input[type=checkbox],input[type=radio]')],dt=e.querySelector('input[type=text]'),p=$('p',{className:'opts'},[bd(q.l+': ')]);q.o.forEach((o,j)=>p.append($('span',{textContent:BX(ins[j].checked)+' '+o+(AH.test(o)?': '+((dt&&dt.value)||'________'):'')})));out.append(p);return}
    if(q.k=='s'){const [sel,x,y]=e.querySelectorAll('input'),p=$('p',{className:'opts'},[bd(q.l+': ')]);['מעולם לא','בעבר בלבד','כיום'].forEach(o=>p.append($('span',{textContent:BX(sel.value==o)+' '+o})));
     out.append(p,$('div',{className:'fr'},[bd('תדירות או כמות:'),ln(x.value),bd('שימוש אחרון:'),ln(y.value)]));return}
    if(q.k=='g'){out.append($('p',{className:'opts'},[bd(q.l+'   '),$('span',{textContent:BX(e.querySelector('.skip').checked)+' אין קושי בתחום זה'})]));
@@ -285,18 +293,21 @@ function doc(out){
     e.querySelectorAll('.row.gi').forEach(r=>{const sv=r.querySelector('input[type=hidden]').value,wk=r.querySelector('input[type=checkbox]').checked,hp=r.querySelector('input[type=text]'),tr=$('tr');
      tr.append($('td',{textContent:r.dataset.n}));q.s.forEach(o=>tr.append($('td',{className:'c',textContent:BX(sv==o)})));tr.append($('td',{className:'c',textContent:BX(wk)}));if(q.h)tr.append($('td',{textContent:hp?hp.value:''}));tb.append(tr)});
     out.append(tb);if(q.ex)out.append(fr('קשיים נוספים בתחום זה, או דוגמה (לא חובה)',e.querySelector('textarea').value,1));return}
-   if(q.k=='r'){out.append($('p',{className:'opts'},[bd(q.l)]));const rows=[...e.querySelectorAll('.row')].map(r=>[...r.querySelectorAll('input,select,textarea')].map(x=>x.value));while(rows.length<3)rows.push([]);
+   if(q.k=='r'){out.append($('p',{className:'opts'},[bd(q.l)]));const cv=c=>c.tagName=='DIV'?[...c.querySelectorAll('input')].map(x=>x.value).filter(Boolean).join(': '):c.value,rows=[...e.querySelectorAll('.row')].map(r=>[...r.children].filter(c=>c.tagName!='BUTTON').map(cv));while(rows.length<3)rows.push([]);
     const tb=$('table'),hr=$('tr');q.cols.forEach(([l])=>hr.append($('th',{textContent:l})));tb.append(hr);
     rows.forEach(r=>{const tr=$('tr');q.cols.forEach((_,j)=>tr.append($('td',{textContent:r[j]||''})));tb.append(tr)});out.append(tb)}
   })})}
-document.getElementById('pdf').onclick=()=>{
+function mk(){
  const out=document.getElementById('out');out.innerHTML='';
- out.append($('h1',{textContent:'שאלון רקע לקראת אבחון נוירופסיכולוגי'}),$('p',{textContent:'הופק בטלפון המטופל בתאריך '+new Date().toLocaleDateString('he-IL')}));
+ out.append($('h1',{textContent:'שאלון רקע לקראת אבחון נוירופסיכולוגי'}),$('p',{textContent:'הופק במכשיר המטופל בתאריך '+new Date().toLocaleDateString('he-IL')}));
  const T=tl();if(T)out.append($('h2',{textContent:'ציר זמן מסכם'}),T);
- doc(out);document.getElementById('dlg').style.display='flex'};
+ doc(out);return out}
+document.getElementById('pdf').onclick=()=>{mk();document.getElementById('dlg').style.display='flex'};
+document.getElementById('wd').onclick=()=>{const o=mk(),h='<html dir="rtl" lang="he"><head><meta charset="utf-8"><style>body{font-family:Arial;direction:rtl}table{border-collapse:collapse;width:100%}td,th{border:1px solid #777;padding:3px;text-align:right}.ln{border-bottom:1px solid #666}.opts span{margin-left:12px}</style></head><body>'+o.innerHTML+'</body></html>',a=$('a',{href:URL.createObjectURL(new Blob(['\ufeff',h],{type:'application/msword'})),download:'שאלון_רקע.doc'});document.body.append(a);a.click();a.remove();toast('הקובץ ירד למכשיר. צרפו אותו להודעת מייל ושלחו אלינו.',6000)};
 document.getElementById('go').onclick=()=>{document.getElementById('dlg').style.display='none';window.print()};
 document.getElementById('no').onclick=()=>{document.getElementById('dlg').style.display='none'};
-document.getElementById('clr').onclick=()=>{if(confirm('למחוק את כל התשובות?')){try{sessionStorage.removeItem(SK)}catch(e){}uid=0;render();show(0);pv()}};
+document.getElementById('clr').onclick=()=>{if(confirm('למחוק את כל התשובות?')){try{localStorage.removeItem(SK)}catch(e){}uid=0;render();show(0);pv()}};
+document.getElementById('clr2').onclick=document.getElementById('clr').onclick;
 </script>
 </body>
 </html>
