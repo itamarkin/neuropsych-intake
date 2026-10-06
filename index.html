@@ -37,12 +37,15 @@ button.p{background:var(--acc);color:#fff;font-weight:600}
 .skd .row{display:none}
 #nav{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 16px;margin:12px -16px 0}
 #nav span{font-size:.85rem;color:var(--mut);text-align:center}#nav button{margin:0}#nav button:disabled{opacity:.4}
+#dlg{position:fixed;inset:0;background:#0007;display:none;align-items:center;justify-content:center;z-index:9;padding:16px}#dlg>div{background:#fff;border-radius:8px;padding:16px;max-width:460px}
 #out{display:none}
 @media print{
  body{background:#fff;font-size:11pt}
  main{display:none}
  #out{display:block;padding:0}
- #out h1{margin:0 0 4px}#out h2{margin:14px 0 6px;font-size:12pt;break-after:avoid}#out h3{margin:10px 0 4px;font-size:11pt;break-after:avoid}#out table{width:100%;border-collapse:collapse;font-size:9.5pt;margin-bottom:6px}#out td,#out th{border:1px solid #777;padding:3px 5px;vertical-align:top;text-align:right}#out th{background:#e8eef4}#out tr{break-inside:avoid}
+ #out h1{margin:0 0 4px}#out h2{margin:14px 0 6px;font-size:12pt;break-after:avoid}#out h3{margin:10px 0 4px;font-size:11pt;break-after:avoid}#out table{width:100%;border-collapse:collapse;font-size:9.5pt;margin-bottom:6px}#out td,#out th{border:1px solid #777;padding:3px 5px;vertical-align:top;text-align:right}#out th{background:#e8eef4}#out tr{break-inside:avoid}#out td{height:1.7em}#out td.c{text-align:center}#out th{font-size:9pt}
+ #out .fr{display:flex;gap:8px;align-items:flex-end;margin:5px 0;break-inside:avoid}#out .fr b{white-space:nowrap}#out .ln{flex:1;border-bottom:1px solid #666;min-height:1.5em;padding:0 4px;white-space:pre-wrap}
+ #out .ta .ln{border:1px solid #666;min-height:3.4em}#out .opts{margin:6px 0}#out .opts span{display:inline-block;margin-left:14px}#out p.nt{font-size:9.5pt;color:#444;margin:6px 0}
  #out p{margin:2px 0;break-inside:avoid}
  #out i{color:#444;font-style:normal;font-weight:600}
  @page{size:A4;margin:14mm}
@@ -56,13 +59,14 @@ button.p{background:var(--acc);color:#fff;font-weight:600}
 <div class="note intro">המידע שתמלאו נשאר רק בטלפון שלכם ולא נשלח לשום מקום. בסוף לוחצים על ״הפק PDF״ ושומרים או מדפיסים. את הקובץ מביאים לפגישה, ואחר כך מוחקים אותו מהטלפון. אל תשלחו אותו במייל או בוואטסאפ. אם תסגרו את הדף, מה שמולא יימחק. סעיפים שאין בהם קושי אפשר לדלג, ואפשר לכתוב ״לא יודע/ת״. סעיף שקשה למלא אפשר להשאיר ולסמן ״אשלים סעיף זה בפגישה״. אפשר לעבור בין הסעיפים בפס שבראש הדף.</div>
 <details class="intro"><summary>מהו אבחון נוירופסיכולוגי?</summary><p>אבחון נוירופסיכולוגי ממפה את היכולות הקוגניטיביות והרגשיות־התנהגותיות שלך, בהשוואה לרמה המצופה מבני אותו גיל ובהתייחס להיסטוריה האישית שלך. הוא עוזר להבין את מקור הקשיים ולהתאים להם המלצות.</p></details>
 <details class="intro"><summary>כיצד האבחון מתבצע?</summary><ul><li><b>ריאיון קליני:</b> כשעה. מטרתו היכרות, הבנת הקשיים הנוכחיים והערכת התפקוד לפני שהתחילו הקשיים.</li><li><b>מטלות אבחון:</b> סדרת מטלות הבוחנות תפקוד קוגניטיבי ורגשי, חלקן בדף ובעיפרון וחלקן ממוחשבות.</li><li><b>משך ותדירות:</b> 3–4 פגישות של כשלוש שעות כל אחת, פגישה אחת בשבוע בערך, עם הפסקות לפי הצורך.</li><li><b>דוח ומשוב:</b> דוח מפורט שצפוי להישלח גם לגורם המפנה, ופגישת משוב של כשעה.</li></ul></details>
-<details class="intro"><summary>הנחיות לקראת האבחון</summary><ul><li>לישון היטב ולהגיע במצב רענן.</li><li>ליטול תרופות קבועות כרגיל, אלא אם הרופא המטפל הנחה אחרת.</li><li>להימנע מאלכוהול וקנאביס ביממה שלפני כל פגישה.</li><li>להשקיע מאמץ מרבי במטלות. אם יש עייפות, כאב או תחושה לא טובה, אפשר לבקש הפסקה.</li><li>אם קשה לספר על המצב, מומלץ להגיע עם בן משפחה או אדם קרוב.</li></ul></details>
-<details class="intro"><summary>מה להביא לפגישה?</summary><p>תעודה מזהה, אוכל ושתייה, משקפיים או מכשיר שמיעה (אם משתמשים), ומסמכים: קורות חיים, גיליון ציונים או אישורי לימודים, תעודת בגרות, תעודת שחרור או אישור שירות, סיכומי אשפוז, מסמכים נוירולוגיים או פסיכיאטריים, אבחונים קודמים ורשימת תרופות עדכנית.</p><p>פרטים מנהליים: [להשלמה על ידי המרכז: מיקום וחנייה, עלות ומדיניות ביטולים, זמן משוער לקבלת הדוח, יצירת קשר]</p></details>
+<details class="intro"><summary>הנחיות לקראת האבחון</summary><p>כמה צעדים קטנים לפני הפגישה יעזרו לנו לראות אותך במיטבך, וכך התוצאות והמלצות יתאימו בדיוק לך.</p><ul><li><b>שינה טובה בלילה שלפני:</b> מוח רענן נותן תמונה אמיתית של היכולות שלך.</li><li><b>תרופות קבועות:</b> ממשיכים ליטול אותן כרגיל, כדי שנראה אותך כמו בחיי היום-יום, אלא אם הרופא המטפל הנחה אחרת.</li><li><b>יממה בלי אלכוהול וקנאביס:</b> כך התוצאות ישקפו את היכולות האמיתיות שלך.</li><li><b>מאמץ מרבי:</b> ההשקעה שלך היא מה שהופך את התוצאות למדויקות. אם יש עייפות, כאב או אי נוחות, תגידו לנו. אפשר לקחת הפסקה בכל שלב, וזה לגמרי בסדר.</li><li><b>לא חייבים להגיע לבד:</b> אם קשה לספר על הקשיים, אפשר להגיע עם בן משפחה או אדם קרוב. הוא יכול לעזור לנו לראות את התמונה המלאה.</li></ul></details>
+<details class="intro"><summary>מה להביא לפגישה?</summary><p>כדי שנכיר אותך באמת, כדאי להביא:</p><ul><li><b>תעודה מזהה.</b></li><li><b>אוכל ושתייה:</b> הפגישה נמשכת כשלוש שעות, ומי שאכל טוב מתרכז טוב יותר.</li><li><b>משקפיים או מכשיר שמיעה,</b> אם משתמשים, כדי שתראו ותשמעו בצורה הטובה ביותר.</li><li><b>מסמכים שמספרים את הסיפור שלך:</b> קורות חיים, גיליון ציונים או אישורי לימודים, תעודת בגרות, תעודת שחרור או אישור שירות, סיכומי אשפוז, מסמכים נוירולוגיים או פסיכיאטריים, אבחונים קודמים ורשימת תרופות עדכנית.</li></ul><p>לא חייבים להביא הכול. מה שיש בבית מספיק, ואת השאר נשלים יחד.</p></details>
 <div id="form"></div>
 <div id="pv"></div>
 <div id="end"><div class="bar"><button class="p" id="pdf">הפק PDF</button><button id="clr">נקה הכול</button></div>
 <div class="note">בטלפון: בחלון ההדפסה בוחרים ״שמור כ-PDF״. באייפון: שיתוף ← הדפסה, פותחים את התצוגה המקדימה בצביטה ושומרים בקבצים.</div></div>
 <div id="nav"><button id="prv" type="button">הקודם</button><span id="ptxt"></span><button id="nxt" class="p" type="button">הבא</button></div>
+<div id="dlg"><div><h2 style="margin-top:0">לפני ההדפסה</h2><p>בחלון שייפתח:</p><ul><li><b>אנדרואיד:</b> בחרו ״שמירה כ-PDF״ כיעד ולחצו על כפתור ההורדה.</li><li><b>אייפון:</b> פתחו את התצוגה המקדימה בצביטה עם שתי אצבעות, ואז שיתוף ושמירה בקבצים.</li><li><b>אם יש מדפסת:</b> אפשר להדפיס ישירות.</li></ul><p>את הקובץ או ההדפסה מביאים לפגישה.</p><div class="bar"><button class="p" id="go" type="button">פתח את חלון ההדפסה</button><button id="no" type="button">ביטול</button></div></div></div>
 </main>
 <section id="out"></section>
 <script>
@@ -178,7 +182,7 @@ function build(q){
  }
  return w}
 const form=document.getElementById('form');
-function render(){form.innerHTML='';D.forEach(([t,qs],i)=>{const add=e=>{e.dataset.s=i;form.append(e)};add($('h2',{textContent:t}));if(i<D.length-1)add(build({k:'k'}));qs.forEach(q=>add(build(q)))})}
+function render(){form.innerHTML='';D.forEach(([t,qs],i)=>{const add=e=>{e.dataset.s=i;form.append(e)};add($('h2',{textContent:t}));if(i<D.length-1){const k=build({k:'k'});D[i]._k=k;add(k)}qs.forEach(q=>{const e=build(q);q._e=e;add(e)})})}
 render();
 function read(q){
  const sk=q.querySelector('.skip');if(sk&&sk.checked)return 'אין קושי בתחום';
@@ -223,20 +227,35 @@ function show(i){cur=i;const L=D.length-1;[...form.children].forEach(e=>e.classL
 const upd=()=>{pv();prog()};form.addEventListener('input',upd);form.addEventListener('change',upd);
 document.getElementById('prv').onclick=()=>show(cur-1);document.getElementById('nxt').onclick=()=>show(cur+1);
 pv();show(0);
+const BX=b=>b?'☑':'☐',bd=t=>$('b',{textContent:t}),ln=v=>$('div',{className:'ln',textContent:v||''});
+const fr=(l,v,ta)=>$('div',{className:'fr'+(ta?' ta':'')},[bd(l+':'),ln(v)]);
+function doc(out){
+ D.forEach(([t,qs],i)=>{
+  out.append($('h2',{textContent:t}));
+  if(D[i]._k)out.append($('p',{textContent:BX(D[i]._k.querySelector('input').checked)+' אשלים סעיף זה בפגישה'}));
+  qs.forEach(q=>{const e=q._e;
+   if(q.k=='h'){out.append($('h3',{textContent:q.t}));return}
+   if(q.k=='n'){out.append($('p',{className:'nt',textContent:q.t}));return}
+   if(q.k=='f'){out.append(fr(q.l,e.querySelector('input,textarea').value,q.t=='ta'));return}
+   if(q.k=='c'||q.k=='m'){const ins=[...e.querySelectorAll('input')],p=$('p',{className:'opts'},[bd(q.l+': ')]);q.o.forEach((o,j)=>p.append($('span',{textContent:BX(ins[j].checked)+' '+o})));out.append(p);return}
+   if(q.k=='s'){const [sel,x,y]=e.querySelectorAll('select,input'),p=$('p',{className:'opts'},[bd(q.l+': ')]);['מעולם לא','בעבר בלבד','כיום'].forEach(o=>p.append($('span',{textContent:BX(sel.value==o)+' '+o})));
+    out.append(p,$('div',{className:'fr'},[bd('תדירות או כמות:'),ln(x.value),bd('שימוש אחרון:'),ln(y.value)]));return}
+   if(q.k=='g'){out.append($('p',{className:'opts'},[bd(q.l+'   '),$('span',{textContent:BX(e.querySelector('.skip').checked)+' אין קושי בתחום זה'})]));
+    const tb=$('table'),hr=$('tr');['פריט',...q.s,q.w,...(q.h?['מי עוזר?']:[])].forEach(h=>hr.append($('th',{textContent:h})));tb.append(hr);
+    e.querySelectorAll('.row.gi').forEach(r=>{const sv=r.querySelector('select').value,wk=r.querySelector('input[type=checkbox]').checked,hp=r.querySelector('input[type=text]'),tr=$('tr');
+     tr.append($('td',{textContent:r.dataset.n}));q.s.forEach(o=>tr.append($('td',{className:'c',textContent:BX(sv==o)})));tr.append($('td',{className:'c',textContent:BX(wk)}));if(q.h)tr.append($('td',{textContent:hp?hp.value:''}));tb.append(tr)});
+    out.append(tb);if(q.ex)out.append(fr('דוגמה (לא חובה)',e.querySelector('textarea').value,1));return}
+   if(q.k=='r'){out.append($('p',{className:'opts'},[bd(q.l)]));const rows=[...e.querySelectorAll('.row')].map(r=>[...r.querySelectorAll('input,select,textarea')].map(x=>x.value));while(rows.length<3)rows.push([]);
+    const tb=$('table'),hr=$('tr');q.cols.forEach(([l])=>hr.append($('th',{textContent:l})));tb.append(hr);
+    rows.forEach(r=>{const tr=$('tr');q.cols.forEach((_,j)=>tr.append($('td',{textContent:r[j]||''})));tb.append(tr)});out.append(tb)}
+  })})}
 document.getElementById('pdf').onclick=()=>{
  const out=document.getElementById('out');out.innerHTML='';
  out.append($('h1',{textContent:'שאלון רקע לקראת אבחון נוירופסיכולוגי'}),$('p',{textContent:'הופק בטלפון המטופל בתאריך '+new Date().toLocaleDateString('he-IL')}));
  const T=tl();if(T)out.append($('h2',{textContent:'ציר זמן מסכם'}),T);
- let h=null,h3=null;
- [...form.children].forEach(e=>{
-  if(e.tagName=='H2'){h=$('h2',{textContent:e.textContent});h3=null;return}
-  if(e.tagName=='H3'){h3=$('h3',{textContent:e.textContent});return}
-  if(e.dataset.skip||e.dataset.l=='לימודים'||e.dataset.l=='עבודות'||e.dataset.l=='אירועים משמעותיים')return;
-  const v=read(e);if(!v)return;
-  if(h){out.append(h);h=null}if(h3){out.append(h3);h3=null}
-  const p=$('p');if(e.dataset.l)p.append($('i',{textContent:e.dataset.l+': '}));
-  v.split('\n').forEach((ln,i)=>{if(i)p.append($('br'));p.append(document.createTextNode(ln))});out.append(p)});
- window.print()};
+ doc(out);document.getElementById('dlg').style.display='flex'};
+document.getElementById('go').onclick=()=>{document.getElementById('dlg').style.display='none';window.print()};
+document.getElementById('no').onclick=()=>{document.getElementById('dlg').style.display='none'};
 document.getElementById('clr').onclick=()=>{if(confirm('למחוק את כל התשובות?')){uid=0;render();show(0);pv()}};
 </script>
 </body>
