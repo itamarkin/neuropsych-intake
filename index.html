@@ -28,10 +28,10 @@ details{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8
 button{font:inherit;padding:12px 18px;border-radius:6px;border:1px solid var(--acc);background:#fff;color:var(--acc);margin:4px 0}
 button.p{background:var(--acc);color:#fff;font-weight:600}
 .bar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
-#pv{overflow-x:auto}#pv table{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff}#pv td,#pv th{border:1px solid var(--line);padding:5px 6px;vertical-align:top;text-align:right}#pv th{background:#e8eef4}
+#pv{overflow-x:auto}#pv table{min-width:620px}#pv table{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff}#pv td,#pv th{border:1px solid var(--line);padding:5px 6px;vertical-align:top;text-align:right}#pv th{background:#e8eef4}
 #top{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0 4px;border-bottom:1px solid var(--line)}
 #pb{height:8px;background:#dfe7ee;border-radius:4px;overflow:hidden}#pf{height:100%;width:0;background:var(--acc);transition:width .3s}
-#mn{display:flex;gap:4px;overflow-x:auto;padding:4px 0}#mn button{min-width:0;padding:3px 8px;margin:0;white-space:nowrap;font-size:1rem;line-height:1.25;border-radius:12px;display:flex;flex-direction:column;align-items:center}#mn .t{font-size:.6rem;font-weight:400}
+#mn{display:flex;gap:4px;overflow-x:auto;padding:4px 0}#mn button{flex:none;min-width:0;padding:3px 8px;margin:0;white-space:nowrap;font-size:1rem;line-height:1.25;border-radius:12px;display:flex;flex-direction:column;align-items:center}#mn .t{font-size:.6rem;font-weight:400}
 #mn button.on{background:var(--acc);color:#fff}#mn button.dn{border-color:#2e7d32}
 #form>[data-s]{display:none}#form>[data-s].on{display:block}
 .skd .row{display:none}
@@ -56,6 +56,49 @@ body.cv #top,body.cv #form,body.cv #pv,body.cv #end,body.cv #nav{display:none!im
 .ctl{background:#eaf4ec;border:1px solid #b9d9bf;border-radius:10px;padding:12px 14px}.ctl ul{margin:6px 0 0;padding-inline-start:20px;line-height:1.7}
 #dr{background:#fff7e6;border:1px solid #f0d9a8;border-radius:10px;padding:12px;margin:12px 0}
 .know{background:#fff7e6;border:1px solid #f0d9a8;border-radius:10px;padding:12px 14px}.know p{margin:0;line-height:1.7}.warn{background:#c0392b!important;color:#fff!important;border-color:#c0392b!important}.hero #go0{background:#fff;color:var(--acc);border-color:#fff;font-weight:700}
+#form h2{background:var(--st,#eef3f8);border-bottom:3px solid var(--sc,var(--acc));padding:8px 10px;border-radius:8px 8px 0 0}#form .q{border-right:4px solid var(--sc,var(--line))}
+.acch{width:100%;display:flex;justify-content:space-between;align-items:center;border:0;background:transparent;font-weight:700;color:var(--ink);padding:6px 0;margin:0;font-size:1rem}.acch::after{content:'▾';margin-right:8px;color:var(--mut)}.acc.open>.acch::after{content:'▴'}
+.acc.done{border-color:#2e7d32;background:#f3faf4}.cnt{color:#2e7d32;font-size:.85rem;font-weight:600;margin-right:auto;margin-left:8px}.accb{display:none}.acc.open>.accb{display:block}
+label.dk{color:var(--mut);font-size:.9rem}.pgrid{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.note.ok{background:#eaf4ec;border-color:#b9d9bf}
+#pv .note.gap{background:#fff4ec;border-color:#f0c9ad;color:var(--ink);margin:8px 0}#pv .note.gap .pill{display:block;margin-top:6px}
+.tc{background:#fff;border:1px solid var(--line);border-right:5px solid var(--tc,var(--acc));border-radius:10px;margin:8px 0;overflow:hidden;scroll-margin-top:calc(var(--th,110px) + 8px)}
+.tch{display:flex;align-items:stretch}.tcs{flex:1;position:relative;display:grid;grid-template-columns:1fr auto;gap:2px 10px;text-align:right;background:transparent;border:0;border-radius:0;margin:0;padding:10px 12px 10px 30px;color:var(--ink);font-size:.95rem}
+.tcs::after{content:'▾';position:absolute;left:10px;top:11px;color:var(--mut)}.tc.open .tcs::after{content:'▴'}.tc.open .tcs{background:#f6f8fa}
+.tcs .s1{font-weight:700}.tcs .s2{color:var(--mut);font-size:.88rem;justify-self:end;direction:rtl}.tcs .s3,.tcs .s4{grid-column:1/-1;font-size:.86rem;color:var(--mut)}.tcs .s4:empty{display:none}.tcs .emp{color:var(--acc);text-decoration:underline}
+.tdel{display:none;padding:4px 10px;margin:8px;font-size:.8rem;color:var(--mut);border-color:var(--line);align-self:center}.tc.open .tdel{display:block}
+.tcb{display:none;padding:0 12px 12px}.tc.open .tcb{display:block}.tdone{display:block;width:100%;margin-top:14px}
+.tsg{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:6px;padding:6px 10px;border:1px dashed var(--line);border-radius:8px;background:#f6f8fa;font-size:.88rem}.tsg:empty{display:none}.tsg .pill{margin:0;padding:4px 10px;font-size:.85rem}
+.tlink{background:none;border:0;color:var(--acc);text-decoration:underline;padding:4px 0;margin:10px 0 0;font-size:.92rem}
+.tgd{background:#f6f8fa;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}.tgd>button.p{margin-top:12px}
+.tlh{font-size:.8rem;color:var(--mut);margin-bottom:4px}.tlb,.tlm,.tlg{cursor:pointer}
+@media(min-width:700px){.tcs{grid-template-columns:minmax(9em,13em) 8.5em 1fr minmax(0,10em);align-items:center}.tcs .s3,.tcs .s4{grid-column:auto}.tcs .s2{justify-self:start}.tcs .s4:empty{display:block}}
+.tc .lb{display:block;font-size:.85rem;color:var(--mut);margin:0 0 3px}.tcf{margin:10px 0 0}.tcp{display:flex;flex-wrap:wrap;gap:6px}
+.tcy{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}.tcy input[type=text]{width:6.2em;text-align:center;margin:0}.tcy input:disabled{background:#f1f4f7}.tc label.o{margin:0;padding:2px 0;font-size:.92rem}
+.tc textarea{min-height:2.6em}.tcw{color:#b5522a;font-size:.85rem;margin-top:6px}.tcw:empty{display:none}.tc.nil .opt{display:none!important}
+.tadd{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:12px 0 4px;padding:10px;border:1.5px dashed var(--line);border-radius:10px;background:#fafcfe}.tadd .pl{width:100%}
+.tls{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:8px 0}.tll{display:flex;align-items:center;gap:8px;margin:5px 0}.tln{width:5.4em;flex:none;font-size:.78rem;color:var(--mut)}
+.tlt{position:relative;flex:1;height:24px;background:#f1f4f7;border-radius:4px}.tlb{position:absolute;top:2px;bottom:2px;border-radius:4px;color:#fff;font-size:.7rem;line-height:20px;padding:0 4px;overflow:hidden;white-space:nowrap;min-width:6px;box-shadow:0 0 0 1px #fff}
+
+.tlg{position:absolute;top:2px;bottom:2px;border:1.5px dashed #b5522a;border-radius:4px;background:repeating-linear-gradient(45deg,#fff,#fff 3px,#fbe3d9 3px,#fbe3d9 6px)}
+.tla{position:relative;height:16px;margin-right:6em;font-size:.7rem;color:var(--mut)}.tla span{position:absolute;transform:translateX(50%)}
+body.hc .tc,body.hc .tls{border-color:#000}
+.smeta{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:0 0 10px;color:var(--mut);font-size:.9rem}.why{background:none;border:0;padding:0;margin:0}.why summary{cursor:pointer;color:var(--acc);font-weight:400;text-decoration:underline}.why[open]{flex-basis:100%}.why p{margin:6px 0 0;line-height:1.6}
+.dmy{display:flex;align-items:center;gap:6px;direction:rtl}.dmy input{text-align:center;margin:3px 0}.dmy .dp2{width:4.2em}.dmy .dp4{width:5.6em}.dmy span{color:var(--mut)}
+.pain{gap:4px}.pain .pill{min-width:2.4em;padding:7px 0;text-align:center}.q>.pl{display:block;margin-top:2px}
+.tlm{position:absolute;top:6px;width:12px;height:12px;margin-right:-6px;transform:rotate(45deg);background:#c04aa8;border-radius:2px}
+.onebox{border-style:dashed}.onebox .bar{margin:8px 0 0}
+#one{position:fixed;inset:0;z-index:7;background:var(--bg);display:none;justify-content:center;overflow:auto}body.nos{overflow:hidden}
+.onei{width:100%;max-width:560px;padding:14px 16px 24px;display:flex;flex-direction:column;gap:8px}.onex{align-self:flex-start;margin:0;padding:6px 12px;font-size:.85rem}
+.onep{display:flex;justify-content:space-between;color:var(--mut);font-size:.9rem;margin-top:4px}.onebar{height:6px;background:#dfe7ee;border-radius:3px;overflow:hidden}.onebar>div{height:100%;background:var(--acc)}
+.oneq{font-size:1.3rem;font-weight:700;line-height:1.45;margin:18px 0 4px;min-height:3.2em}.onel{color:var(--mut);font-size:.92rem}
+.oneb{display:flex;justify-content:space-between;align-items:center;width:100%;margin:0;padding:14px 16px;font-size:1.05rem;background:#fff;color:var(--ink);border:1.5px solid var(--line);border-radius:10px;text-align:right}.oneb small{color:var(--mut);font-size:.85rem}.oneb.on{background:var(--acc);border-color:var(--acc);color:#fff}.oneb.on small{color:#e6eef6}
+.onew{margin:4px 0 0;border-style:dashed}.onew.on{background:#fff4ec;border-color:#c96a2b;color:#8a3f12;border-style:solid}.onen{display:flex;justify-content:space-between;gap:10px;margin-top:10px}.onen button{flex:1;margin:0}
+#pvw{position:fixed;inset:0;background:#0007;display:none;z-index:9;padding:10px}#pvw>div{background:#fff;max-width:780px;margin:0 auto;height:100%;display:flex;flex-direction:column;border-radius:8px;overflow:hidden}
+.pvh{padding:10px 14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column}#pvw .bar{margin:0;padding:10px 14px;border-top:1px solid var(--line)}
+.docv{overflow:auto;padding:12px 16px;flex:1;font-size:.88rem;line-height:1.45}.docv h1{font-size:1.15rem;margin:4px 0}.docv h2{font-size:1rem;margin:16px 0 6px;color:var(--acc)}.docv h3{font-size:.92rem;margin:10px 0 4px}
+.docv table{border-collapse:collapse;width:100%;min-width:520px;font-size:.78rem;margin-bottom:6px}.docv td,.docv th{border:1px solid #aab;padding:3px 5px;text-align:right;vertical-align:top}.docv th{background:#e8eef4}.docv td.c{text-align:center}
+.docv .fr{display:flex;gap:8px;align-items:flex-end;margin:4px 0}.docv .fr b{white-space:nowrap}.docv .ln{flex:1;border-bottom:1px solid #aab;min-height:1.4em;padding:0 4px;white-space:pre-wrap}.docv .ta .ln{border:1px solid #aab;min-height:2.6em}.docv .opts span{display:inline-block;margin-left:12px}.docv p{margin:3px 0}.docv p.nt{color:#555;font-size:.82rem}
+.fam:empty{display:none}.fam{background:#fff7e6;border:1px solid #f0d9a8;border-radius:8px;padding:8px 12px;margin:0 0 10px;font-size:.95rem;line-height:1.6}
 #out{display:none}
 @media print{
  body{background:#fff;font-size:11pt}
@@ -95,32 +138,33 @@ body.cv #top,body.cv #form,body.cv #pv,body.cv #end,body.cv #nav{display:none!im
 <li><b>הפרטיות שלכם:</b> המידע לא נשלח לשום מקום. רק אתם מחליטים אם להוריד קובץ ולשלוח אותו אלינו.</li>
 <li><b>בסוף:</b> מורידים קובץ Word, שולחים אותו אלינו במייל, ומוחקים אותו מהמכשיר.</li></ul>
 <p><button id="clr2" type="button">מחק את הטיוטה שלי עכשיו</button></p></div>
-<div class="cv-sec"><h2>מה מחכה לכם בשאלון</h2><p class="sd"><span id="cnt"></span> סעיפים. הסעיפים עם ★ הם החשובים ביותר, ואת השאר אפשר להשלים גם בפגישה. אחרי שמתחילים אפשר לעבור בין הסעיפים בפס שבראש הדף.</p><div class="rm" id="rm"></div></div>
+<div class="cv-sec"><h2>מה מחכה לכם בשאלון</h2><p class="sd"><span id="cnt"></span> סעיפים. לא חייבים למלא הכול ברצף: אפשר לעצור ולחזור בכל שלב. הסעיפים עם ★ הם החשובים ביותר, ואת השאר אפשר להשלים גם בפגישה. אחרי שמתחילים אפשר לעבור בין הסעיפים בפס שבראש הדף.</p><div class="rm" id="rm"></div></div>
 <button class="p" id="go1" type="button">מתחילים</button>
 </div>
 <div id="form"></div>
 <div id="pv"></div>
-<div id="end"><div class="bar"><button class="p" id="wd" type="button">הורד קובץ Word</button><button id="pdf">הדפס או שמור כ-PDF</button><button id="clr">נקה הכול</button></div>
+<div id="end"><div id="pend"></div><div class="bar"><button class="p" id="vw" type="button">צפייה במסמך לפני השליחה</button><button id="wd" type="button">הורד קובץ Word</button><button id="pdf" type="button">הדפס או שמור כ-PDF</button><button id="clr" type="button">נקה הכול</button></div>
 <div class="note"><b>שליחה:</b> הקובץ יורד למכשיר (לתיקיית ההורדות, ובאייפון לאפליקציית ״קבצים״). מצרפים אותו להודעת מייל ושולחים אלינו, ואחר כך אפשר למחוק אותו. מי שמעדיף נייר או PDF יכול ללחוץ על ״הדפס או שמור כ-PDF״.</div></div>
 <div id="nav"><button id="prv" type="button">הקודם</button><span><span id="ptxt"></span> <b id="sv"></b></span><button id="nxt" class="p" type="button">הבא</button></div>
 <div id="toast"></div>
+<div id="pvw"><div><div class="pvh"><b>כך ייראה המסמך שתשלחו</b><span class="pl">זו רק תצוגה. אפשר לסגור, לתקן ולחזור.</span></div><div class="docv" id="docv"></div><div class="bar"><button class="p" id="vw1" type="button">הורד קובץ Word</button><button id="vw2" type="button">הדפס או שמור כ-PDF</button><button id="vw3" type="button">סגירה</button></div></div></div>
 <div id="dlg"><div><h2 style="margin-top:0">לפני ההדפסה</h2><p>בחלון שייפתח:</p><ul><li><b>מחשב:</b> בחרו יעד ״שמירה כ-PDF״ (Save as PDF) ולחצו על שמירה.</li><li><b>אנדרואיד:</b> בחרו ״שמירה כ-PDF״ כיעד ולחצו על כפתור ההורדה.</li><li><b>אייפון:</b> פתחו את התצוגה המקדימה בצביטה עם שתי אצבעות, ואז שיתוף ושמירה בקבצים.</li><li><b>אם יש מדפסת:</b> אפשר להדפיס ישירות.</li></ul><p>את הקובץ אפשר לשלוח לנו במייל או להביא לפגישה.</p><div class="bar"><button class="p" id="go" type="button">פתח את חלון ההדפסה</button><button id="no" type="button">ביטול</button></div></div></div>
 </main>
 <section id="out"></section>
 <script>
-const f=(l,t)=>({k:'f',l,t}),c=(l,o)=>({k:'c',l,o}),m=(l,o)=>({k:'m',l,o}),g=(l,i,s,w,h,ex)=>({k:'g',l,i,s,w,h,ex}),r=(l,cols)=>({k:'r',l,cols});
-const S4=['אין','לפעמים','לעתים קרובות','כמעט תמיד'],SD=['עצמאי','עזרה חלקית','תלוי באחרים','לא רלוונטי'];
+const f=(l,t)=>({k:'f',l,t}),c=(l,o)=>({k:'c',l,o}),m=(l,o)=>({k:'m',l,o}),g=(l,i,s,w,h,ex)=>({k:'g',l,i,s,w,h,ex}),r=(l,cols,pre)=>({k:'r',l,cols,pre}),tlq=(l,pre)=>({k:'t',l,pre});
+const PAIN=['0','1','2','3','4','5','6','7','8','9','10'],S4=['אין','לפעמים','לעתים קרובות','כמעט תמיד'],SD=['עצמאי','עזרה חלקית','תלוי באחרים','לא רלוונטי'];
 const dom=(n,a)=>g(n,a,S4,'החמיר לעומת בעבר',0,1),sb=l=>({k:'s',l}),hd=t=>({k:'h',t});
 const D=[
 ['1. פרטים אישיים',[
  c('מי ממלא את השאלון?',['המאובחן/ת','בן/בת משפחה או אדם קרוב','מילוי משותף']),f('אם לא המאובחן/ת: שם וקרבה'),
  f('שם מלא'),f('תאריך לידה','date'),f('טלפון','tel'),f('דוא״ל'),f('כתובת נוכחית'),
  c('מין',['זכר','נקבה','אחר']),c('יד דומיננטית',['ימין','שמאל','שתיהן']),
- c('מצב משפחתי',['רווק/ה','נשוי/אה','גרוש/ה','אלמן/ה']),
+ c('מצב משפחתי',['רווק/ה','נשוי/אה','גרוש/ה','אלמן/ה','בזוגיות','ידוע/ה בציבור','פרוד/ה']),
  f('מתגורר/ת עם'),f('ילדים וגילאים'),f('מספר אחים'),f('תעסוקת האב'),f('תעסוקת האם'),f('איש קשר (שם, קרבה, טלפון)'),
  f('שפת אם'),f('שפות נוספות'),f('שפת אבחון מועדפת'),c('נדרש מתורגמן',['לא','כן']),f('באיזו שפה למדת בבית הספר? (למשל עברית, רוסית, ערבית, אנגלית)'),f('ארץ לידה'),f('תאריך עלייה (אם רלוונטי)'),f('שנים בארץ וגיל תחילת עברית'),
  c('שליטה בעברית: דיבור',['טובה','בינונית','מועטה']),c('שליטה בעברית: קריאה',['טובה','בינונית','מועטה']),c('שליטה בעברית: כתיבה',['טובה','בינונית','מועטה']),
- m('ראייה, שמיעה ומוטוריקה',['משקפיים או עדשות','ליקוי ראייה','עיוורון צבעים','ירידה בשמיעה','מכשיר שמיעה','רעד או קושי בתנועת היד'])]],
+ m('ראייה, שמיעה ומוטוריקה',['משקפיים או עדשות','ליקוי ראייה','עיוורון צבעים','ירידה בשמיעה','מכשיר שמיעה','רעד או קושי בתנועת היד','אין אף אחד'])]],
 ['2. סיבת הפנייה',[
  f('הסיבה העיקרית להגעה לאבחון','ta'),f('מה הייתם רוצים שהאבחון יענה עליו?','ta'),
  m('גורם מפנה',['יוזמה פרטית','רופא','ביטוח לאומי','משרד הביטחון','מוסד לימודים','מקום עבודה','משפטי','אחר']),
@@ -130,9 +174,10 @@ const D=[
 c('רקע פלילי',['אין','תיק פתוח או הליך מתנהל','הרשעה בעבר']),f('פירוט (רקע פלילי)'),
  c('מתי התחילו הקשיים?',['בילדות','בהתבגרות','בבגרות המוקדמת','בשנים האחרונות','לא יודע/ת']),f('בערך מתי (שנה, אפשר בערך)'),
  m('מה לדעתכם גרם לקשיים או הקדים אותם?',['אירוע רפואי','חבלת ראש','אירוע נפשי או טראומטי','משבר או שינוי בחיים','תרופה או טיפול','לא יודע/ת','אחר']),
- c('מהלך הקשיים',['יציב','מחמיר','משתפר','תנודתי']),f('אירוע או נסיבות סביב ההתחלה','ta'),c('ניסיונות קודמים לטפל בקשיים',['לא','כן']),f('אם כן: מה נוסה')]],
-['3. רקע בילדות',[
- m('סמנו מה שהיה',['סיבוכים בהיריון או בלידה, עיכוב התפתחותי','קשיים בקריאה, כתיבה או חשבון','חינוך מיוחד, חזרה על כיתה או שיעורי עזר','קשיים התנהגותיים או חברתיים בילדות']),f('פירוט','ta')]],
+ c('מהלך הקשיים',['יציב','מחמיר','משתפר','תנודתי','לא יודע/ת']),f('אירוע או נסיבות סביב ההתחלה','ta'),c('ניסיונות קודמים לטפל בקשיים',['לא','כן']),f('אם כן: מה נוסה')]],
+['3. לידה והתפתחות מוקדמת',[
+ {k:'n',t:'כאן שואלים על התקופה שלפני בית הספר. על בית הספר עצמו, כולל קשיים בלימודים, חינוך מיוחד או חזרה על כיתה, נשאל בסעיף ציר הזמן.'},
+ m('היריון, לידה והתפתחות',['סיבוכים בהיריון או בלידה','לידה מוקדמת או משקל לידה נמוך','עיכוב בהתפתחות התנועה (ישיבה, הליכה)','עיכוב בהתפתחות הדיבור','קשיים התנהגותיים או חברתיים בגיל הגן','אין אף אחד','לא יודע/ת']),f('פירוט','ta')]],
 ['4. היסטוריה רפואית',[
  {k:'n',t:'סמנו רק מצבים שהיו או שיש. אם אין אף אחד מהמצבים בקבוצה, סמנו ״אין אף אחד״.'},
 
@@ -149,42 +194,27 @@ c('רקע פלילי',['אין','תיק פתוח או הליך מתנהל','הר
  {k:'n',t:'תרופות קבועות, כולל ללא מרשם, תוספים וקנאביס רפואי. אם אין, כתבו ״אין״.'},
  r('תרופות',[['שם התרופה'],['מינון'],['סיבה'],['מתי התחילה'],['שימוש',['קבוע','לפי צורך']]])]],
 ['5. ציר זמן: לימודים, שירות ותעסוקה',[
- {k:'n',t:'מלאו כל שלב לפי מה שהיה, וכתבו שנים ולא גילאים, למשל 2008-2012. אם אינכם זוכרים את השנה המדויקת, אפשר לכתוב בערך (למשל ״בערך 2010״). תחום שלא רלוונטי אפשר לדלג.'},
- hd('בית ספר יסודי'),
- {k:'n',t:'הוסיפו שורה לכל בית ספר או מסגרת. אם עברתם ממסגרת למסגרת, כתבו כל מסגרת בשורה נפרדת, כדי שנבין את המסלול.'},
- r('מסגרות',[['שם בית הספר'],['שנים (אפשר בערך)'],['סוג מסגרת',['רגילה','חינוך מיוחד','אחר']],['איך הלך לימודית?',['מצוין','טוב','בינוני','קשה']],['איך הלך חברתית?',['מצוין','טוב','בינוני','קשה']],['איך הסתיים?',['סיים','עזב','עבר מסגרת']],['סיבת מעבר או קשיים']]),
- hd('תיכון'),
- {k:'n',t:'גם כאן שורה לכל בית ספר או מסגרת. אם עברתם מסגרת, כתבו כל אחת בנפרד.'},
- r('מסגרות',[['שם בית הספר'],['שנים (אפשר בערך)'],['מגמה'],['סוג מסגרת',['רגילה','חינוך מיוחד','אחר']],['איך הלך לימודית?',['מצוין','טוב','בינוני','קשה']],['איך הלך חברתית?',['מצוין','טוב','בינוני','קשה']],['איך הסתיים?',['סיים','עזב','עבר מסגרת']],['סיבת מעבר או קשיים']]),
- c('בגרות',['מלאה','חלקית','ללא']),f('ממוצע בגרות'),m('התאמות בבחינות',['תוספת זמן','הקראה','בחינה בעל פה','אחר']),f('קשיים בתיכון','ta'),
- hd('שירות צבאי או לאומי'),
- c('שירות',['צבאי מלא','צבאי חלקי','לאומי','לא בוצע']),f('באילו שנים שירתת? (למשל 2012-2015, אפשר בערך)'),f('יחידה ותפקיד'),f('פרופיל'),c('איך הלך בשירות?',['מצוין','טוב','בינוני','קשה']),
- c('איך הסתיים?',['סיים שירות מלא','שוחרר מוקדם','הפסיק']),f('סיבת שחרור מוקדם (אם רלוונטי)'),m('חשיפה',['חשיפה לאירועי לחימה או לאירוע קשה (יידון בריאיון)']),f('קשיים בשירות','ta'),
- hd('השכלה גבוהה ולימודים מקצועיים'),
- c('לימודים אחרי התיכון',['לא למדתי','למדתי','לומד/ת כיום']),f('ציון פסיכומטרי'),m('פסיכומטרי',['לא נבחנתי']),
- {k:'n',t:'הוסיפו שורה לכל מוסד או תואר.'},
- r('לימודים',[['מוסד'],['תחום'],['שנים (אפשר בערך)'],['תואר או תעודה'],['ממוצע או ציון סיום'],['איך הסתיים?',['סיים','נשר','עדיין לומד','הפסקה']],['סיבה או הערות']]),
- m('התאמות לימודיות',['תוספת זמן','הקראה','בחינה בעל פה','אחר']),f('קשיים בלימודים','ta'),
- hd('תעסוקה'),
- c('מצב תעסוקתי כיום',['עובד/ת','לא עובד/ת','פנסיונר/ית','סטודנט/ית']),
- {k:'n',t:'הוסיפו רק עבודות מרכזיות או ארוכות, לפי סדר כרונולוגי. אם היו תקופות ארוכות בלי עבודה (שנה ומעלה), הוסיפו שורה ורשמו ״לא עבדתי״ בשם המעסיק.'},
- r('עבודות',[['מעסיק או מקום עבודה'],['תפקיד'],['שנים (אפשר בערך)'],['היקף',['מלא','חלקי']],['איך הלך?',['מצוין','טוב','בינוני','קשה']],['איך הסתיים?',['עדיין שם','עזב','פוטר','סיום חוזה','מעבר']],['סיבת סיום וקשיים']]),
- f('אם לא עובד/ת: ממתי ומדוע'),f('קשיים בעבודה','ta'),
- hd('תקופות אחרות ושינוי בתפקוד'),
- {k:'n',t:'אירועים משמעותיים או קשים בחיים (למשל לחימה, תאונה, אובדן). אפשר לציין רק שנה וסוג האירוע, ואין צורך לפרט. את הפרטים נשאל בריאיון. אם אין, דלגו.'},
- r('אירועים משמעותיים',[['שנה (בערך)'],['סוג האירוע',['לחימה','תאונה','אובדן של אדם קרוב','מחלה או אשפוז','פגיעה או אלימות','אירוע אחר']],['הערה קצרה (לא חובה)']]),
- f('תקופות אחרות שלא הופיעו (אשפוז, מחלה, חיפוש עבודה, נסיעה, פער של יותר מחצי שנה)','ta'),
- f('מתי התחלתם לשים לב לשינוי בתפקוד? (גיל או שנה)'),f('בסמוך לאירוע, או בהדרגה?'),c('התפקוד לפני שהתחילו הקשיים',['מעל הממוצע','ממוצע','מתחת לממוצע'])]],
+ {k:'n',t:'כאן בונים את מסלול החיים: לימודים, שירות, עבודה ואירועים משמעותיים. כתבו שנים ולא גילאים, למשל 2008 עד 2012. אין צורך לדייק: שנה בערך מספיקה, ואפשר לסמן ״בערך״.'},
+ hd('תחנות החיים'),
+ {k:'n',t:'כל תחנה היא כרטיס: לוחצים כדי לפתוח, ממלאים, ו״סיום״ מעביר לתחנה הבאה. מה שלא רלוונטי אפשר להשאיר ריק. בעבודות מספיקות העיקריות או הארוכות. לאירוע קשה מספיקים שנה וסוג, ואת הפרטים נשאל בריאיון.'},
+ tlq('תחנות חיים',['בית ספר יסודי','תיכון']),
+ hd('פרטים משלימים'),
+ c('בגרות',['מלאה','חלקית','ללא','לא זוכר/ת']),f('ממוצע בגרות'),m('התאמות בבחינות או בלימודים',['תוספת זמן','הקראה','בחינה בעל פה','אחר']),m('באילו מסגרות היו ההתאמות?',['בית ספר יסודי','תיכון','לימודים אחרי התיכון']),
+ f('ציון פסיכומטרי'),m('פסיכומטרי',['לא נבחנתי']),
+ f('פרופיל צבאי'),m('חשיפה',['חשיפה לאירועי לחימה או לאירוע קשה (יידון בריאיון)']),
+ c('מצב תעסוקתי כיום',['עובד/ת','לא עובד/ת','פנסיונר/ית','סטודנט/ית']),f('אם לא עובד/ת: ממתי ומדוע'),
+ hd('שינוי בתפקוד'),
+ f('מתי התחלתם לשים לב לשינוי בתפקוד? (גיל או שנה)'),f('בסמוך לאירוע, או בהדרגה?'),c('התפקוד לפני שהתחילו הקשיים',['מעל הממוצע','ממוצע','מתחת לממוצע','לא זוכר/ת'])]],
 ['6. שינה ושימוש בחומרים',[
  c('שעות שינה בלילה',['פחות מ-5','5-6','7-8','9 ומעלה']),f('שעת הליכה לישון ושעת קימה'),c('איכות שינה',['טובה','בינונית','ירודה']),
  c('עייפות ביום',['אין','קלה','בינונית','משמעותית']),
- m('בעיות שינה',['יקיצות מרובות','נחירות או עצירות נשימה','דום נשימה בשינה (אובחן או חשד)','סיוטים','רגליים חסרות מנוחה','תרופות שינה']),
+ m('בעיות שינה',['יקיצות מרובות','נחירות או עצירות נשימה','דום נשימה בשינה (אובחן או חשד)','סיוטים','רגליים חסרות מנוחה','תרופות שינה','אין אף אחד']),
  {k:'n',t:'שימוש בחומרים: בחרו סטטוס ופרטו תדירות או כמות (למשל משקאות בשבוע) ומועד שימוש אחרון. פירוט על שימוש בעבר יישאל בריאיון.'},
  ...['אלכוהול','קנאביס (כולל רפואי)','טבק או סיגריה אלקטרונית','תרופות הרגעה או שינה','חומרים אחרים'].map(sb)]],
 ['7. כאב',[
  c('האם יש כאב מתמשך או חוזר?',['לא','כן']),
  m('סוג הכאב',['כאבי ראש או מיגרנה','כאב בגב או בצוואר','כאב במפרקים','כאב עצבי (צריבה, חשמל)','כאב מפושט בגוף','אחר']),f('פירוט ואיפה בגוף'),
- c('תדירות',['כל יום','כמה פעמים בשבוע','לפעמים']),f('רמת כאב טיפוסית (0-10)'),f('רמת כאב בימים הקשים (0-10)'),
+ c('תדירות',['כל יום','כמה פעמים בשבוע','לפעמים']),f('רמת כאב טיפוסית (0-10)',PAIN),f('רמת כאב בימים הקשים (0-10)',PAIN),
  m('הכאב משפיע על',['שינה','ריכוז','מצב רוח','עבודה או לימודים','פעילות יומיומית']),
  m('טיפול בכאב',['ללא טיפול','תרופות','פיזיותרפיה','טיפול אחר'])]],
 ['8. קשיי חשיבה ורגש',[
@@ -198,10 +228,10 @@ c('רקע פלילי',['אין','תיק פתוח או הליך מתנהל','הר
  dom('תכנון והתארגנות',['קושי להתחיל משימות','קושי לתכנן שלבים ולהתארגן','קושי לעמוד בזמנים','פעולה אימפולסיבית (לפני מחשבה)','קושי לקבל החלטות','קושי להסתגל לשינוי בתוכניות או לעבור בין משימות','טעויות בעבודה או בניהול כספים']),
  dom('מהירות חשיבה',['חשיבה איטית מבעבר','צורך בזמן נוסף כדי להבין או להשיב','משימות שלוקחות יותר זמן מבעבר','קושי לעמוד בקצב של שיחה או עבודה']),
  dom('ראייה מרחבית',['הליכה לאיבוד במקום מוכר','קושי בחנייה או בהערכת מרחקים בנהיגה','קושי בלבישה (כפתורים, סדר הבגדים)','קושי לקרוא מפה או להתמצא בניווט','קושי בזיהוי פרצופים (גם של אנשים מוכרים)','התנגשות או היתקעות בחפצים, בדלתות או באנשים, בעיקר מצד אחד']),
- dom('מוטוריקה',['נפילות או חוסר יציבות','קושי בתנועות עדינות (כתיבה, כפתורים)','רעד','חולשה בצד אחד או בגפיים','איטיות או נוקשות בתנועה','קושי בתיאום (בהליכה או בעבודה עם הידיים)']),
- dom('תחושה וחושים',['קהות, נימול או עקצוץ','רגישות לרעש','רגישות לאור','רגישות למגע, לריחות או לבדים','ירידה בחוש הריח או הטעם','ראייה או שמיעה של דברים שאחרים אינם קולטים']),
- dom('מצב רוח, חרדה והתנהגות',['מצב רוח ירוד או עצבות','חרדה או מתח','עצבנות או התפרצויות כעס','אדישות או חוסר מוטיבציה','אובדן עניין בפעילויות שהיו אהובות','שינוי באישיות או בהתנהגות (לפי הסובבים)','דאגות מוגזמות או מחשבות חוזרות']),
- dom('עייפות',['עייפות מתמשכת','סחרחורת']),
+ dom('מוטוריקה',['נפילות או חוסר יציבות','קושי בתנועות עדינות (כתיבה, כפתורים)','רעד','חולשה בצד אחד או בגפיים','איטיות או נוקשות בתנועה','קושי בתיאום (בהליכה או בעבודה עם הידיים)','סחרחורת']),
+ dom('תחושה וחושים',['קהות, נימול או עקצוץ','רגישות לרעש','רגישות לאור','רגישות למגע, לריחות או לבדים','ירידה בחוש הריח או הטעם']),
+ dom('מצב רוח, חרדה והתנהגות',['מצב רוח ירוד או עצבות','חרדה או מתח','עצבנות או התפרצויות כעס','אדישות או חוסר מוטיבציה','אובדן עניין בפעילויות שהיו אהובות','שינוי באישיות או בהתנהגות (לפי הסובבים)','דאגות מוגזמות או מחשבות חוזרות','ראייה או שמיעה של דברים שאחרים אינם קולטים']),
+ dom('עייפות',['עייפות מתמשכת','התעייפות מהירה ממאמץ מחשבתי (קריאה, שיחה, מסך)']),
  f('קשיים נוספים שלא הופיעו','ta'),m('מי שם לב לקשיים?',['אני','בן/בת זוג','ילדים','הורים או אחים','חברים','מקום עבודה','מסגרת לימודית','רופא','אחר']),
  m('מה עוזר להתמודד?',['רשימות','תזכורות בטלפון או ביומן','מישהו עוזר','הימנעות ממשימות מסוימות','השקעת זמן נוסף','אחר'])]],
 ['9. תפקוד יומיומי',[
@@ -217,59 +247,88 @@ c('רקע פלילי',['אין','תיק פתוח או הליך מתנהל','הר
  m('אני מצהיר/ה כי',['הבנתי את מהלך האבחון','המידע שמסרתי נכון ככל הידוע לי']),
  f('שם מלא'),f('תאריך','date'),f('אם מולא בסיוע אחר: שם וקרבה')]]
 ];
+const ACC=['#2f6d9f','#d98324','#3a9a55','#d1456a','#7a55c1','#2a9a9a','#c9951a','#4a63c9','#9a7a3a','#c04aa8','#667788'],TINT=['#e8f0fa','#fdeede','#eaf6ec','#fde9ee','#efe9fa','#e6f5f5','#fff4d9','#e8eefc','#f3ecdf','#fbe9f6','#eceff2'];
 const TL=D.findIndex(d=>d[0].includes('ציר זמן')),KEY=D.map(d=>/פרטים אישיים|סיבת הפנייה|היסטוריה רפואית|ציר זמן/.test(d[0]));
-D.forEach(([t,qs])=>{for(let j=qs.length-2;j>=0;j--){const n=qs[j],x=qs[j+1];if(n.k=='n'&&['c','m','f','r'].includes(x.k)&&(j>0||t.includes('רצונות'))){x.d=n.t;qs.splice(j,1)}}});
+D.forEach(([t,qs])=>{for(let j=qs.length-2;j>=0;j--){const n=qs[j],x=qs[j+1];if(n.k=='n'&&['c','m','f','r','t'].includes(x.k)&&(j>0||t.includes('רצונות'))){x.d=n.t;qs.splice(j,1)}}});
+D.forEach(([t,qs])=>{if(/סיבת הפנייה|היסטוריה רפואית|ציר זמן|קשיי חשיבה|תפקוד יומיומי/.test(t))qs.push(f('יש משהו חשוב שלא שאלנו?','ta'))});
+{const q8=D.find(d=>d[0].includes('קשיי חשיבה'))[1];q8.splice(q8.findIndex(q=>q.k=='g'),0,{k:'x'})}
 const ALL=()=>D.flatMap(d=>d[1]);
+const DK=['תאריך עלייה (אם רלוונטי)','שנים בארץ וגיל תחילת עברית','בערך מתי (שנה, אפשר בערך)','ציון פסיכומטרי','ממוצע בגרות','פרופיל צבאי','כמה אחוזי נכות','מתי התחלתם לשים לב לשינוי בתפקוד? (גיל או שנה)','אם לא עובד/ת: ממתי ומדוע','נוירולוגי: שנה ופירוט','נוירו-התפתחותי: שנה ופירוט','רפואי כללי: שנה ופירוט','נפשי: שנה ופירוט, וטיפול כיום או בעבר','משפחה: מי ומתי','אבחונים: שנה וממצאים עיקריים','ילדים וגילאים'];
+ALL().forEach(q=>{if(DK.includes(q.l))q.dk=1});
 const WH=(ls,l,v)=>ALL().forEach(q=>{if(ls.includes(q.l))q.when=[l,v]});
 WH(['שם עובד/ת השיקום','טלפון עובד/ת השיקום'],'גורם מפנה',['ביטוח לאומי','משרד הביטחון']);
 WH(['אחוזי הנכות הוכרו על ידי','כמה אחוזי נכות','על מה הוכרו (סוג הליקוי)'],'מוכר/ת עם אחוזי נכות',['כן']);
 WH(['פירוט (רקע פלילי)'],'רקע פלילי',['תיק פתוח או הליך מתנהל','הרשעה בעבר']);
 WH(['אם כן: מה נוסה'],'ניסיונות קודמים לטפל בקשיים',['כן']);
-WH(['באילו שנים שירתת? (למשל 2012-2015, אפשר בערך)','יחידה ותפקיד','פרופיל','איך הלך בשירות?','איך הסתיים?','סיבת שחרור מוקדם (אם רלוונטי)','חשיפה','קשיים בשירות'],'שירות',['צבאי מלא','צבאי חלקי','לאומי']);
-WH(['לימודים','התאמות לימודיות','קשיים בלימודים'],'לימודים אחרי התיכון',['למדתי','לומד/ת כיום']);
+WH(['באילו מסגרות היו ההתאמות?'],'התאמות בבחינות או בלימודים',['תוספת זמן','הקראה','בחינה בעל פה','אחר']);
 WH(['אם לא עובד/ת: ממתי ומדוע'],'מצב תעסוקתי כיום',['לא עובד/ת']);
 WH(['סוג הכאב','פירוט ואיפה בגוף','תדירות','רמת כאב טיפוסית (0-10)','רמת כאב בימים הקשים (0-10)','הכאב משפיע על','טיפול בכאב'],'האם יש כאב מתמשך או חוזר?',['כן']);
-function selOf(q){const e=q&&q._e;if(!e||(q.k!='c'&&q.k!='m'))return[];const ins=[...e.querySelectorAll('input[type=checkbox],input[type=radio]')];return q.o.filter((o,j)=>ins[j]&&ins[j].checked)}
-function vis(){const a=ALL();a.forEach(q=>{if(!q.when||!q._e)return;const d=a.find(x=>x.l==q.when[0]);q._e.toggleAttribute('data-hide',!(d&&selOf(d).some(o=>q.when[1].includes(o))))})}
-const qf=l=>ALL().find(q=>q.l==l),val=q=>{const i=q&&q._e&&q._e.querySelector('input,textarea');return i?i.value.trim():''};
+const hid=q=>!!(q&&q._e&&q._e.hasAttribute('data-hide'));
+function selOf(q){const e=q&&q._e;if(!e||(q.k!='c'&&q.k!='m')||hid(q))return[];const ins=[...e.querySelectorAll('input[type=checkbox],input[type=radio]')];return q.o.filter((o,j)=>ins[j]&&ins[j].checked)}
+function vis(){const a=ALL();a.forEach(q=>{if(!q.when||!q._e)return;const d=a.find(x=>x.l==q.when[0]);q._e.toggleAttribute('data-hide',!(d&&selOf(d).some(o=>q.when[1].includes(o))))});
+ const sv=tcards().some(o=>o.ty=='שירות צבאי או לאומי'&&tfull(o)&&o.kd!='לא שירתתי');['פרופיל צבאי','חשיפה'].forEach(l=>{const q=qf(l);if(q&&q._e)q._e.toggleAttribute('data-hide',!sv)})}
+const qf=l=>ALL().find(q=>q.l==l),val=q=>{if(hid(q))return '';const i=q&&q._e&&q._e.querySelector('input,textarea');return i?i.value.trim():''};
 const $=(t,a,k)=>{const e=document.createElement(t);Object.assign(e,a||{});(k||[]).forEach(x=>e.append(x));return e};
-let uid=0;const AH=/(^|\s)אחר$/;
+let uid=0;const AH=/(^|\s)אחר$/,NONE=['אין אף אחד','ללא טיפול'];
 function pill(o,l,cp){const w=$('div',{className:'pg'+(cp?' cg':'')}),h=$('input',{type:'hidden'});h.dataset.l=l;w.append(h);if(l)w.append($('span',{className:'pl',textContent:l+':'}));
  const d=$('input',{type:'text',placeholder:'פרטו'});d.dataset.l=(l||'')+' (פירוט)';d.style.display='none';
  o.forEach(x=>{const b=$('button',{type:'button',className:'pill',textContent:cp?'':x});b.dataset.v=x;b.setAttribute('aria-label',x);b.onclick=()=>{const on=h.value!=x;h.value=on?x:'';d.style.display=AH.test(h.value)?'':'none';w.querySelectorAll('.pill').forEach(c=>c.classList.toggle('on',on&&c.dataset.v==x));w.dispatchEvent(new Event('input',{bubbles:true}))};w.append(b)});if(o.some(x=>AH.test(x)))w.append(d);return w}
 function ctl(t,l){
  if(Array.isArray(t))return pill(t,l);
- if(0){const s=$('select');s.append($('option',{value:'',textContent:l}));t.forEach(o=>s.append($('option',{value:o,textContent:o})));s.dataset.l=l;return s}
  const i=t=='ta'?$('textarea',{rows:2}):$('input',{type:t||'text'});i.placeholder=l;i.dataset.l=l;return i}
+const IM={'כמה אחוזי נכות':'numeric','ממוצע בגרות':'decimal','ציון פסיכומטרי':'numeric','מספר אחים':'numeric','פרופיל צבאי':'numeric'};
+function kb(i,l){if(i.tagName!='INPUT')return;if(IM[l])i.inputMode=IM[l];if(l=='דוא״ל'){i.type='email';i.autocomplete='email'}if(l=='טלפון')i.autocomplete='tel';if(l=='שם מלא')i.autocomplete='name'}
+// date as three short fields (day, month, year); the value is kept in one hidden field as DD.MM.YYYY
+function dmy(w,l){const h=$('input',{type:'hidden'});h.dataset.l=l;const P=(ph,n)=>{const x=$('input',{type:'text',inputMode:'numeric',maxLength:n,placeholder:ph,className:'dp'+n});x.dataset.nt=1;return x};
+ const d=P('יום',2),m=P('חודש',2),y=P('שנה',4),wr=$('div',{className:'tcw'}),box=$('div',{className:'dmy'},[d,$('span',{textContent:'/'}),m,$('span',{textContent:'/'}),y]);
+ const pad=v=>v&&v.length==1?'0'+v:v;
+ const put=()=>{const D_=pad(d.value),M_=pad(m.value),Y=y.value;h.value=!D_&&!M_&&!Y?'':D_&&M_?D_+'.'+M_+'.'+Y:M_?M_+'.'+Y:Y;
+  const e=[];if(d.value&&!(+d.value>=1&&+d.value<=31))e.push('יום בין 1 ל-31.');if(m.value&&!(+m.value>=1&&+m.value<=12))e.push('חודש בין 1 ל-12.');if(Y&&!(Y.length==4&&+Y>=1900&&+Y<=new Date().getFullYear()))e.push('שנה בת 4 ספרות.');wr.textContent=e.join(' ')};
+ d.addEventListener('input',()=>{if(d.value.length==2)m.focus()});m.addEventListener('input',()=>{if(m.value.length==2)y.focus()});
+ w.addEventListener('input',e=>{if(e.target===d||e.target===m||e.target===y)put()});
+ w._sync=()=>{const v=h.value||'';let r=v.match(/^(\d{4})-(\d{2})-(\d{2})$/);if(r){y.value=r[1];m.value=r[2];d.value=r[3]}else{const p=v.split('.');y.value=p.pop()||'';m.value=p.pop()||'';d.value=p.pop()||''}put()};
+ const f=document.createDocumentFragment();f.append(h,box,wr);f.removeAttribute=()=>{};f.classList={add(){}};f.tagName='FRAG';return f}
 function opts(o,type,name){return o.flatMap(x=>{const i=$('input',{type,name}),L=$('label',{className:'o'},[i,document.createTextNode(x)]);if(!AH.test(x))return [L];const d=$('input',{type:'text',placeholder:'פרטו'});d._i=i;d.style.display='none';return [L,d]})}
 function build(q){
  const w=$('div',{className:'q'});w.dataset.l=q.l||'';
  if(q.k=='h')return $('h3',{textContent:q.t});
  if(q.k=='k'){w.dataset.l='';w.append($('label',{className:'o'},[$('input',{type:'checkbox'}),document.createTextNode('אשלים סעיף זה בפגישה')]));return w}
+ if(q.k=='x'){w.className='q onebox';w.dataset.l='';const a=$('button',{type:'button',className:'p',textContent:'פריט אחד בכל פעם'}),b=$('button',{type:'button',textContent:'רשימה לפי תחומים'});a.onclick=()=>ONE.start();b.onclick=()=>{const f=form.querySelector('.q.acc');f.classList.add('open');f.scrollIntoView({block:'start'})};
+  w.append($('b',{textContent:'איך נוח לך למלא את החלק הזה?'}),$('div',{className:'qd',textContent:'יש שתי דרכים, והתשובות נשמרות באותו מקום. ״פריט אחד בכל פעם״ מציג משפט אחד עם כפתורים גדולים ועובר לבא אחריו לבד. זה נוח במיוחד בטלפון, או למי שקשה לו להתרכז ברשימה ארוכה. ״רשימה לפי תחומים״ מציגה כל תחום כרשימה שנפתחת בלחיצה. אפשר לעבור בין הדרכים בכל שלב.'}),$('div',{className:'bar'},[a,b]));return w}
  if(q.k=='n'){w.className='note';w.textContent=q.t;w.dataset.skip=1;return w}
- if(q.l&&q.k!='f')w.append($('b',{textContent:q.l}));
+ if(q.l&&q.k!='f'&&q.k!='t')w.append($('b',{textContent:q.l}));
  if(q.d&&q.k!='f')w.append($('div',{className:'qd',textContent:q.d}));
- if(q.k=='f'){const i=ctl(q.t,q.l);i.removeAttribute('placeholder');w.append($('b',{textContent:q.l}),...(q.d?[$('div',{className:'qd',textContent:q.d})]:[]),i)}
- if(q.k=='c'||q.k=='m'){const og=$('div',{className:'og'});opts(q.o,q.k=='c'?'radio':'checkbox',q.k=='c'?'r'+(++uid):'').forEach(x=>{if(x.tagName=='LABEL'&&x.textContent.length>28)x.classList.add('long');og.append(x)});w.append(og);w.addEventListener('change',()=>w.querySelectorAll('input[type=text]').forEach(d=>d.style.display=d._i.checked?'':'none'))}
+ if(q.k=='f'){const i=q.t=='date'?dmy(w,q.l):Array.isArray(q.t)?pill(q.t,''):ctl(q.t,q.l);if(i.removeAttribute)i.removeAttribute('placeholder');kb(i,q.l);if(q.t===PAIN)i.classList.add('pain');w.append($('b',{textContent:q.l}),...(q.d?[$('div',{className:'qd',textContent:q.d})]:[]),i);if(q.t===PAIN)w.append($('div',{className:'pl',textContent:'0 = אין כאב, 10 = הכאב הכי חזק שאפשר לדמיין'}));if(q.dk){const ck=$('input',{type:'checkbox'});ck.onchange=()=>{if(ck.checked)i.value=''};i.addEventListener('input',()=>{if(i.value)ck.checked=false});w.append($('label',{className:'o dk'},[ck,document.createTextNode('לא יודע/ת / לא זוכר/ת')]))}}
+ if(q.k=='c'||q.k=='m'){const og=$('div',{className:'og'});opts(q.o,q.k=='c'?'radio':'checkbox',q.k=='c'?'r'+(++uid):'').forEach(x=>{if(x.tagName=='LABEL'&&x.textContent.length>28)x.classList.add('long');og.append(x)});w.append(og);const nj=q.o.findIndex(o=>NONE.includes(o)||(o=='לא יודע/ת'&&q.l=='היריון, לידה והתפתחות'));if(q.k=='m'&&nj>=0)w.addEventListener('change',ev=>{const L=[...og.querySelectorAll('input[type=checkbox]')],j=L.indexOf(ev.target);if(j<0||!ev.target.checked)return;if(j==nj)L.forEach((y,k)=>{if(k!=nj)y.checked=false});else L[nj].checked=false});w.addEventListener('change',()=>w.querySelectorAll('input[type=text]').forEach(d=>d.style.display=d._i.checked?'':'none'))}
  if(q.k=='g'){
-  const sk=$('input',{type:'checkbox',className:'skip'});sk.onchange=()=>w.classList.toggle('skd',sk.checked);w.append($('label',{className:'o sk'},[sk,document.createTextNode('אין קושי בתחום זה')]));w.append($('div',{className:'gh'},[...q.s,q.w].map(t=>$('span',{textContent:t}))));
+  const cog=q.s===S4,body=cog?$('div',{className:'accb'}):w;if(cog){w.firstChild.remove();const hb=$('button',{type:'button',className:'acch'},[$('span',{textContent:q.l}),$('span',{className:'cnt'})]);hb.onclick=()=>w.classList.toggle('open');w.classList.add('acc');w.append(hb,body)}
+  const sk=$('input',{type:'checkbox',className:'skip'});sk.onchange=()=>{if(sk.checked&&[...w.querySelectorAll('.row.gi')].some(r=>r.querySelector('input[type=hidden]').value&&r.querySelector('input[type=hidden]').value!='אין'||r.querySelector('input[type=checkbox]').checked)){sk.checked=false;toast('בתחום הזה כבר סומנו קשיים. כדי לסמן ״אין קושי״, בטלו קודם את הסימונים.',5000)}w.classList.toggle('skd',sk.checked)};body.append($('label',{className:'o sk'},[sk,document.createTextNode('אין קושי בתחום זה')]));body.append($('div',{className:'gh'},[...q.s,q.w].map(t=>$('span',{textContent:t}))));
   q.i.forEach(n=>{const s=pill(q.s,'',1);
    const ck=$('input',{type:'checkbox'});ck.dataset.l=q.w;
-   s.append(ck);const row=$('div',{className:'row gi'},[$('span',{textContent:n}),s]);if(q.h)row.append(ctl('text','מי עוזר?'));row.dataset.n=n;w.append(row)});
-  if(q.ex)w.append($('div',{className:'row'},[ctl('ta','קשיים נוספים בתחום זה, או דוגמה (לא חובה)')]));
+   s.append(ck);const row=$('div',{className:'row gi'},[$('span',{textContent:n}),s]);if(q.h)row.append(ctl('text','מי עוזר?'));row.dataset.n=n;body.append(row)});
+  if(q.ex)body.append($('div',{className:'row'},[ctl('ta','קשיים נוספים בתחום זה, או דוגמה (לא חובה)')]));
  }
  if(q.k=='s')w.append($('div',{className:'row'},[ctl(['מעולם לא','בעבר בלבד','כיום'],'סטטוס'),ctl('text','תדירות או כמות'),ctl('text','שימוש אחרון')]));
+ if(q.k=='t'){w.classList.add('tlw');const list=$('div',{className:'tcl'});w._list=list;w._strip=$('div');
+  w._add=t=>{const c=tcard(t);list.append(c);return c};
+  const gb=$('div',{className:'tgd'}),A={};w._g=A;
+  gb.append($('b',{textContent:'שלוש שאלות קצרות, ונפתח את הכרטיסים המתאימים'}));
+  GQ.forEach(([k,l,o])=>{const g=$('div',{className:'tcp'});o.forEach(x=>{const b=$('button',{type:'button',className:'pill',textContent:x});b.onclick=()=>{A[k]=A[k]==x?'':x;g.querySelectorAll('.pill').forEach(y=>y.classList.toggle('on',y.textContent==A[k]))};g.append(b)});gb.append($('div',{className:'tcf'},[$('span',{className:'lb',textContent:l}),g]))});
+  const go=$('button',{type:'button',className:'p',textContent:'פתיחת הכרטיסים'});go.onclick=()=>{tguide(w);upd()};gb.append(go);
+  w._gb=gb;w._gd=0;w._setgd=v=>{w._gd=v?1:0;gb.style.display=v?'none':''};
+  w.append(w._strip,gb,list,$('div',{className:'tadd'},[$('span',{className:'pl',textContent:'הוספת תחנה:'}),...Object.keys(TT).map(t=>{const b=$('button',{type:'button',className:'pill',textContent:'+ '+t});b.onclick=()=>{const c=w._add(t);topen(c,true);upd()};return b})]));
+  (q.pre||[]).forEach(t=>w._add(t))}
  if(q.k=='r'){
-  const add=()=>{const row=$('div',{className:'row'});q.cols.forEach(([l,t])=>row.append(ctl(t||'text',l)));
-   const d=$('button',{textContent:'מחק שורה',type:'button'});d.onclick=()=>row.remove();row.append(d);w.insertBefore(row,btn)};
-  const btn=$('button',{textContent:'הוסף שורה',type:'button'});btn.onclick=add;w.append(btn);add();
+  const add=(pre)=>{const row=$('div',{className:'row'});q.cols.forEach(([l,t])=>row.append(ctl(t||'text',l)));
+   const d=$('button',{textContent:'מחק שורה',type:'button'});d.onclick=()=>row.remove();row.append(d);w.insertBefore(row,btn);if(pre){const b=[...row.querySelectorAll('.pill')].find(x=>x.dataset.v==pre);if(b)b.onclick()}};
+  const btn=$('button',{textContent:'הוסף שורה',type:'button'});btn.onclick=()=>add();w.append(btn);(q.pre||[0]).forEach(p=>add(p||undefined));
  }
  return w}
 const form=document.getElementById('form');
 const DESC={
 'פרטים אישיים':'פרטים בסיסיים עוזרים לנו להתאים את האבחון אליך. השפה, הרקע התרבותי ויכולות החושים והתנועה משפיעים על בחירת המבחנים ועל פירוש התוצאות.',
 'סיבת הפנייה':'כאן אפשר לספר במילים שלך למה הגעת ומה היית רוצה להבין. זה עוזר לנו למקד את האבחון במה שהכי חשוב לך.',
-'רקע בילדות':'ההתפתחות והלימודים בילדות עוזרים להבין אם הקשיים התחילו מוקדם או מאוחר, ומה היה המצב לפני שהם התחילו.',
+'לידה והתפתחות מוקדמת':'ההיריון, הלידה וההתפתחות בשנים הראשונות עוזרים להבין אם חלק מהקשיים התחילו כבר אז, עוד לפני בית הספר.',
 'היסטוריה רפואית':'מצבים רפואיים, תרופות ואבחונים קודמים יכולים להשפיע על ריכוז, זיכרון וחשיבה. אנחנו שואלים כדי להבין את התמונה המלאה, ולא כדי לחפש בעיה.',
 'ציר זמן: לימודים, שירות ותעסוקה':'מסלול החיים, בלימודים, בשירות ובעבודה, מראה איך תפקדת לאורך השנים ומתי השתנה משהו. כך אפשר להבחין בין קושי ותיק לשינוי חדש.',
 'שינה ושימוש בחומרים':'שינה גרועה וחומרים כמו אלכוהול וקנאביס משפיעים על ריכוז וזיכרון. התשובות כאן עוזרות לנו לפרש נכון את התוצאות.',
@@ -278,92 +337,253 @@ const DESC={
 'תפקוד יומיומי':'כאן בודקים עד כמה אפשר להסתדר בפעולות היום-יום ומה השתנה לאחרונה. זה עוזר לנו להבין איך הקשיים משפיעים בפועל על החיים.',
 'רצונות ושאיפות':'אנחנו רוצים להכיר גם את מה שחשוב לך. כך ההמלצות בסוף האבחון יתאימו לא רק לקשיים אלא גם למטרות שלך.',
 'הצהרה':'אישור קצר שהבנתם את התהליך ושהמידע נכון ככל הידוע לכם.'};
-function render(){form.innerHTML='';D.forEach(([t,qs],i)=>{const add=e=>{e.dataset.s=i;form.append(e)};add($('h2',{textContent:t}));
- const ds=DESC[t.replace(/^\d+\.\s*/,'')];if(ds)add($('p',{className:'sd',textContent:ds}));
+function render(){form.innerHTML='';D.forEach(([t,qs],i)=>{const add=e=>{e.dataset.s=i;e.style.setProperty('--sc',ACC[i]);e.style.setProperty('--st',TINT[i]);form.append(e)};add($('h2',{textContent:t}));
+ const ds=DESC[t.replace(/^\d+\.\s*/,'')];add($('div',{className:'smeta'},[...(ds?[$('details',{className:'why'},[$('summary',{textContent:'למה שואלים?'}),$('p',{textContent:ds})])]:[])]));
+ if(i<D.length-1)add($('div',{className:'fam'}));
  let k=0;while(k<qs.length&&qs[k].k=='n'){const q=qs[k++],e=build(q);q._e=e;add(e)}
  if(i<D.length-1){const d=build({k:'k'});D[i]._k=d;add(d)}
  qs.slice(k).forEach(q=>{const e=build(q);q._e=e;add(e)})});vis()}
+const DFS=['קריאה, כתיבה או חשבון','קשב והתארגנות','חברתיים','רגשיים','התנהגותיים'],DFG=['לימודיים או מקצועיים','קשב והתארגנות','חברתיים','רגשיים','התנהגותיים'],SPO=['שיעורי עזר או הוראה מתקנת','חזרה על כיתה','אבחון או התאמות','ליווי רגשי (יועצת, פסיכולוג)'],NOWY=new Date().getFullYear(),HS=['מעל הממוצע','ממוצע','מתחת לממוצע','קשה מאוד'],HW=['טוב מאוד','טוב','בינוני','קשה'],HI=['לא','מעט','הרבה','לא בטוח/ה'];
+const TT={
+'בית ספר יסודי':{s:'יסודי',c:'#3a9a55',g:'s',nm:'שם בית הספר ויישוב',kl:'מסגרת',k:['רגילה','חינוך מיוחד','כיתה קטנה או מקדמת','אחר'],hl:'הישגים בלימודים',h:HS,so:1,e:['סיים/ה','עבר/ה בית ספר','נשר/ה'],df:1,dfo:DFS,sp:1,nt:'למשל: סיבת מעבר בית ספר, באיזו כיתה התחילו הקשיים'},
+'תיכון':{s:'תיכון',c:'#2f7f6f',g:'s',nm:'שם בית הספר ויישוב',kl:'מסגרת',k:['עיונית','מקצועית או טכנולוגית','חינוך מיוחד','ישיבה או אולפנה','פנימייה','אחר'],rl:'מגמה',hl:'הישגים בלימודים',h:HS,so:1,e:['סיים/ה','עבר/ה בית ספר','נשר/ה','עדיין לומד/ת'],df:1,dfo:DFS,sp:1,nt:'למשל: סיבת מעבר, התאמות בבגרות'},
+'שירות צבאי או לאומי':{s:'שירות',c:'#6b7a3a',g:'m',nm:'יחידה או מקום השירות',kl:'סוג',k:['צבאי','לאומי או אזרחי','לא שירתתי'],rl:'תפקיד',hl:'איך הלך?',h:HW,e:['שחרור רגיל','שחרור מוקדם','עדיין בשירות','אחר'],df:1,nt:'למשל: סיבת שחרור מוקדם, שינוי תפקיד'},
+'לימודים אחרי התיכון':{s:'לימודים',c:'#4a63c9',g:'s',nm:'מוסד לימודים',kl:'מה למדת',k:['מכינה','קורס או הכשרה מקצועית','תעודה או הנדסאי','תואר ראשון','תואר שני ומעלה','לא למדתי אחרי התיכון'],rl:'תחום לימוד',gr:1,hl:'איך הלך?',h:HW,e:['סיים/ה','הפסיק/ה','הפסקה זמנית','עדיין לומד/ת'],df:1,nt:'למשל: התאמות בלימודים, סיבת הפסקה'},
+'עבודה':{s:'עבודה',c:'#d98324',g:'w',nm:'מקום העבודה',kl:'היקף',k:['משרה מלאה','משרה חלקית','מזדמנת או משמרות','עצמאי/ת','לא עבדתי'],rl:'תפקיד',hl:'איך הלך?',h:HW,kk:1,e:['עדיין עובד/ת','עבר/ה לעבודה אחרת','עזב/ה מרצון','פוטר/ה','סיום חוזה או פרויקט','עזב/ה בגלל קשיים או בריאות','אחר'],df:1,nt:'למשל: סיבת עזיבה, קשיים שהופיעו בעבודה'},
+'אירוע משמעותי':{s:'אירוע',c:'#c04aa8',g:'e',one:1,nm:'מה קרה? (מספיקה מילה או שתיים)',kl:'סוג',k:['לחימה','תאונה או חבלת ראש','מחלה או אשפוז','אובדן של אדם קרוב','פגיעה או אלימות','פרידה או שינוי משפחתי','מעבר דירה או עלייה','אחר'],hl:'השפיע על התפקוד?',h:HI,nt:'אם רוצים, עוד כמה מילים. הפרטים יידונו בריאיון'},
+'תקופה אחרת':{s:'תקופה',c:'#7a8794',g:'o',nm:'תיאור קצר',kl:'סוג',k:['חיפוש עבודה או אבטלה','מחלה או החלמה','טיפול בבן משפחה','שהות בחו״ל','חופשת לידה','אחר'],hl:'השפיע על התפקוד?',h:HI,nt:'הערות'}};
+const LANES={s:'לימודים',m:'שירות',w:'עבודה',o:'תקופות אחרות',e:'אירועים'},PFX={'הישגים בלימודים':'הישגים: ','השפיע על התפקוד?':'השפעה: '};
+const yok=v=>/^\d{4}$/.test(v)&&+v>=1900&&+v<=NOWY+1,J=(...a)=>a.filter(v=>v&&String(v).trim()).join(', ');
+const GQ=[['sv','שירתת בצבא או בשירות לאומי?',['כן, צבאי','כן, לאומי או אזרחי','לא']],['st','למדת אחרי התיכון?',['כן','לומד/ת היום','לא']],['wk','עבדת?',['עובד/ת היום','עבדתי בעבר','לא עבדתי']]];
+const BY=()=>{const m=(val(qf('תאריך לידה'))||'').match(/\d{4}/);return m?+m[0]:0};
+function yfmt(o,C){const nil=/^לא /.test(o.kd||'');let yr=nil?'':C.one?(o.y1||''):o.now?(o.y1?'מ-'+o.y1+' ':'')+'עד היום':o.y1&&o.y2?RG(o.y1,o.y2):o.y1?'מ-'+o.y1:o.y2?'עד '+o.y2:'';if(yr&&o.ap)yr='בערך '+yr;return yr}
+function tob(c){const o={_c:c};c.querySelectorAll('[data-k]').forEach(x=>o[x.dataset.k]=x.type=='checkbox'?x.checked:x.value.trim());return o}
+function topen(c,on){if(on)c.parentNode.querySelectorAll('.tc.open').forEach(x=>{if(x!==c)x.classList.remove('open')});c.classList.toggle('open',on);if(on){c._sync();c.scrollIntoView({block:'start',behavior:'smooth'})}}
+function tsug(c){const o=tob(c),C=TT[o.ty];if(C.one||o.y1||o.y2||o.now||/^לא /.test(o.kd))return null;
+ const by=BY(),A={'בית ספר יסודי':[6,12],'תיכון':[12,18],'שירות צבאי או לאומי':[18,21]}[o.ty];if(by&&A)return [by+A[0],by+A[1],'לפי שנת הלידה'];
+ const e=[...c.parentNode.querySelectorAll('.tc')].filter(x=>x!==c).map(tob).filter(p=>!TT[p.ty].one&&yok(p.y1)&&!p.now).map(p=>yok(p.y2)?+p.y2:+p.y1);
+ return e.length?[Math.max(...e),0,'מיד אחרי התחנה הקודמת']:null}
+function tcard(type){
+ const C=TT[type]||TT['תקופה אחרת'],card=$('div',{className:'tc'}),I={};card.style.setProperty('--tc',C.c);
+ const inp=(k,e)=>{e.dataset.k=k;I[k]=e;return e},lab=t=>$('span',{className:'lb',textContent:t}),fire=()=>card.dispatchEvent(new Event('input',{bubbles:true}));
+ const chips=(k,label,o,multi,cls)=>{const h=inp(k,$('input',{type:'hidden'})),g=$('div',{className:'tcp'});
+  o.forEach(x=>{const b=$('button',{type:'button',className:'pill',textContent:x});b.dataset.v=x;b.onclick=()=>{let v=h.value?h.value.split('|'):[];if(multi)v=v.includes(x)?v.filter(y=>y!=x):o.filter(y=>v.includes(y)||y==x);else v=v[0]==x?[]:[x];h.value=v.join('|');fire()};g.append(b)});
+  return $('div',{className:'tcf '+(cls||'')},[lab(label),h,g])};
+ const ty=inp('ty',$('input',{type:'hidden',value:type}));ty.dataset.nt=1;
+ const sm=$('button',{type:'button',className:'tcs'});sm.onclick=()=>topen(card,!card.classList.contains('open'));
+ const del=$('button',{type:'button',className:'tdel',textContent:'הסרה'});arm(del,'לחצו שוב להסרה',()=>{card.remove();upd()});
+ const y1=inp('y1',$('input',{type:'text',inputMode:'numeric',maxLength:4,placeholder:C.one?'שנה':'משנה'})),y2=inp('y2',$('input',{type:'text',inputMode:'numeric',maxLength:4,placeholder:'עד שנה'}));
+ const now=inp('now',$('input',{type:'checkbox'})),ap=inp('ap',$('input',{type:'checkbox'}));
+ const sug=$('div',{className:'tsg'});
+ const yrs=$('div',{className:'tcf opt'},[lab(C.one?'מתי':'שנים'),$('div',{className:'tcy'},[y1,...(C.one?[]:[$('span',{textContent:'עד'}),y2,$('label',{className:'o'},[now,document.createTextNode('עד היום')])]),$('label',{className:'o'},[ap,document.createTextNode('בערך')])]),sug]);
+ if(C.one){y2.style.display='none';now.style.display='none'}
+ const nm=inp('nm',$('input',{type:'text'})),rl=inp('rl',$('input',{type:'text'})),gr=inp('gr',$('input',{type:'text'})),no=inp('no',$('textarea',{rows:2,placeholder:C.nt}));
+ const kd=chips('kd',C.kl,C.k),hw=chips('hw',C.hl,C.h,0,'opt'),so=chips('so','איך הלך חברתית?',HW,0,'opt'),en=chips('en','איך הסתיים?',C.e||[],0,'opt');
+ const dq=chips('dq','היו קשיים בתקופה הזו?',['לא','כן'],0,'opt'),df=chips('df','אילו קשיים? (אפשר לסמן כמה)',C.dfo||DFG,1,'opt'),sp=chips('sp','קיבלת עזרה או תמיכה? (אפשר לסמן כמה)',SPO,1,'opt');if(!C.sp)sp.style.display='none';
+ if(!C.e)en.style.display='none';if(!C.so)so.style.display='none';if(!C.df)dq.style.display='none';
+ const nw=$('div',{className:'tcf'},[lab('הערות'),no]),nb=$('button',{type:'button',className:'tlink',textContent:'יש עוד מה להוסיף? כתבו הערה'});nb.onclick=()=>{card._nt=1;card._sync();no.focus()};
+ const warn=$('div',{className:'tcw'}),done=$('button',{type:'button',className:'p tdone',textContent:'סיום, לתחנה הבאה'});
+ done.onclick=()=>{topen(card,false);const nx=[...card.parentNode.querySelectorAll('.tc')].find(c=>c!==card&&!tfull(tob(c)));if(nx)topen(nx,true);else card.scrollIntoView({block:'nearest'})};
+ const body=$('div',{className:'tcb'},[kd,yrs,$('div',{className:'tcf opt'},[lab(C.nm),nm]),$('div',{className:'tcf opt',style:C.rl?'':'display:none'},[lab(C.rl||''),rl]),$('div',{className:'tcf opt',style:C.gr?'':'display:none'},[lab('ממוצע או ציון סיום'),gr]),hw,so,en,dq,df,sp,nb,nw,warn,done]);
+ card.append(ty,$('div',{className:'tch'},[sm,del]),body);
+ card._sync=()=>{if(I.df.value&&!I.dq.value)I.dq.value='כן';if(I.dq.value=='לא')I.df.value='';
+  card.querySelectorAll('.tcf').forEach(f=>{const h=f.querySelector('input[type=hidden]');if(!h||h===ty)return;const v=h.value.split('|');f.querySelectorAll('.pill').forEach(b=>b.classList.toggle('on',v.includes(b.dataset.v)))});
+  const nil=/^לא /.test(I.kd.value);card.classList.toggle('nil',nil);y2.disabled=now.checked;if(now.checked)y2.value='';
+  df.style.display=C.df&&I.dq.value=='כן'?'':'none';const sn=!!(no.value||card._nt);nw.style.display=sn?'':'none';nb.style.display=sn?'none':'';
+  const by=BY(),w=[];[y1,y2].forEach(y=>{if(y.value&&!yok(y.value))w.push('כתבו שנה בת 4 ספרות, למשל 2010.')});
+  if(yok(y1.value)&&yok(y2.value)&&+y2.value<+y1.value)w.push('שנת הסיום מוקדמת משנת ההתחלה.');if(by&&yok(y1.value)&&+y1.value<by)w.push('השנה מוקדמת משנת הלידה.');warn.textContent=[...new Set(w)].join(' ');
+  sug.replaceChildren();const sg=card.classList.contains('open')&&tsug(card);
+  if(sg){const b=$('button',{type:'button',className:'pill',textContent:'להשתמש בהצעה'});b.onclick=()=>{y1.value=sg[0];if(sg[1])y2.value=sg[1];ap.checked=true;fire()};
+   sug.append($('span',{textContent:'הצעה ('+sg[2]+'): '+(sg[1]?RG(sg[0],sg[1]):'מ-'+sg[0])+(by?' (גיל '+(sg[1]?RG(sg[0]-by,sg[1]-by):sg[0]-by)+')':'')}),b)}
+  const o=tob(card),f=tfull(o);sm.replaceChildren($('span',{className:'s1',textContent:type+(o.kd?': '+o.kd.split('|')[0]:'')}),$('span',{className:'s2',textContent:yfmt(o,C)}),
+   $('span',{className:'s3'+(f?'':' emp'),textContent:f?J(o.nm,o.rl):'לחצו כדי למלא'}),$('span',{className:'s4',textContent:J(o.hw&&(PFX[C.hl]||'')+o.hw,o.en)}))};
+ card.addEventListener('input',card._sync);card.addEventListener('change',card._sync);card._sync();return card}
+function tguide(w){const A=w._g,S=(c,k,v)=>{const x=c.querySelector('[data-k='+k+']');if(x.type=='checkbox')x.checked=!!v;else x.value=v};
+ const sv=w._add('שירות צבאי או לאומי');if(A.sv)S(sv,'kd',{'כן, צבאי':'צבאי','כן, לאומי או אזרחי':'לאומי או אזרחי','לא':'לא שירתתי'}[A.sv]);
+ const st=w._add('לימודים אחרי התיכון');if(A.st=='לא')S(st,'kd','לא למדתי אחרי התיכון');if(A.st=='לומד/ת היום'){S(st,'en','עדיין לומד/ת');S(st,'now',1)}
+ const wk=w._add('עבודה');if(A.wk=='לא עבדתי')S(wk,'kd','לא עבדתי');if(A.wk=='עובד/ת היום'){S(wk,'en','עדיין עובד/ת');S(wk,'now',1)}
+ w._setgd(1);w.querySelectorAll('.tc').forEach(c=>c._sync());const f=[...w.querySelectorAll('.tc')].find(c=>{const o=tob(c);return !/^לא /.test(o.kd)&&!o.y1&&!o.y2});if(f)topen(f,true)}
+function tref(){const q=TQ();if(!q||!q._e)return;const w=q._e,s=strip();w._strip.replaceChildren(...(s?[s]:[]));w.querySelectorAll('.tc.open').forEach(c=>c._sync())}
+const TQ=()=>ALL().find(q=>q.k=='t');
+function tcards(){const q=TQ();return q&&q._e?[...q._e.querySelectorAll('.tc')].map(tob):[]}
+const tfull=o=>['y1','y2','nm','kd','rl','gr','hw','so','en','dq','df','sp','no'].some(k=>o[k])||o.now;
+function tdata(){const by=BY();
+ const R=tcards().filter(tfull).map((o,i)=>{const C=TT[o.ty]||TT['תקופה אחרת'],nil=/^לא /.test(o.kd),a=!nil&&yok(o.y1)?+o.y1:0,b=C.one?a:(o.now?NOWY:(yok(o.y2)?+o.y2:0));
+  const yr=yfmt(o,C);
+  const ag=by&&a?' (גיל '+(b&&b!=a?RG(a-by,b-by):a-by)+')':'';
+  return {...o,C,nil,a,b,i,one:!!C.one,cells:[yr+ag,o.ty+(o.kd?': '+o.kd:''),J(o.nm,o.rl),J(o.hw&&(PFX[C.hl]||'')+o.hw,o.so&&'חברתית: '+o.so,o.gr&&'ציון: '+o.gr),o.en,J(o.df&&'קשיים: '+o.df.split('|').join(', '),o.sp&&'עזרה: '+o.sp.split('|').join(', '),o.no)]}});
+ R.sort((p,q)=>(p.a||1e4)-(q.a||1e4)||p.i-q.i);
+ const P=R.filter(r=>r.a&&!r.one&&!r.nil).map(r=>[r.a,Math.max(r.b||r.a,r.a)]).sort((p,q)=>p[0]-q[0]),G=[];
+ let e=0;P.forEach(([a,b])=>{if(e&&a>e+1)G.push([e+1,a-1]);e=Math.max(e,b)});
+ return {R,G}}
+const RG=(a,b)=>a+'\u200e–\u200e'+b,gtx=([a,b])=>a==b?String(a):RG(a,b);
+function tl(){const {R,G}=tdata();if(!R.length)return null;
+ const tb=$('table'),hr=$('tr');['שנים','תחנה','מקום ותפקיד','איך הלך','איך הסתיים','קשיים והערות'].forEach(h=>hr.append($('th',{textContent:h})));tb.append(hr);
+ R.forEach(r=>{const tr=$('tr');r.cells.forEach(c=>tr.append($('td',{textContent:c||''})));tb.append(tr)});
+ const f=document.createDocumentFragment();f.append(tb);if(G.length)f.append($('p',{className:'nt',textContent:'שנים שלא מופיעה בהן אף תחנה: '+G.map(gtx).join(', ')+'.'}));return f}
+function strip(){const {R,G}=tdata(),P=R.filter(r=>r.a);if(!P.length)return null;
+ const lo=Math.min(...P.map(r=>r.a)),hi=Math.max(...P.map(r=>r.b||r.a),lo+1),sp=hi-lo+1,pos=y=>((y-lo)/sp*100)+'%',box=$('div',{className:'tls'});
+ Object.entries(LANES).forEach(([g,nm])=>{const it=P.filter(r=>r.C.g==g),gp=g=='o'?G:[];if(!it.length&&!gp.length)return;const tr=$('div',{className:'tlt'});
+  gp.forEach(([a,b])=>{const d=$('div',{className:'tlg',title:'אין תחנה בשנים '+gtx([a,b])});d.onclick=()=>gapadd([a,b]);d.style.right=pos(a);d.style.width=((b-a+1)/sp*100)+'%';tr.append(d)});
+  it.forEach(r=>{const t=r.cells[0]+' · '+r.cells[1]+(r.nm?' · '+r.nm:'');if(r.one){const d=$('div',{className:'tlm',title:t});d.onclick=()=>topen(r._c,true);d.style.right='calc('+pos(r.a)+' + '+(50/sp)+'%)';tr.append(d)}
+   else{const d=$('div',{className:'tlb',textContent:r.C.g=='s'&&r.ty!='לימודים אחרי התיכון'?r.C.s:(r.nm||r.kd||r.C.s),title:t});d.style.right=pos(r.a);d.style.width=((Math.max(r.b,r.a)-r.a+1)/sp*100)+'%';d.style.background=r.C.c;d.onclick=()=>topen(r._c,true);tr.append(d)}});
+  box.append($('div',{className:'tll'},[$('span',{className:'tln',textContent:nm}),tr]))});
+ box.prepend($('div',{className:'tlh',textContent:'המסלול שלך עד עכשיו. לחיצה על פס פותחת את התחנה.'}));const ax=$('div',{className:'tla'}),st=sp>30?10:5;for(let y=Math.ceil(lo/st)*st;y<=hi;y+=st){const s=$('span',{textContent:y});s.style.right=pos(y);ax.append(s)}box.append(ax);return box}
 render();
-function read(q){
- const sk=q.querySelector('.skip');if(sk&&sk.checked)return 'אין קושי בתחום';
- const rows=[...q.querySelectorAll('.row')];
- if(rows.length)return rows.map(r=>{
-  const v=[...r.querySelectorAll('input,select,textarea')].map(x=>x.type=='checkbox'?(x.checked?x.dataset.l:''):(x.value&&(x.dataset.l?x.dataset.l+': ':'')+x.value)).filter(Boolean).join(' | ');
-  return v&&(r.dataset.n?r.dataset.n+': ':'')+v}).filter(Boolean).join('\n');
- return [...q.querySelectorAll('input,select,textarea')].map(x=>(x.type=='checkbox'||x.type=='radio')?(x.checked?x.parentNode.textContent.trim():''):x.value).filter(Boolean).join(', ')}
-function stages(){const S={};let cur='';[...form.children].forEach(e=>{if(e.tagName=='H3'){cur=e.textContent;S[cur]={};return}if(e.tagName=='H2'){cur='';return}if(!cur||e.dataset.skip)return;
- if(e.querySelector('button')&&e.querySelector('.row'))S[cur]._r=[...e.querySelectorAll('.row')].map(r=>{const o={};r.querySelectorAll('input,select,textarea').forEach(x=>{if(x.dataset.l)o[x.dataset.l]=x.value});return o});
- else S[cur][e.dataset.l]=read(e)});return S}
-function tl(){
- const S=stages(),g=(o,k)=>((o||{})[k]||'').trim(),R=[];
- const t=S['תיכון'],a=S['שירות צבאי או לאומי'],e=S['השכלה גבוהה ולימודים מקצועיים'],w=S['תעסוקה'],x=S['תקופות אחרות ושינוי בתפקוד'];
- const full=r=>Object.values(r).some(v=>String(v).trim());
- const any=o=>o&&Object.entries(o).some(([k,v])=>k!='_r'&&String(v||'').trim());
- const J=(...a)=>a.filter(v=>v&&String(v).trim()).join(', ');
- const tp=r=>r['סוג מסגרת']=='אחר'?(r['סוג מסגרת (פירוט)']||'אחר'):(r['סוג מסגרת']||'');
- const sch=(o,n)=>((o||{})._r||[]).filter(full).map(r=>[r['שנים (אפשר בערך)']||'',J(n,r['שם בית הספר']),J(tp(r),r['מגמה']),J(r['איך הלך לימודית?']&&'לימודי: '+r['איך הלך לימודית?'],r['איך הלך חברתית?']&&'חברתי: '+r['איך הלך חברתית?']),r['איך הסתיים?']||'',r['סיבת מעבר או קשיים']||'']);
- sch(S['בית ספר יסודי'],'יסודי').concat(sch(t,'תיכון')).forEach(r=>R.push(r));
- if(any(a)&&g(a,'שירות')!='לא בוצע')R.push([g(a,'באילו שנים שירתת? (למשל 2012-2015, אפשר בערך)'),J('שירות',g(a,'שירות')),J(g(a,'יחידה ותפקיד'),g(a,'פרופיל')&&'פרופיל '+g(a,'פרופיל')),g(a,'איך הלך בשירות?'),g(a,'איך הסתיים?'),J(g(a,'סיבת שחרור מוקדם (אם רלוונטי)'),g(a,'חשיפה')&&'חשיפה לאירועי לחימה או לאירוע קשה',g(a,'קשיים בשירות'))]);
- const M=[];
- ((e||{})._r||[]).forEach(r=>{if(full(r))M.push([r['שנים (אפשר בערך)']||'',J('לימודים',r['מוסד']),J(r['תחום'],r['תואר או תעודה']),r['ממוצע או ציון סיום']?'ממוצע '+r['ממוצע או ציון סיום']:'',r['איך הסתיים?']||'',r['סיבה או הערות']||''])});
- ((w||{})._r||[]).forEach(r=>{if(full(r))M.push([r['שנים (אפשר בערך)']||'',J('עבודה',r['מעסיק או מקום עבודה']),J(r['תפקיד'],r['היקף']),r['איך הלך?']||'',r['איך הסתיים?']||'',r['סיבת סיום וקשיים']||''])});
- ((x||{})._r||[]).forEach(r=>{if(full(r))M.push([r['שנה (בערך)']||'','אירוע משמעותי: '+(r['סוג האירוע (פירוט)']||r['סוג האירוע']||''),'','','',r['הערה קצרה (לא חובה)']||''])});
- const n=M.map(r=>parseInt((r[0].match(/\d+/)||[''])[0]));
- if(M.length>1&&n.every(v=>v>0)&&n.every(v=>v>=1900))M.map((r,i)=>[n[i],r]).sort((p,q)=>p[0]-q[0]).forEach(([,r])=>R.push(r));else M.forEach(r=>R.push(r));
- const o=Object.entries(x||{}).find(([k,v])=>k.startsWith('תקופות אחרות')&&String(v).trim());
- if(o)R.push(['','תקופות אחרות','','','',o[1]]);
- if(!R.length)return null;
- const tb=$('table'),hr=$('tr');['שנים','מסגרת','תחום או תפקיד','איך הלך','איך הסתיים','סיבה או קשיים'].forEach(h=>hr.append($('th',{textContent:h})));tb.append(hr);
- R.forEach(r=>{const tr=$('tr');r.forEach(c=>tr.append($('td',{textContent:c||''})));tb.append(tr)});
- return tb}
-function pv(){const d=document.getElementById('pv');d.innerHTML='';const t=tl();d.append($('h2',{textContent:'תצוגה מקדימה של ציר הזמן'}));
- d.append($('div',{className:'note',textContent:t?'כך ייראה ציר הזמן ב-PDF. אם הסדר לא נכון, בדקו שהשנים נכתבו כמספרים, למשל 2012-2015. אפשר גם בערך.':'ציר הזמן יופיע כאן כשתמלאו את סעיף ציר הזמן.'}));if(t)d.append(t)}
+const ONE=(()=>{const ov=$('div',{id:'one'}),H=[['אין',''],['לפעמים','מדי פעם'],['לעתים קרובות','כמה פעמים בשבוע'],['כמעט תמיד','כמעט כל יום']];let L=[],k=0;document.body.append(ov);
+ const items=()=>ALL().filter(q=>q.k=='g'&&q.s===S4).flatMap(q=>[...q._e.querySelectorAll('.row.gi')].map(r=>({q,r}))),sk=it=>it.q._e.querySelector('.skip').checked,cv=it=>it.r.querySelector('input[type=hidden]').value;
+ const go=(d)=>{do k+=d;while(k>=0&&k<L.length&&sk(L[k]));if(k<0)k=0;draw()};
+ function draw(){ov.innerHTML='';const box=$('div',{className:'onei'});ov.append(box);const ex=$('button',{type:'button',className:'onex',textContent:'חזרה לרשימה'});ex.onclick=close;
+  if(k>=L.length){box.append(ex,$('h2',{textContent:'סיימת את החלק המובנה'}),$('p',{textContent:'תודה. אפשר לחזור לרשימה ולעבור על התשובות, או להמשיך לסעיף הבא.'}));const b=$('button',{type:'button',className:'p',textContent:'חזרה לרשימה'});b.onclick=close;box.append(b);return}
+  const it=L[k],v=cv(it),ck=it.r.querySelector('input[type=checkbox]'),n=L.filter((x,j)=>j<=k).length;
+  box.append(ex,$('div',{className:'onep'},[$('span',{textContent:it.q.l}),$('span',{textContent:(k+1)+' מתוך '+L.length})]),$('div',{className:'onebar'},[$('div',{style:'width:'+((k+1)/L.length*100)+'%'})]),
+   $('div',{className:'oneq',textContent:it.r.dataset.n}),$('div',{className:'onel',textContent:(who().m=='f'?'כמה פעמים זה קורה אצל '+who().n+' היום?':'כמה פעמים זה קורה היום?')}));
+  H.forEach(([o,sub_])=>{const b=$('button',{type:'button',className:'oneb'+(v==o?' on':'')},[$('b',{textContent:o}),...(sub_?[$('small',{textContent:sub_})]:[])]);b.onclick=()=>{if(cv(it)!=o)it.r.querySelector('.pill[data-v="'+o+'"]').click();draw();setTimeout(()=>go(1),280)};box.append(b)});
+  const w=$('button',{type:'button',className:'onew'+(ck.checked?' on':''),textContent:(ck.checked?'✓ ':'')+'החמיר לעומת בעבר'});w.onclick=()=>{ck.checked=!ck.checked;ck.dispatchEvent(new Event('change',{bubbles:true}));draw()};box.append(w);
+  const pv_=$('button',{type:'button',textContent:'הקודם'}),nx=$('button',{type:'button',textContent:'דילוג'}),ans=[...it.q._e.querySelectorAll('.row.gi')].some(r=>r.querySelector('input[type=hidden]').value||r.querySelector('input[type=checkbox]').checked),sd=$('button',{type:'button',className:'tlink',textContent:ans?'מעבר לתחום הבא':'אין לי קושי בתחום ״'+it.q.l+'״, לתחום הבא'});
+  pv_.disabled=k==0;pv_.onclick=()=>go(-1);nx.onclick=()=>go(1);sd.onclick=()=>{if(!ans){const s_=it.q._e.querySelector('.skip');s_.checked=true;s_.dispatchEvent(new Event('change',{bubbles:true}));go(1)}else{const j=L.findIndex((x,i)=>i>k&&x.q!==it.q);k=j<0?L.length:j-1;go(1)}};
+  box.append($('div',{className:'onen'},[pv_,nx]),sd)}
+ function close(){ov.style.display='none';document.body.classList.remove('nos');acc();const q=L[Math.min(k,L.length-1)];if(q){q.q._e.classList.add('open');q.q._e.scrollIntoView({block:'start'})}}
+ return {start(){L=items();k=L.findIndex(it=>!sk(it)&&!cv(it));if(k<0)k=0;ov.style.display='flex';document.body.classList.add('nos');draw()}}})();
+function gapadd(g){const w=TQ()._e,c=w._add('תקופה אחרת');c.querySelector('[data-k=y1]').value=g[0];c.querySelector('[data-k=y2]').value=g[1];topen(c,true);upd()}
+function pv(){const d=document.getElementById('pv');d.innerHTML='';const {G}=tdata(),t=tl();d.append($('h2',{textContent:'תצוגה מקדימה של ציר הזמן'}));
+ if(!t){d.append($('div',{className:'note',textContent:'ציר הזמן יופיע כאן כשתמלאו את הכרטיסים בסעיף ציר הזמן.'}));return}
+ G.forEach(g=>{const b=$('button',{type:'button',className:'pill',textContent:'הוספת תקופה לשנים '+gtx(g)});b.onclick=()=>gapadd(g);
+  d.append($('div',{className:'note gap'},[document.createTextNode('בשנים '+gtx(g)+' לא מופיעה אף תחנה. אם הייתה בהן תקופה (למשל חיפוש עבודה, מחלה או שהות בחו״ל), אפשר להוסיף אותה. אם לא, זה בסדר.'),b]))});
+ d.append($('div',{className:'note',textContent:'הטבלה מסודרת לפי השנים, וכך היא תופיע בקובץ שתשלחו.'}),t)}
 let cur=0;const chips=D.map((d,i)=>{const b=$('button',{type:'button',title:d[0]});b.onclick=()=>show(i);document.getElementById('mn').append(b);return b});
-const SH={'רקע בילדות':'ילדות','היסטוריה רפואית':'רפואי','ציר זמן: לימודים, שירות ותעסוקה':'ציר זמן','שינה ושימוש בחומרים':'שינה וחומרים','קשיי חשיבה ורגש':'חשיבה ורגש','רצונות ושאיפות':'שאיפות'},SHORT=D.map(d=>{const n=d[0].replace(/^\d+\.\s*/,'');return SH[n]||n});
-const BR={'פרטים אישיים':'פרטים בסיסיים ורקע','סיבת הפנייה':'מה הביא אתכם, ומה תרצו להבין','ילדות':'ההתפתחות והלימודים בצעירות','רפואי':'מצבים, תרופות ואבחונים קודמים','ציר זמן':'לימודים, שירות ועבודה לאורך השנים','שינה וחומרים':'שינה, אלכוהול ועוד','כאב':'אם יש כאב שמפריע','חשיבה ורגש':'הקשיים שאתם מרגישים ביום-יום','תפקוד יומיומי':'איך מסתדרים בפעולות היום-יום','שאיפות':'מה חשוב לכם להשיג','הצהרה':'אישור קצר לסיום'};
+const SH={'לידה והתפתחות מוקדמת':'התפתחות','היסטוריה רפואית':'רפואי','ציר זמן: לימודים, שירות ותעסוקה':'ציר זמן','שינה ושימוש בחומרים':'שינה וחומרים','קשיי חשיבה ורגש':'חשיבה ורגש','רצונות ושאיפות':'שאיפות'},SHORT=D.map(d=>{const n=d[0].replace(/^\d+\.\s*/,'');return SH[n]||n});
+const BR={'פרטים אישיים':'פרטים בסיסיים ורקע','סיבת הפנייה':'מה הביא אתכם, ומה תרצו להבין','התפתחות':'היריון, לידה והשנים הראשונות','רפואי':'מצבים, תרופות ואבחונים קודמים','ציר זמן':'לימודים, שירות ועבודה לאורך השנים','שינה וחומרים':'שינה, אלכוהול ועוד','כאב':'אם יש כאב שמפריע','חשיבה ורגש':'הקשיים שאתם מרגישים ביום-יום','תפקוד יומיומי':'איך מסתדרים בפעולות היום-יום','שאיפות':'מה חשוב לכם להשיג','הצהרה':'אישור קצר לסיום'};
 function wipe(){try{localStorage.removeItem(SK)}catch(e){}uid=0;render();show(0);pv();document.getElementById('dr').style.display='none'}
 function arm(b,msg,fn){const t=b.textContent;let on=0,tm,t0=0;b.onclick=()=>{if(!on){on=1;t0=Date.now();b.textContent=msg;b.classList.add('warn');tm=setTimeout(()=>{on=0;b.textContent=t;b.classList.remove('warn')},4000)}else if(Date.now()-t0>600){clearTimeout(tm);on=0;b.textContent=t;b.classList.remove('warn');fn()}}}
 function start(i){document.body.classList.remove('cv');show(i)}
-function buildCover(){const r=document.getElementById('rm');r.innerHTML='';D.forEach((d,i)=>{r.append($('div',{},[$('b',{textContent:(i+1)+(KEY[i]?'★':'')+' '+SHORT[i]}),$('small',{textContent:BR[SHORT[i]]||''})]))});document.getElementById('cnt').textContent=D.length}
-function prog(){const t=D.map((_,i)=>[...form.children].filter(e=>e.dataset.s==i).some(e=>[...e.querySelectorAll('input,select,textarea')].some(x=>(x.type=='checkbox'||x.type=='radio')?x.checked:x.value)));
+function buildCover(){const r=document.getElementById('rm');r.innerHTML='';D.forEach((d,i)=>{{const cd=$('div',{},[$('b',{textContent:(i+1)+(KEY[i]?'★':'')+' '+SHORT[i]}),$('small',{textContent:BR[SHORT[i]]||''})]);cd.style.borderRight='4px solid '+ACC[i];r.append(cd)}});document.getElementById('cnt').textContent=D.length}
+function acc(){form.querySelectorAll('.q.acc').forEach(w=>{const sk=w.querySelector('.skip').checked,n=[...w.querySelectorAll('.row.gi')].filter(r=>r.querySelector('input[type=hidden]').value||r.querySelector('input[type=checkbox]').checked).length,ex=w.querySelector('textarea'),dn=sk||n>0||(ex&&ex.value.trim());w.classList.toggle('done',!!dn);w.querySelector('.cnt').textContent=sk?'✓ ללא קושי':(dn?'✓ '+(n?n+' סומנו':'נכתב'):'')})}
+function pend(){const d=document.getElementById('pend');d.innerHTML='';const L=D.length-1,miss=D.map((_,i)=>i).filter(i=>i<L&&!touched(i));
+ d.append($('h3',{textContent:'לפני שמסיימים'}),$('p',{className:'sd',textContent:'אין חובה להשלים את כל הסעיפים. ניתן להמשיך כעת או לחזור ולהוסיף מידע בהמשך.'}));
+ if(miss.length){d.append($('div',{className:'note',textContent:'סעיפים שעדיין לא מולאו:'}));const w=$('div',{className:'pgrid'});miss.forEach(i=>{const b=$('button',{type:'button',className:'pill',textContent:(i+1)+' '+SHORT[i]});b.onclick=()=>show(i);w.append(b)});d.append(w)}else d.append($('div',{className:'note ok',textContent:'כל הסעיפים מולאו. כל הכבוד!'}))}
+function prog(){const t=D.map((_,i)=>touched(i));
  const n=t.filter(Boolean).length;document.getElementById('pf').style.width=n/D.length*100+'%';
  document.getElementById('ptxt').textContent='סעיף '+(cur+1)+' מתוך '+D.length+', מולאו '+n;
- chips.forEach((c,i)=>{c.textContent='';c.append($('span',{textContent:(t[i]?'✓ ':'')+(i+1)+(KEY[i]?'★':'')}),$('span',{className:'t',textContent:SHORT[i]}));c.classList.toggle('on',i==cur);c.classList.toggle('dn',t[i]);if(i==cur&&c.scrollIntoView)c.scrollIntoView({inline:'center',block:'nearest'})})}
+ chips.forEach((c,i)=>{c.textContent='';c.append($('span',{textContent:(t[i]?'✓ ':'')+(i+1)+(KEY[i]?'★':'')}),$('span',{className:'t',textContent:SHORT[i]}));c.classList.toggle('on',i==cur);c.classList.toggle('dn',t[i]);c.style.borderColor=ACC[i];c.style.background=i==cur?ACC[i]:'';if(i==cur&&c.scrollIntoView)c.scrollIntoView({inline:'center',block:'nearest'})})}
 function show(i){cur=i;const L=D.length-1;[...form.children].forEach(e=>e.classList.toggle('on',e.dataset.s==i));
- 
  document.getElementById('pv').style.display=(i==TL||i==L)?'':'none';document.getElementById('end').style.display=i==L?'':'none';
- document.getElementById('prv').disabled=i==0;document.getElementById('nxt').style.display=i==L?'none':'';prog();setTh();scrollTo(0,0)}
-const SK='q1',touched=i=>[...form.children].filter(e=>e.dataset.s==i).some(e=>[...e.querySelectorAll('input,select,textarea')].some(x=>(x.type=='checkbox'||x.type=='radio')?x.checked:x.value));
+ document.getElementById('prv').disabled=i==0;document.getElementById('nxt').style.display=i==L?'none':'';prog();acc();if(i==TL)tref();if(i==L)pend();setTh();scrollTo(0,0)}
+const SK='q1',touched=i=>[...form.children].filter(e=>e.dataset.s==i).some(e=>[...e.querySelectorAll('input,select,textarea')].some(x=>!x.dataset.nt&&((x.type=='checkbox'||x.type=='radio')?x.checked:x.value)));
 function toast(m,ms){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),ms||2200)}
-function save(){try{localStorage.setItem(SK,JSON.stringify({exp:Date.now()+6048e5,vals:[...form.querySelectorAll('input,select,textarea')].map(x=>(x.type=='checkbox'||x.type=='radio')?+x.checked:x.value),rows:D.map(([t,qs])=>qs.filter(q=>q.k=='r').map(q=>q._e.querySelectorAll('.row').length)),cur}));const v=document.getElementById('sv');v.textContent='✓ נשמר';clearTimeout(window._sv);window._sv=setTimeout(()=>v.textContent='',1500)}catch(e){}}
+const SV=2,ins=e=>[...e.querySelectorAll('input,textarea')],gv=x=>(x.type=='checkbox'||x.type=='radio')?+x.checked:x.value,setv=(x,v)=>{if(x.type=='checkbox'||x.type=='radio')x.checked=!!v;else x.value=v==null?'':v};
+function qkeys(){const K=[],n={};D.forEach(([t,qs],i)=>qs.forEach(q=>{if(!q._e||q.k=='n'||q.k=='h')return;const b=i+'|'+(q.l||q.k);n[b]=(n[b]||0)+1;K.push([b+'|'+n[b],q])}));return K}
+function save(){try{const Q={};qkeys().forEach(([k,q])=>{Q[k]=q.k=='t'?{gd:q._e._gd,c:[...q._e.querySelectorAll('.tc')].map(c=>ins(c).map(gv))}:q.k=='r'?{n:q._e.querySelectorAll('.row').length,v:ins(q._e).map(gv)}:ins(q._e).map(gv)});
+ localStorage.setItem(SK,JSON.stringify({v:SV,exp:Date.now()+6048e5,cur,Q,K:D.map(d=>d._k?+d._k.querySelector('input').checked:0)}));const v=document.getElementById('sv');v.textContent='✓ נשמר';clearTimeout(window._sv);window._sv=setTimeout(()=>v.textContent='',1500)}catch(e){}}
+function setRows(q,n){const rs=()=>q._e.querySelectorAll('.row'),ad=[...q._e.querySelectorAll('button')].find(x=>x.textContent=='הוסף שורה');while(rs().length<n)ad.click();while(rs().length>n)rs()[rs().length-1].remove()}
+function tclear(){const w=TQ()._e;w.querySelectorAll('.tc').forEach(c=>c.remove());return w}
+function cogmv(M){const k=n=>'7|'+n+'|1',T=M[k('תחושה וחושים')];if(!T||T.length!=14)return;
+ const rw=(a,i)=>a.slice(1+2*i,3+2*i),mk=(a,rows)=>[a[0],...rows.flat(),a[a.length-1]],F=M[k('עייפות')],Mo=M[k('מצב רוח, חרדה והתנהגות')],Mt=M[k('מוטוריקה')];
+ M[k('תחושה וחושים')]=mk(T,[0,1,2,3,4].map(i=>rw(T,i)));
+ if(Mo&&Mo.length==16)M[k('מצב רוח, חרדה והתנהגות')]=mk(Mo,[...[0,1,2,3,4,5,6].map(i=>rw(Mo,i)),rw(T,5)]);
+ if(F&&F.length==6){if(Mt&&Mt.length==14)M[k('מוטוריקה')]=mk(Mt,[...[0,1,2,3,4,5].map(i=>rw(Mt,i)),rw(F,1)]);M[k('עייפות')]=mk(F,[rw(F,0),['',0]])}}
+function s3mv(M){const v=M['2|סמנו מה שהיה|1'];if(!v||!v.some(Boolean))return;const w=TQ()._e,q=qf('היריון, לידה והתפתחות'),e=ins(q._e);
+ let c=[...w.querySelectorAll('.tc')].find(x=>x.querySelector('[data-k=ty]').value=='בית ספר יסודי')||w._add('בית ספר יסודי');const S=(k,x)=>c.querySelector('[data-k='+k+']').value=x,G=k=>c.querySelector('[data-k='+k+']').value;
+ if(v[0]){const p=ins(qf('פירוט')._e)[0];p.value=J('סומן: סיבוכים בהיריון או בלידה, עיכוב התפתחותי',p.value)}
+ if(v[1]){S('dq','כן');S('df',DFS.filter(o=>G('df').split('|').includes(o)||o=='קריאה, כתיבה או חשבון').join('|'))}
+ if(v[2])S('no',J(G('no'),'סומן: חינוך מיוחד, חזרה על כיתה או שיעורי עזר'));
+ if(v[3])S('no',J(G('no'),'סומן: קשיים התנהגותיים או חברתיים בילדות'));
+ if(v[4])e[q.o.indexOf('אין אף אחד')].checked=true;c._sync()}
+function applyQ(Q,K){cogmv(Q);qkeys().forEach(([k,q])=>{const v=Q[k];if(v==null)return;
+  if(q.k=='t'){const w=tclear(),cs=Array.isArray(v)?v:v.c;cs.forEach(a=>{const c=w._add(a[0]);ins(c).forEach((x,j)=>{if(j)setv(x,a[j])})});w._setgd(Array.isArray(v)||v.gd);return}
+  if(q.k=='r'){setRows(q,v.n);const e=ins(q._e);if(e.length==v.v.length)e.forEach((x,j)=>setv(x,v.v[j]));return}
+  const e=ins(q._e);e.forEach((x,j)=>{if(j<v.length)setv(x,v[j])})});
+ (K||[]).forEach((v,i)=>{if(D[i]._k)D[i]._k.querySelector('input').checked=!!v});s3mv(Q)}
+// Drafts saved by earlier versions (a flat list of values). LEG describes the field layout of each earlier version:
+// gh = the version published on GitHub, v1a = the interim version with the single timeline table.
+const LEG={"gh":[["_k",0],["0|מי ממלא את השאלון?|1",3],["0|אם לא המאובחן/ת: שם וקרבה|1",1],["0|שם מלא|1",1],["0|תאריך לידה|1",1],["0|טלפון|1",1],["0|דוא״ל|1",1],["0|כתובת נוכחית|1",1],["0|מין|1",4],["0|יד דומיננטית|1",3],["0|מצב משפחתי|1",4],["0|מתגורר/ת עם|1",1],["0|ילדים וגילאים|1",1],["0|מספר אחים|1",1],["0|תעסוקת האב|1",1],["0|תעסוקת האם|1",1],["0|איש קשר (שם, קרבה, טלפון)|1",1],["0|שפת אם|1",1],["0|שפות נוספות|1",1],["0|שפת אבחון מועדפת|1",1],["0|נדרש מתורגמן|1",2],["0|באיזו שפה למדת בבית הספר? (למשל עברית, רוסית, ערבית, אנגלית)|1",1],["0|ארץ לידה|1",1],["0|תאריך עלייה (אם רלוונטי)|1",1],["0|שנים בארץ וגיל תחילת עברית|1",1],["0|שליטה בעברית: דיבור|1",3],["0|שליטה בעברית: קריאה|1",3],["0|שליטה בעברית: כתיבה|1",3],["0|ראייה, שמיעה ומוטוריקה|1",6],["_k",1],["1|הסיבה העיקרית להגעה לאבחון|1",1],["1|מה הייתם רוצים שהאבחון יענה עליו?|1",1],["1|גורם מפנה|1",9],["1|שם עובד/ת השיקום|1",1],["1|טלפון עובד/ת השיקום|1",1],["1|הליך מתנהל (תביעה, ועדה, ערר)|1",2],["1|מוכר/ת עם אחוזי נכות|1",2],["1|אחוזי הנכות הוכרו על ידי|1",5],["1|כמה אחוזי נכות|1",1],["1|על מה הוכרו (סוג הליקוי)|1",1],["1|רקע פלילי|1",3],["1|פירוט (רקע פלילי)|1",1],["1|מתי התחילו הקשיים?|1",5],["1|בערך מתי (שנה, אפשר בערך)|1",1],["1|מה לדעתכם גרם לקשיים או הקדים אותם?|1",8],["1|מהלך הקשיים|1",4],["1|אירוע או נסיבות סביב ההתחלה|1",1],["1|ניסיונות קודמים לטפל בקשיים|1",2],["1|אם כן: מה נוסה|1",1],["_k",2],["2|סמנו מה שהיה|1",4],["2|פירוט|1",1],["_k",3],["3|נוירולוגי|1",7],["3|נוירולוגי: שנה ופירוט|1",1],["3|נוירו-התפתחותי|1",9],["3|נוירו-התפתחותי: שנה ופירוט|1",1],["3|רפואי כללי|1",10],["3|רפואי כללי: שנה ופירוט|1",1],["3|נפשי|1",8],["3|נפשי: שנה ופירוט, וטיפול כיום או בעבר|1",1],["3|היסטוריה במשפחה (הורים, אחים, ילדים)|1",9],["3|משפחה: מי ומתי|1",1],["3|אבחונים קודמים|1",7],["3|אבחונים: שנה וממצאים עיקריים|1",1],["3|תרופות|1","r",5,3,0],["_k",4],["4|מסגרות|1","r",8,4,0],["4|מסגרות|2","r",9,4,1],["4|בגרות|1",3],["4|ממוצע בגרות|1",1],["4|התאמות בבחינות|1",5],["4|קשיים בתיכון|1",1],["4|שירות|1",4],["4|באילו שנים שירתת? (למשל 2012-2015, אפשר בערך)|1",1],["4|יחידה ותפקיד|1",1],["4|פרופיל|1",1],["4|איך הלך בשירות?|1",4],["4|איך הסתיים?|1",3],["4|סיבת שחרור מוקדם (אם רלוונטי)|1",1],["4|חשיפה|1",1],["4|קשיים בשירות|1",1],["4|לימודים אחרי התיכון|1",3],["4|ציון פסיכומטרי|1",1],["4|פסיכומטרי|1",1],["4|לימודים|1","r",7,4,2],["4|התאמות לימודיות|1",5],["4|קשיים בלימודים|1",1],["4|מצב תעסוקתי כיום|1",4],["4|עבודות|1","r",7,4,3],["4|אם לא עובד/ת: ממתי ומדוע|1",1],["4|קשיים בעבודה|1",1],["4|אירועים משמעותיים|1","r",4,4,4],["4|תקופות אחרות שלא הופיעו (אשפוז, מחלה, חיפוש עבודה, נסיעה, פער של יותר מחצי שנה)|1",1],["4|מתי התחלתם לשים לב לשינוי בתפקוד? (גיל או שנה)|1",1],["4|בסמוך לאירוע, או בהדרגה?|1",1],["4|התפקוד לפני שהתחילו הקשיים|1",3],["_k",5],["5|שעות שינה בלילה|1",4],["5|שעת הליכה לישון ושעת קימה|1",1],["5|איכות שינה|1",3],["5|עייפות ביום|1",4],["5|בעיות שינה|1",6],["5|אלכוהול|1",3],["5|קנאביס (כולל רפואי)|1",3],["5|טבק או סיגריה אלקטרונית|1",3],["5|תרופות הרגעה או שינה|1",3],["5|חומרים אחרים|1",3],["_k",6],["6|האם יש כאב מתמשך או חוזר?|1",2],["6|סוג הכאב|1",7],["6|פירוט ואיפה בגוף|1",1],["6|תדירות|1",3],["6|רמת כאב טיפוסית (0-10)|1",1],["6|רמת כאב בימים הקשים (0-10)|1",1],["6|הכאב משפיע על|1",5],["6|טיפול בכאב|1",5],["_k",7],["7|במילים שלך: מה הקשיים שאתם מרגישים, ומה הכי מפריע?|1",1],["7|זיכרון|1",20],["7|קשב וריכוז|1",18],["7|שפה|1",14],["7|תכנון והתארגנות|1",16],["7|מהירות חשיבה|1",10],["7|ראייה מרחבית|1",14],["7|מוטוריקה|1",14],["7|תחושה וחושים|1",14],["7|מצב רוח, חרדה והתנהגות|1",16],["7|עייפות|1",6],["7|קשיים נוספים שלא הופיעו|1",1],["7|מי שם לב לקשיים?|1",10],["7|מה עוזר להתמודד?|1",7],["_k",8],["8|פעולות בסיסיות|1",10],["8|פעולות מורכבות|1",28],["8|רישיון נהיגה|1",4],["8|אם יש בעיות בנהיגה|1",3],["8|סדר יום טיפוסי|1",1],["8|תחומי עניין ותחביבים|1",1],["8|חיי חברה|1",4],["8|שינויים בולטים בתפקוד היומיומי|1",1],["_k",9],["9|רצונות ושאיפות לעתיד|1",1],["10|אני מצהיר/ה כי|1",2],["10|שם מלא|1",1],["10|תאריך|1",1],["10|אם מולא בסיוע אחר: שם וקרבה|1",1]],"v1a":[["_k",0],["0|מי ממלא את השאלון?|1",3],["0|אם לא המאובחן/ת: שם וקרבה|1",1],["0|שם מלא|1",1],["0|תאריך לידה|1",1],["0|טלפון|1",1],["0|דוא״ל|1",1],["0|כתובת נוכחית|1",1],["0|מין|1",4],["0|יד דומיננטית|1",3],["0|מצב משפחתי|1",4],["0|מתגורר/ת עם|1",1],["0|ילדים וגילאים|1",2],["0|מספר אחים|1",1],["0|תעסוקת האב|1",1],["0|תעסוקת האם|1",1],["0|איש קשר (שם, קרבה, טלפון)|1",1],["0|שפת אם|1",1],["0|שפות נוספות|1",1],["0|שפת אבחון מועדפת|1",1],["0|נדרש מתורגמן|1",2],["0|באיזו שפה למדת בבית הספר? (למשל עברית, רוסית, ערבית, אנגלית)|1",1],["0|ארץ לידה|1",1],["0|תאריך עלייה (אם רלוונטי)|1",2],["0|שנים בארץ וגיל תחילת עברית|1",2],["0|שליטה בעברית: דיבור|1",3],["0|שליטה בעברית: קריאה|1",3],["0|שליטה בעברית: כתיבה|1",3],["0|ראייה, שמיעה ומוטוריקה|1",6],["_k",1],["1|הסיבה העיקרית להגעה לאבחון|1",1],["1|מה הייתם רוצים שהאבחון יענה עליו?|1",1],["1|גורם מפנה|1",9],["1|שם עובד/ת השיקום|1",1],["1|טלפון עובד/ת השיקום|1",1],["1|הליך מתנהל (תביעה, ועדה, ערר)|1",2],["1|מוכר/ת עם אחוזי נכות|1",2],["1|אחוזי הנכות הוכרו על ידי|1",5],["1|כמה אחוזי נכות|1",2],["1|על מה הוכרו (סוג הליקוי)|1",1],["1|רקע פלילי|1",3],["1|פירוט (רקע פלילי)|1",1],["1|מתי התחילו הקשיים?|1",5],["1|בערך מתי (שנה, אפשר בערך)|1",2],["1|מה לדעתכם גרם לקשיים או הקדים אותם?|1",8],["1|מהלך הקשיים|1",5],["1|אירוע או נסיבות סביב ההתחלה|1",1],["1|ניסיונות קודמים לטפל בקשיים|1",2],["1|אם כן: מה נוסה|1",1],["1|יש משהו חשוב שלא שאלנו?|1",1],["_k",2],["2|סמנו מה שהיה|1",4],["2|פירוט|1",1],["_k",3],["3|נוירולוגי|1",7],["3|נוירולוגי: שנה ופירוט|1",2],["3|נוירו-התפתחותי|1",9],["3|נוירו-התפתחותי: שנה ופירוט|1",2],["3|רפואי כללי|1",10],["3|רפואי כללי: שנה ופירוט|1",2],["3|נפשי|1",8],["3|נפשי: שנה ופירוט, וטיפול כיום או בעבר|1",2],["3|היסטוריה במשפחה (הורים, אחים, ילדים)|1",9],["3|משפחה: מי ומתי|1",2],["3|אבחונים קודמים|1",7],["3|אבחונים: שנה וממצאים עיקריים|1",2],["3|תרופות|1","r",5,3,0],["3|יש משהו חשוב שלא שאלנו?|1",1],["_k",4],["4|תחנות חיים|1","r",9,4,0],["4|בגרות|1",4],["4|ממוצע בגרות|1",2],["4|התאמות בבחינות או בלימודים|1",5],["4|ציון פסיכומטרי|1",2],["4|פסיכומטרי|1",1],["4|פרופיל צבאי|1",2],["4|חשיפה|1",1],["4|מצב תעסוקתי כיום|1",4],["4|אם לא עובד/ת: ממתי ומדוע|1",2],["4|תקופות אחרות שלא הופיעו (אשפוז, מחלה, חיפוש עבודה, נסיעה, פער של יותר מחצי שנה)|1",1],["4|מתי התחלתם לשים לב לשינוי בתפקוד? (גיל או שנה)|1",2],["4|בסמוך לאירוע, או בהדרגה?|1",1],["4|התפקוד לפני שהתחילו הקשיים|1",4],["4|יש משהו חשוב שלא שאלנו?|1",1],["_k",5],["5|שעות שינה בלילה|1",4],["5|שעת הליכה לישון ושעת קימה|1",1],["5|איכות שינה|1",3],["5|עייפות ביום|1",4],["5|בעיות שינה|1",6],["5|אלכוהול|1",3],["5|קנאביס (כולל רפואי)|1",3],["5|טבק או סיגריה אלקטרונית|1",3],["5|תרופות הרגעה או שינה|1",3],["5|חומרים אחרים|1",3],["_k",6],["6|האם יש כאב מתמשך או חוזר?|1",2],["6|סוג הכאב|1",7],["6|פירוט ואיפה בגוף|1",1],["6|תדירות|1",3],["6|רמת כאב טיפוסית (0-10)|1",1],["6|רמת כאב בימים הקשים (0-10)|1",1],["6|הכאב משפיע על|1",5],["6|טיפול בכאב|1",5],["_k",7],["7|במילים שלך: מה הקשיים שאתם מרגישים, ומה הכי מפריע?|1",1],["7|זיכרון|1",20],["7|קשב וריכוז|1",18],["7|שפה|1",14],["7|תכנון והתארגנות|1",16],["7|מהירות חשיבה|1",10],["7|ראייה מרחבית|1",14],["7|מוטוריקה|1",14],["7|תחושה וחושים|1",14],["7|מצב רוח, חרדה והתנהגות|1",16],["7|עייפות|1",6],["7|קשיים נוספים שלא הופיעו|1",1],["7|מי שם לב לקשיים?|1",10],["7|מה עוזר להתמודד?|1",7],["7|יש משהו חשוב שלא שאלנו?|1",1],["_k",8],["8|פעולות בסיסיות|1",10],["8|פעולות מורכבות|1",28],["8|רישיון נהיגה|1",4],["8|אם יש בעיות בנהיגה|1",3],["8|סדר יום טיפוסי|1",1],["8|תחומי עניין ותחביבים|1",1],["8|חיי חברה|1",4],["8|שינויים בולטים בתפקוד היומיומי|1",1],["8|יש משהו חשוב שלא שאלנו?|1",1],["_k",9],["9|רצונות ושאיפות לעתיד|1",1],["10|אני מצהיר/ה כי|1",2],["10|שם מלא|1",1],["10|תאריך|1",1],["10|אם מולא בסיוע אחר: שם וקרבה|1",1]]};
+function legacy(d){const V=d.vals;
+ for(const L of Object.values(LEG)){let p=0;const M={},K=[];
+  for(const e of L){if(e[0]=='_k'){K[e[1]]=V[p++];continue}
+   if(e[1]=='r'){const n=((d.rows||[])[e[3]]||[])[e[4]]||0,rr=[];for(let r=0;r<n;r++){rr.push(V.slice(p,p+e[2]));p+=e[2]}M[e[0]]=rr}else{M[e[0]]=V.slice(p,p+e[1]);p+=e[1]}}
+  if(p!=V.length)continue;
+  cogmv(M);
+  K.forEach((v,i)=>{if(D[i]._k)D[i]._k.querySelector('input').checked=!!v});
+  qkeys().forEach(([k,q])=>{const v=M[k];if(v==null||q.k=='t')return;
+   if(q.k=='r'){setRows(q,v.length);[...q._e.querySelectorAll('.row')].forEach((r,j)=>ins(r).forEach((x,i)=>{if(i<v[j].length)setv(x,v[j][i])}));return}
+   ins(q._e).forEach((x,i)=>{if(i<v.length)setv(x,v[i])})});
+  tmig(M);s3mv(M);return 1}
+ return 0}
+function tmig(M){const w=TQ()._e,used=new Set(),g=k=>M['4|'+k+'|1'],s1=k=>{const v=g(k);return v&&v[0]!=null?String(v[0]).trim():''};
+ const has=a=>a.some(v=>v&&String(v).trim()),ob=tob;
+ const card=t=>{let c=[...w.querySelectorAll('.tc')].find(c=>!used.has(c)&&c.querySelector('[data-k=ty]').value==t&&!tfull(ob(c)));if(!c)c=w._add(t);used.add(c);return c};
+ const last=t=>[...w.querySelectorAll('.tc')].filter(c=>c.querySelector('[data-k=ty]').value==t&&used.has(c)).pop()||card(t);
+ const S=(c,k,v)=>{if(v==null||v==='')return;const x=c.querySelector('[data-k='+k+']');if(x.type=='checkbox')x.checked=!!v;else x.value=v},N=(c,...a)=>{const x=c.querySelector('[data-k=no]');x.value=J(x.value,...a)};
+ const pick=(c,k,v,map,lab)=>{if(!v)return;const C=TT[c.querySelector('[data-k=ty]').value],o={kd:C.k,hw:C.h,so:HW,en:C.e||[]}[k],m=(map||{})[v]||v;if(o.includes(m)&&m!='אחר')S(c,k,m);else N(c,(lab?lab+': ':'')+v)};
+ const Y=(c,y)=>{y=String(y||'').trim();if(!y)return;const C=TT[c.querySelector('[data-k=ty]').value],m=y.match(/\d{4}/g)||[];if(m[0])S(c,'y1',m[0]);if(m[1]&&!C.one)S(c,'y2',m[1]);if(/בערך|~/.test(y))S(c,'ap',1);if(/היום|עדיין/.test(y)&&!C.one)S(c,'now',1);if(!m.length)N(c,'שנים: '+y)};
+ const sel=(k,o)=>{const v=g(k);return v?o.filter((_,i)=>v[i]).join(', '):''},HWM={'מצוין':'טוב מאוד'};
+ // --- GitHub version: separate tables and questions per stage
+ [['מסגרות|1','בית ספר יסודי'],['מסגרות|2','תיכון']].forEach(([k,t])=>(M['4|'+k]||[]).forEach(r=>{const [nm,yr,mg,kd,kdo,ac,so,en,why]=t=='תיכון'?r:[r[0],r[1],'',...r.slice(2)];if(!has(r))return;const c=card(t);
+  S(c,'nm',nm);Y(c,yr);if(t=='תיכון')S(c,'rl',mg);else if(mg)N(c,'מגמה: '+mg);pick(c,'kd',kd,0,'מסגרת');if(kd=='אחר'&&kdo)N(c,'מסגרת: '+kdo);if(ac)N(c,'איך הלך לימודית: '+ac);
+  pick(c,'so',so,HWM,'איך הלך חברתית');pick(c,'en',en,{'סיים':'סיים/ה','עבר מסגרת':'עבר/ה בית ספר'},'איך הסתיים');N(c,why)}));
+ if(s1('קשיים בתיכון'))N(last('תיכון'),'קשיים בתיכון: '+s1('קשיים בתיכון'));
+ const sv=sel('שירות',['צבאי מלא','צבאי חלקי','לאומי','לא בוצע']),svy=s1('באילו שנים שירתת? (למשל 2012-2015, אפשר בערך)');
+ if(sv||svy||s1('יחידה ותפקיד')){const c=card('שירות צבאי או לאומי');pick(c,'kd',sv,{'צבאי מלא':'צבאי','צבאי חלקי':'צבאי','לאומי':'לאומי או אזרחי','לא בוצע':'לא שירתתי'});if(sv=='צבאי חלקי')N(c,'שירות חלקי');
+  Y(c,svy);S(c,'nm',s1('יחידה ותפקיד'));pick(c,'hw',sel('איך הלך בשירות?',['מצוין','טוב','בינוני','קשה']),HWM,'איך הלך');
+  pick(c,'en',sel('איך הסתיים?',['סיים שירות מלא','שוחרר מוקדם','הפסיק']),{'סיים שירות מלא':'שחרור רגיל','שוחרר מוקדם':'שחרור מוקדם'},'איך הסתיים');
+  if(s1('סיבת שחרור מוקדם (אם רלוונטי)'))N(c,'סיבת שחרור מוקדם: '+s1('סיבת שחרור מוקדם (אם רלוונטי)'));if(s1('קשיים בשירות'))N(c,'קשיים בשירות: '+s1('קשיים בשירות'))}
+ if(s1('פרופיל')){const q=qf('פרופיל צבאי');if(q)q._e.querySelector('input').value=s1('פרופיל')}
+ if(sel('לימודים אחרי התיכון',['לא למדתי','למדתי','לומד/ת כיום'])=='לא למדתי')S(card('לימודים אחרי התיכון'),'kd','לא למדתי אחרי התיכון');
+ (g('לימודים')||[]).forEach(r=>{const [ins_,fl,yr,deg,avg,en,why]=r;if(!has(r))return;const c=card('לימודים אחרי התיכון');S(c,'nm',ins_);S(c,'rl',fl);Y(c,yr);S(c,'gr',avg);
+  const dk=/שני|מוסמך|דוקטור|M\.?A|M\.?Sc|Ph/i.test(deg)?'תואר שני ומעלה':/תואר|ראשון|B\.?A|B\.?Sc|B\.?Ed/i.test(deg)?'תואר ראשון':/הנדסאי|תעודה/.test(deg)?'תעודה או הנדסאי':/מכינה/.test(deg)?'מכינה':/קורס|הכשרה/.test(deg)?'קורס או הכשרה מקצועית':'';
+  if(dk)S(c,'kd',dk);if(deg)N(c,'תואר או תעודה: '+deg);pick(c,'en',en,{'סיים':'סיים/ה','נשר':'הפסיק/ה','עדיין לומד':'עדיין לומד/ת','הפסקה':'הפסקה זמנית'},'איך הסתיים');N(c,why)});
+ if(s1('קשיים בלימודים'))N(last('לימודים אחרי התיכון'),'קשיים בלימודים: '+s1('קשיים בלימודים'));
+ const A1=g('התאמות בבחינות'),A2=g('התאמות לימודיות');if(A1||A2){const q=qf('התאמות בבחינות או בלימודים'),e=ins(q._e);[0,1,2,3].forEach(i=>{if((A1&&A1[i])||(A2&&A2[i]))e[i].checked=true});e[4].value=J(A1&&A1[4],A2&&A2[4]);
+  const f=ins(qf('באילו מסגרות היו ההתאמות?')._e);if(A1&&has(A1.slice(0,4)))f[1].checked=true;if(A2&&has(A2.slice(0,4)))f[2].checked=true}
+ (g('עבודות')||[]).forEach(r=>{const [emp,role,yr,sc,hw,en,why]=r;if(!has(r))return;const nw=/לא עבד/.test(emp),c=card(nw?'תקופה אחרת':'עבודה');S(c,'nm',emp);S(c,'rl',role);Y(c,yr);
+  if(nw)S(c,'kd','חיפוש עבודה או אבטלה');else{pick(c,'kd',sc,{'מלא':'משרה מלאה','חלקי':'משרה חלקית'},'היקף');pick(c,'hw',hw,HWM,'איך הלך');pick(c,'en',en,{'עדיין שם':'עדיין עובד/ת','פוטר':'פוטר/ה','סיום חוזה':'סיום חוזה או פרויקט','מעבר':'עבר/ה לעבודה אחרת'},'איך הסתיים')}N(c,why)});
+ if(s1('קשיים בעבודה'))N(last('עבודה'),'קשיים בעבודה: '+s1('קשיים בעבודה'));
+ (g('אירועים משמעותיים')||[]).forEach(r=>{const [yr,kd,kdo,nt]=r;if(!has(r))return;const c=card('אירוע משמעותי');Y(c,yr);pick(c,'kd',kd,{'תאונה':'תאונה או חבלת ראש','אירוע אחר':'אחר'});if(kd=='אירוע אחר')S(c,'kd','אחר');S(c,'nm',kdo||nt);if(kdo&&nt)N(c,nt)});
+ // --- interim version: single timeline table
+ (g('תחנות חיים')||[]).forEach(r=>{const [ty,tyo,yrs,nm,rl,hw,en,eno,no]=r;const t=TT[ty]?ty:'תקופה אחרת',c=card(t);if(!has(r))return;
+  if(ty=='אחר'){S(c,'nm',tyo);if(nm)N(c,nm)}else S(c,'nm',nm);S(c,'rl',rl);Y(c,yrs);
+  const sc=TT[t].g=='s'&&t!='לימודים אחרי התיכון';if(hw)sc?N(c,'איך הלך: '+hw):pick(c,'hw',hw,HWM,'איך הלך');
+  pick(c,'en',en=='אחר'&&eno?eno:en,{'סיים':'סיים/ה','פוטר':'פוטר/ה','סיום חוזה':'סיום חוזה או פרויקט','עבר מסגרת':t=='עבודה'?'עבר/ה לעבודה אחרת':'עבר/ה בית ספר','עזב':'עזב/ה מרצון','שוחרר':'שחרור רגיל','עדיין שם':{'עבודה':'עדיין עובד/ת','שירות צבאי או לאומי':'עדיין בשירות'}[t]||'עדיין לומד/ת'},'איך הסתיים');N(c,no)});
+ // --- both earlier versions
+ const op=s1('תקופות אחרות שלא הופיעו (אשפוז, מחלה, חיפוש עבודה, נסיעה, פער של יותר מחצי שנה)');if(op)N(card('תקופה אחרת'),op);
+ w.querySelectorAll('.tc').forEach(c=>c._sync());w._setgd(tcards().some(tfull))}
 function restore(){try{const j=localStorage.getItem(SK);if(!j)return 0;const d=JSON.parse(j);if(!d.exp||d.exp<Date.now()){localStorage.removeItem(SK);return 0}
- D.forEach(([t,qs],i)=>qs.filter(q=>q.k=='r').forEach((q,k)=>{const want=d.rows[i][k],rs=()=>q._e.querySelectorAll('.row'),ad=[...q._e.querySelectorAll('button')].find(x=>x.textContent=='הוסף שורה');
-  while(rs().length<want)ad.click();while(rs().length>want)rs()[rs().length-1].remove()}));
- const els=[...form.querySelectorAll('input,select,textarea')];if(els.length!=d.vals.length)return 0;
- els.forEach((x,j)=>{if(x.type=='checkbox'||x.type=='radio')x.checked=!!d.vals[j];else x.value=d.vals[j]});
+ if(d.v==SV)applyQ(d.Q,d.K);else if(d.vals&&!legacy(d)){uid=0;render();RF=1;return 0}
  form.querySelectorAll('.pg').forEach(w=>{const v=w.querySelector('input').value;w.querySelectorAll('.pill').forEach(c=>c.classList.toggle('on',!!v&&c.dataset.v==v));const dd=w.querySelector('input[type=text]');if(dd)dd.style.display=AH.test(v)?'':'none'});
  form.querySelectorAll('input[type=text]').forEach(d=>{if(d._i)d.style.display=d._i.checked?'':'none'});
  form.querySelectorAll('.skip').forEach(k=>k.closest('.q').classList.toggle('skd',k.checked));
- return d.cur||0}catch(e){return 0}}
-const upd=()=>{vis();pv();prog();save()};form.addEventListener('input',upd);form.addEventListener('change',upd);
+ form.querySelectorAll('.tc').forEach(c=>c._sync());form.querySelectorAll('.q').forEach(w=>w._sync&&w._sync());
+ if(d.v!=SV)save();
+ return d.cur||0}catch(e){RF=1;return 0}}
+let RF=0;
+function who(){const s=selOf(qf('מי ממלא את השאלון?'))[0],n=(val(qf('שם מלא'))||'').split(/\s+/)[0];return {m:s=='בן/בת משפחה או אדם קרוב'?'f':s=='מילוי משותף'?'j':'',n:n||'המאובחן/ת'}}
+function famup(){const {m,n}=who();
+ form.querySelectorAll('.fam').forEach(e=>{e.textContent=m=='f'?'ממלאים עבור '+n+': ענו על '+n+' ולא על עצמכם. מה שאינכם יודעים אפשר לסמן ״לא יודע/ת״ או לדלג, ונשלים בפגישה.':m=='j'?'ממלאים יחד: התשובות הן על '+n+'. אם אתם רואים משהו אחרת, אפשר לציין זאת בהערות.':'';e.style.display=m?'':'none'});
+ const q=qf('במילים שלך: מה הקשיים שאתם מרגישים, ומה הכי מפריע?');if(q&&q._e)q._e.querySelector('b').textContent=m=='f'?'במילים שלכם: אילו קשיים אתם רואים אצל '+n+', ומה הכי מפריע?':q.l;
+ const nl=qf('שם מלא');if(nl&&nl._e)nl._e.querySelector('b').textContent=m=='f'?'שם מלא של המאובחן/ת':nl.l}
+const upd=()=>{vis();famup();tref();pv();prog();acc();if(cur==D.length-1)pend();save()};form.addEventListener('input',upd);form.addEventListener('change',upd);
 document.getElementById('prv').onclick=()=>show(cur-1);document.getElementById('nxt').onclick=()=>{const o=cur,had=touched(o);show(o+1);if(had)toast('כל הכבוד על סעיף '+(o+1)+'!')};
+famup();
 const dft=(()=>{try{const d=JSON.parse(localStorage.getItem(SK)||'null');return d&&d.exp>Date.now()?d:null}catch(e){return null}})(),r0=restore();vis();pv();show(r0);buildCover();
 if(dft)document.getElementById('dr').style.display='';
+if(RF){const dr=document.getElementById('dr');dr.firstChild.textContent='מצאנו טיוטה מגרסה קודמת של השאלון, אבל לא הצלחנו לשחזר אותה.';dr.childNodes[1].textContent=' אפשר למחוק אותה ולהתחיל מחדש.';document.getElementById('drc').style.display='none';document.getElementById('dr2').textContent='מחיקת הטיוטה הישנה'}
 document.getElementById('drc').onclick=()=>start(r0);
 document.getElementById('go1').onclick=()=>start(0);
 arm(document.getElementById('dr2'),'לחצו שוב למחיקת הטיוטה',()=>{wipe();toast('הטיוטה נמחקה',4000)});
 const BX=b=>b?'☑':'☐',bd=t=>$('b',{textContent:t}),ln=v=>$('div',{className:'ln',textContent:v||''});
 const fr=(l,v,ta)=>$('div',{className:'fr'+(ta?' ta':'')},[bd(l+':'),ln(v)]);
 function doc(out){
+ const blank=!D.some((_,i)=>touched(i));
  D.forEach(([t,qs],i)=>{
   out.append($('h2',{textContent:t}));
   if(D[i]._k)out.append($('p',{textContent:BX(D[i]._k.querySelector('input').checked)+' אשלים סעיף זה בפגישה'}));
-  qs.forEach(q=>{const e=q._e;
+  qs.forEach(q=>{const e=q._e;if(!blank&&hid(q))return;
    if(q.d)out.append($('p',{className:'nt',textContent:q.d}));
+   if(q.k=='x')return;
    if(q.k=='h'){out.append($('h3',{textContent:q.t}));return}
    if(q.k=='n'){out.append($('p',{className:'nt',textContent:q.t}));return}
-   if(q.k=='f'){out.append(fr(q.l,e.querySelector('input,textarea').value,q.t=='ta'));return}
-   if(q.k=='c'||q.k=='m'){const ins=[...e.querySelectorAll('input[type=checkbox],input[type=radio]')],dt=e.querySelector('input[type=text]'),p=$('p',{className:'opts'},[bd(q.l+': ')]);q.o.forEach((o,j)=>p.append($('span',{textContent:BX(ins[j].checked)+' '+o+(AH.test(o)?': '+((dt&&dt.value)||'________'):'')})));out.append(p);return}
+   if(q.k=='f'){const dk=e.querySelector('input[type=checkbox]');out.append(fr(q.l,e.querySelector('input,textarea').value||(dk&&dk.checked?'לא יודע/ת / לא זוכר/ת':''),q.t=='ta'));return}
+   if(q.k=='c'||q.k=='m'){const ins=[...e.querySelectorAll('input[type=checkbox],input[type=radio]')],dt=e.querySelector('input[type=text]'),p=$('p',{className:'opts'},[bd(q.l+': ')]);q.o.forEach((o,j)=>p.append($('span',{textContent:BX(ins[j].checked)+' '+o+(AH.test(o)&&(ins[j].checked||blank)?': '+((ins[j].checked&&dt&&dt.value)||'________'):'')})));out.append(p);return}
    if(q.k=='s'){const [sel,x,y]=e.querySelectorAll('input'),p=$('p',{className:'opts'},[bd(q.l+': ')]);['מעולם לא','בעבר בלבד','כיום'].forEach(o=>p.append($('span',{textContent:BX(sel.value==o)+' '+o})));
     out.append(p,$('div',{className:'fr'},[bd('תדירות או כמות:'),ln(x.value),bd('שימוש אחרון:'),ln(y.value)]));return}
    if(q.k=='g'){out.append($('p',{className:'opts'},[bd(q.l+'   '),$('span',{textContent:BX(e.querySelector('.skip').checked)+' אין קושי בתחום זה'})]));
@@ -371,11 +591,13 @@ function doc(out){
     e.querySelectorAll('.row.gi').forEach(r=>{const sv=r.querySelector('input[type=hidden]').value,wk=r.querySelector('input[type=checkbox]').checked,hp=r.querySelector('input[type=text]'),tr=$('tr');
      tr.append($('td',{textContent:r.dataset.n}));q.s.forEach(o=>tr.append($('td',{className:'c',textContent:BX(sv==o)})));tr.append($('td',{className:'c',textContent:BX(wk)}));if(q.h)tr.append($('td',{textContent:hp?hp.value:''}));tb.append(tr)});
     out.append(tb);if(q.ex)out.append(fr('קשיים נוספים בתחום זה, או דוגמה (לא חובה)',e.querySelector('textarea').value,1));return}
+   if(q.k=='t'){out.append($('p',{className:'opts'},[bd(q.l)]));if(tdata().R.length){out.append($('p',{className:'nt',textContent:'הטבלה המלאה מופיעה בתחילת המסמך, תחת ״ציר זמן מסכם״.'}));return}
+    const tb=$('table'),hr=$('tr');['שנים','תחנה','מקום ותפקיד','איך הלך','איך הסתיים','קשיים והערות'].forEach(h=>hr.append($('th',{textContent:h})));tb.append(hr);for(let k=0;k<6;k++){const tr=$('tr');for(let j=0;j<6;j++)tr.append($('td'));tb.append(tr)}out.append(tb);return}
    if(q.k=='r'){out.append($('p',{className:'opts'},[bd(q.l)]));const cv=c=>c.tagName=='DIV'?[...c.querySelectorAll('input')].map(x=>x.value).filter(Boolean).join(': '):c.value,rows=[...e.querySelectorAll('.row')].map(r=>[...r.children].filter(c=>c.tagName!='BUTTON').map(cv));while(rows.length<3)rows.push([]);
     const tb=$('table'),hr=$('tr');q.cols.forEach(([l])=>hr.append($('th',{textContent:l})));tb.append(hr);
     rows.forEach(r=>{const tr=$('tr');q.cols.forEach((_,j)=>tr.append($('td',{textContent:r[j]||''})));tb.append(tr)});out.append(tb)}
   })})}
-const VER='1.0, אוקטובר 2026',MIS=['שם מלא','טלפון','הסיבה העיקרית להגעה לאבחון'];
+const VER='1.1, אוקטובר 2026',MIS=['שם מלא','טלפון','הסיבה העיקרית להגעה לאבחון'];
 const missing=()=>MIS.filter(l=>!val(qf(l)));
 function summary(out){
  const R=[],add=(t,x)=>{const v=Array.isArray(x)?x.filter(Boolean).join('; '):x;if(v)R.push([t,v])},sels=l=>selOf(qf(l));
@@ -383,6 +605,7 @@ function summary(out){
  add('מילא את השאלון',sels('מי ממלא את השאלון?'));
  ['נוירולוגי','נוירו-התפתחותי','רפואי כללי','נפשי'].forEach(l=>add(l,sels(l).filter(o=>o!='אין אף אחד')));
  add('היסטוריה במשפחה',sels('היסטוריה במשפחה (הורים, אחים, ילדים)').filter(o=>o!='אין אף אחד'));
+ add('היריון, לידה והתפתחות',sels('היריון, לידה והתפתחות').filter(o=>!['אין אף אחד','לא יודע/ת'].includes(o)));
  add('אבחונים קודמים',sels('אבחונים קודמים'));
  const md=rows('תרופות');add('תרופות',md);
  if(/ריטלין|קונצרטה|אדרל|ויוונס|סטרטרה|אטומוקסטין|מתילפנידאט|ritalin|concerta|adderall|vyvanse|strattera|methylphenidate|atomoxetine/i.test(md.join(' ')))add('שימו לב','ייתכן שנוטל/ת תרופה לקשב וריכוז. מומלץ לתאם לפני האבחון');
@@ -391,14 +614,17 @@ function summary(out){
  if(sels('מוכר/ת עם אחוזי נכות').includes('כן'))add('אחוזי נכות',[sels('אחוזי הנכות הוכרו על ידי').join(', '),val(qf('כמה אחוזי נכות'))&&val(qf('כמה אחוזי נכות'))+'%',val(qf('על מה הוכרו (סוג הליקוי)'))]);
  add('עובד/ת שיקום',[val(qf('שם עובד/ת השיקום')),val(qf('טלפון עובד/ת השיקום'))]);
  if(sels('חשיפה').length)add('חשיפה בשירות','לאירועי לחימה או לאירוע קשה');
- add('אירועים משמעותיים',rows('אירועים משמעותיים'));
+ const TD=tdata();
+ add('אירועים משמעותיים',TD.R.filter(r=>r.ty=='אירוע משמעותי').map(r=>J(r.y1,r.kd,r.nm)+(r.hw?' (השפעה על התפקוד: '+r.hw+')':'')));
+ add('נקודות לבדיקה בציר הזמן',TD.R.filter(r=>r.ty!='אירוע משמעותי'&&(['נשר/ה','שחרור מוקדם','פוטר/ה','עזב/ה בגלל קשיים או בריאות','הפסיק/ה'].includes(r.en)||['קשה','קשה מאוד','מתחת לממוצע'].includes(r.hw)||r.so=='קשה'||r.df||/חזרה על כיתה/.test(r.sp))).map(r=>J(r.cells[0],r.cells[1],(r.hw||r.so)&&r.cells[3],r.en,r.df&&'קשיים: '+r.df.split('|').join(', '),r.sp&&'עזרה: '+r.sp.split('|').join(', '))));
+ add('שנים ללא תחנה בציר הזמן',TD.G.map(gtx));
  add('שימוש בחומרים',ALL().filter(q=>q.k=='s').map(q=>{const v=q._e.querySelector('input[type=hidden]').value;return v&&v!='מעולם לא'?q.l+' ('+v+')':''}));
  if(sels('האם יש כאב מתמשך או חוזר?').includes('כן'))add('כאב',[sels('סוג הכאב').join(', '),val(qf('רמת כאב טיפוסית (0-10)'))&&'טיפוסי '+val(qf('רמת כאב טיפוסית (0-10)')),val(qf('רמת כאב בימים הקשים (0-10)'))&&'בימים הקשים '+val(qf('רמת כאב בימים הקשים (0-10)'))]);
  ALL().filter(q=>q.k=='g').forEach(q=>{const e=q._e,sk=e.querySelector('.skip'),cog=q.s===S4;if(sk&&sk.checked)return;
   const hi=[...e.querySelectorAll('.row.gi')].map(r=>({n:r.dataset.n,v:r.querySelector('input[type=hidden]').value,w:r.querySelector('input[type=checkbox]').checked})).filter(x=>(cog?['לעתים קרובות','כמעט תמיד'].includes(x.v):['עזרה חלקית','תלוי באחרים'].includes(x.v))||x.w);
   add((cog?'קושי: ':'תפקוד יומיומי: ')+q.l,hi.map(x=>x.n+(x.v?' ('+x.v+')':'')+(x.w?', החמיר':'')))});
  if(!R.length)return;
- out.append($('h2',{textContent:'תקציר למאבחן'}),$('p',{className:'nt',textContent:'נוצר אוטומטית מתשובות הנבדק. כולל פריטים שסומנו ״לעתים קרובות״, ״כמעט תמיד״ או ״החמיר״. הפירוט המלא בהמשך.'}));
+ out.append($('h2',{textContent:'תקציר למאבחן'}),$('p',{className:'nt',textContent:'נוצר אוטומטית מתשובות הנבדק. בקשיי חשיבה ורגש מופיעים פריטים שסומנו ״לעתים קרובות״, ״כמעט תמיד״ או ״החמיר״. בתפקוד היומיומי מופיעים פריטים שסומנו ״עזרה חלקית״, ״תלוי באחרים״ או ״השתנה״. הפירוט המלא בהמשך.'}));
  R.forEach(([t,v])=>out.append($('p',{},[bd(t+': '),document.createTextNode(v)])))}
 function mk(){
  const out=document.getElementById('out');out.innerHTML='';
@@ -408,9 +634,12 @@ function mk(){
  doc(out);return out}
 document.getElementById('pdf').onclick=()=>{const m=missing();mk();document.getElementById('dlg').style.display='flex';if(m.length)toast('שימו לב, לא מולאו: '+m.join(', ')+'. אפשר להמשיך או לחזור להשלים.',7000)};
 document.getElementById('wd').onclick=()=>{const m=missing(),nm=(val(qf('שם מלא'))||'נבדק').replace(/[\\/:*?"<>|]/g,'').trim().replace(/\s+/g,'_'),fn='שאלון_רקע_'+nm+'_'+new Date().toISOString().slice(0,10)+'.doc',o=mk(),h='<html dir="rtl" lang="he"><head><meta charset="utf-8"><style>body{font-family:Arial;direction:rtl}table{border-collapse:collapse;width:100%}td,th{border:1px solid #777;padding:3px;text-align:right}.ln{border-bottom:1px solid #666}.opts span{margin-left:12px}</style></head><body>'+o.innerHTML+'</body></html>',a=$('a',{href:URL.createObjectURL(new Blob(['\ufeff',h],{type:'application/msword'})),download:fn});document.body.append(a);a.click();a.remove();toast(m.length?'הקובץ ירד, אבל לא מולאו: '+m.join(', ')+'. אפשר להשלים ולהוריד שוב.':'הקובץ ירד למכשיר. צרפו אותו להודעת מייל ושלחו אלינו.',7000)};
+const pvwc=()=>document.getElementById('pvw').style.display='none';
+document.getElementById('vw').onclick=()=>{const o=mk(),d=document.getElementById('docv');d.innerHTML=o.innerHTML;d.scrollTop=0;document.getElementById('pvw').style.display='block'};
+document.getElementById('vw1').onclick=()=>{pvwc();document.getElementById('wd').click()};document.getElementById('vw2').onclick=()=>{pvwc();document.getElementById('pdf').click()};document.getElementById('vw3').onclick=pvwc;
 document.getElementById('go').onclick=()=>{document.getElementById('dlg').style.display='none';window.print()};
 document.getElementById('no').onclick=()=>{document.getElementById('dlg').style.display='none'};
-document.getElementById('clr').onclick=()=>{if(confirm('למחוק את כל התשובות?')){try{localStorage.removeItem(SK)}catch(e){}uid=0;render();show(0);pv()}};
+arm(document.getElementById('clr'),'לחצו שוב למחיקת כל התשובות',()=>{wipe();toast('כל התשובות נמחקו',4000)});
 arm(document.getElementById('clr2'),'לחצו שוב לאישור המחיקה',()=>{wipe();toast('הטיוטה נמחקה',4000)});
 let fzn=0;document.getElementById('fz').onclick=()=>{fzn=(fzn+1)%3;document.documentElement.style.fontSize=[100,115,130][fzn]+'%';setTh()};document.getElementById('hc').onclick=()=>document.body.classList.toggle('hc');
 function setTh(){document.documentElement.style.setProperty('--th',document.getElementById('top').offsetHeight+'px')}
