@@ -41,12 +41,21 @@ button.p{background:var(--acc);color:#fff;font-weight:600}
 #toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%);background:var(--acc);color:#fff;padding:8px 14px;border-radius:18px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:8}#toast.on{opacity:1}
 .calm{background:#eaf4ec;border-color:#b9d9bf;color:var(--ink);font-size:1.02rem;line-height:1.7;padding:12px 14px;margin:12px 0}.how h2{margin:20px 0 6px}.how ul{list-style:none;padding:0;margin:0}.how li{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:8px 0;line-height:1.7}
 #form>[data-hide]{display:none!important}
-#acc{display:flex;gap:6px;justify-content:flex-end;margin-bottom:4px}#acc button{padding:2px 10px;margin:0;font-size:.8rem}#sv{color:#2e7d32;font-weight:600}
+#acc{display:flex;gap:6px;justify-content:space-between;align-items:center;margin-bottom:4px}.ab{display:flex;gap:6px}.ab button{background:#fff;color:var(--mut);border-color:var(--line)}#acc #hm{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600;padding:4px 14px;font-size:.85rem}#acc button{padding:2px 10px;margin:0;font-size:.8rem}#sv{color:#2e7d32;font-weight:600}
 body.hc{--ink:#000;--mut:#111;--line:#444;--bg:#fff;--acc:#003366}body.hc .q,body.hc .note,body.hc details{border-color:#000}
 .og{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0 10px}.og label.o{margin:2px 0}.og .long,.og input[type=text]{grid-column:1/-1}
 .gh,.cg{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;text-align:center;align-items:center}.gh{font-size:.85rem;font-weight:600;color:var(--ink);background:#fff;border-bottom:1px solid var(--line);padding:6px 0;margin:2px 0 4px;line-height:1.25;position:sticky;top:var(--th,100px);z-index:3}.cg{margin:2px 0}.cg .pill{width:28px;height:28px;padding:0;border-radius:50%;justify-self:center}.cg input[type=checkbox]{justify-self:center;width:22px;height:22px;margin:0}.skd .gh{display:none}
 .qd{color:var(--mut);font-size:.92rem;line-height:1.55;margin:0 0 8px}
 .sd{color:var(--mut);font-size:.95rem;line-height:1.6;margin:0 0 10px}
+body.cv #top,body.cv #form,body.cv #pv,body.cv #end,body.cv #nav{display:none!important}body:not(.cv) #cover{display:none}
+.hero{background:linear-gradient(135deg,#1f4e79,#2f6d9f);color:#fff;border-radius:12px;padding:20px 18px;margin:8px 0 14px}.hero h1{color:#fff;font-size:1.6rem;line-height:1.25;margin:4px 0}.hero p{margin:6px 0 0;font-size:1.02rem;line-height:1.6}
+#go0,#go1{width:100%;font-size:1.1rem;padding:14px;margin:6px 0}
+.cv-sec{margin:20px 0}.cv-sec>h2{margin:0 0 8px;border:0;padding:0;font-size:1.1rem}
+.why{display:grid;gap:8px}.why>div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;line-height:1.6}
+.rm{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}.rm button{text-align:right;display:block;background:#fff;border:1px solid var(--line);color:var(--ink);padding:10px 12px;border-radius:10px;margin:0}.rm b{color:var(--acc)}.rm small{display:block;color:var(--mut);font-size:.82rem;margin-top:2px}
+.ctl{background:#eaf4ec;border:1px solid #b9d9bf;border-radius:10px;padding:12px 14px}.ctl ul{margin:6px 0 0;padding-inline-start:20px;line-height:1.7}
+#dr{background:#fff7e6;border:1px solid #f0d9a8;border-radius:10px;padding:12px;margin:12px 0}
+.know{background:#fff7e6;border:1px solid #f0d9a8;border-radius:10px;padding:12px 14px}.know p{margin:0;line-height:1.7}.warn{background:#c0392b!important;color:#fff!important;border-color:#c0392b!important}.hero #go0{background:#fff;color:var(--acc);border-color:#fff;font-weight:700}
 #out{display:none}
 @media print{
  body{background:#fff;font-size:11pt}
@@ -61,23 +70,34 @@ body.hc{--ink:#000;--mut:#111;--line:#444;--bg:#fff;--acc:#003366}body.hc .q,bod
 }
 </style>
 </head>
-<body>
+<body class="cv">
 <main id="app">
-<div id="top"><div id="acc"><button id="fz" type="button">א+ גודל</button><button id="hc" type="button">ניגודיות</button></div><div id="pb"><div id="pf"></div></div><div id="mn"></div></div>
-<h1>שאלון רקע לקראת אבחון נוירופסיכולוגי</h1>
-<div class="note intro calm"><b>אפשר להירגע:</b> אם השאלון מלחיץ, מציף או ארוך מדי, אפשר לעצור בכל רגע. אין חובה למלא אותו כדי להשתתף באבחון, ובמקסימום נעבור עליו יחד בפגישה.</div>
-<div class="intro how"><h2>איך זה עובד</h2><ul>
-<li><b>הפרטיות שלכם:</b> המידע נשאר רק במכשיר שלכם ולא נשלח לשום מקום.</li>
+<div id="top"><div id="acc"><button id="hm" type="button">⌂ מסך פתיחה</button><span class="ab"><button id="fz" type="button">א+ גודל</button><button id="hc" type="button">ניגודיות</button></span></div><div id="pb"><div id="pf"></div></div><div id="mn"></div></div>
+<div id="cover">
+<div class="hero"><small>ברוכים הבאים</small><h1>שאלון רקע לקראת אבחון נוירופסיכולוגי</h1>
+<p>השאלון הזה הוא הצעד הראשון בהיכרות בינינו. הוא עוזר לנו להבין אתכם ואת הדרך שעשיתם, ולהתאים את האבחון אליכם.</p><button id="go0" type="button">מתחילים</button></div>
+<div id="dr" style="display:none"><b>מצאנו טיוטה שנשמרה במכשיר.</b> אפשר להמשיך בדיוק מהמקום שעצרתם.<div class="bar"><button class="p" id="drc" type="button">המשך מהמקום שעצרתי</button><button id="dr2" type="button">התחלה מחדש</button></div></div>
+<div class="cv-sec"><h2>קצת על האבחון</h2><details><summary>מהו אבחון נוירופסיכולוגי?</summary><p>אבחון נוירופסיכולוגי ממפה את היכולות הקוגניטיביות והרגשיות־התנהגותיות שלך, בהשוואה לרמה המצופה מבני אותו גיל ובהתייחס להיסטוריה האישית שלך. הוא עוזר להבין את מקור הקשיים ולהתאים להם המלצות.</p></details>
+<details><summary>כיצד האבחון מתבצע?</summary><ul><li><b>ריאיון קליני:</b> כשעה. מטרתו היכרות, הבנת הקשיים הנוכחיים והערכת התפקוד לפני שהתחילו הקשיים.</li><li><b>מטלות אבחון:</b> סדרת מטלות הבוחנות תפקוד קוגניטיבי ורגשי, חלקן בדף ובעיפרון וחלקן ממוחשבות.</li><li><b>משך ותדירות:</b> 3–4 פגישות של כשלוש שעות כל אחת, פגישה אחת בשבוע בערך, עם הפסקות לפי הצורך.</li><li><b>דוח ומשוב:</b> דוח מפורט שצפוי להישלח גם לגורם המפנה, ופגישת משוב של כשעה.</li></ul></details>
+<details><summary>הנחיות לקראת האבחון</summary><p>כמה צעדים קטנים לפני הפגישה יעזרו לנו לראות אותך במיטבך, וכך התוצאות והמלצות יתאימו בדיוק לך.</p><ul><li><b>שינה טובה בלילה שלפני:</b> מוח רענן נותן תמונה אמיתית של היכולות שלך.</li><li><b>תרופות קבועות:</b> ממשיכים ליטול אותן כרגיל, כדי שנראה אותך כמו בחיי היום-יום, אלא אם הרופא המטפל הנחה אחרת.</li><li><b>תרופות לקשב וריכוז:</b> אם אתם נוטלים תרופות לטיפול בקשב וריכוז, עדכנו את המאבחן מראש. נתייעץ יחד איך לנהוג ביום האבחון, כדי שנקבל תמונה מדויקת ככל האפשר.</li><li><b>יממה בלי אלכוהול וקנאביס:</b> כך התוצאות ישקפו את היכולות האמיתיות שלך.</li><li><b>מאמץ מרבי:</b> ההשקעה שלך היא מה שהופך את התוצאות למדויקות. אם יש עייפות, כאב או אי נוחות, תגידו לנו. אפשר לקחת הפסקה בכל שלב, וזה לגמרי בסדר.</li><li><b>לא חייבים להגיע לבד:</b> אם קשה לספר על הקשיים, אפשר להגיע עם בן משפחה או אדם קרוב. הוא יכול לעזור לנו לראות את התמונה המלאה.</li></ul></details>
+<details><summary>מה להביא לפגישה?</summary><p>כדי שנכיר אותך באמת, כדאי להביא:</p><ul><li><b>תעודה מזהה.</b></li><li><b>אוכל ושתייה:</b> הפגישה נמשכת כשלוש שעות, ומי שאכל טוב מתרכז טוב יותר.</li><li><b>משקפיים או מכשיר שמיעה,</b> אם משתמשים, כדי שתראו ותשמעו בצורה הטובה ביותר.</li></ul><p><b>מסמכים רפואיים:</b> אלה היחידים החשובים באמת: סיכומי אשפוז, מסמכים נוירולוגיים או פסיכיאטריים, אבחונים קודמים ורשימת תרופות עדכנית. עדיף לשלוח אותם אלינו לפני הפגישה, כדי שנוכל להתכונן. אין צורך בקורות חיים או בתעודות, כי את הסיפור שלך נשמע ממך.</p></details>
+</div>
+<div class="cv-sec know"><h2>חשוב לדעת</h2><p>בפגישה נעבור יחד על השאלון כדי לוודא את הפרטים ולהשלים מה שחסר. לכן אין צורך שהכול יהיה מדויק לגמרי: הערכה בערך מספיקה, ואפשר לכתוב ״לא בטוח/ה״. וגם אין סיבה לחשוב שאנחנו מבזבזים זמן. מה שתמלאו כאן נותן לנו נקודת פתיחה טובה, וכך הפגישה עצמה ממוקדת ויעילה יותר.</p></div>
+<div class="cv-sec"><h2>למה כדאי למלא</h2><div class="why">
+<div><b>אבחון מדויק יותר.</b> ככל שנכיר אתכם טוב יותר מראש, נוכל לבחור את המבחנים המתאימים ולפרש את התוצאות נכון.</div>
+<div><b>יותר זמן למה שחשוב.</b> מה שתמלאו כאן חוסך בפגישה שאלות רקע ומשאיר זמן לשיחה עליכם.</div>
+<div><b>המלצות שמתאימות לחיים שלכם.</b> גם פרטים שנראים קטנים עוזרים לנו להרכיב תמונה שלמה, ולהתאים את ההמלצות בסוף האבחון.</div></div></div>
+<div class="cv-sec ctl"><h2>אתם בשליטה</h2><ul>
 <li><b>אין תשובות נכונות או שגויות.</b> אפשר לכתוב ״לא יודע/ת״.</li>
-<li><b>סעיף שקשה למלא?</b> סמנו ״אשלים סעיף זה בפגישה״ ועברו הלאה.</li>
-<li><b>אפשר לעצור ולהמשיך.</b> מומלץ למלא בכמה פעמים של 10-15 דקות. הטיוטה נשמרת רק במכשיר שלכם ונמחקת אוטומטית 7 ימים אחרי העדכון האחרון.</li>
-<li><b>★ בפס שבראש הדף</b> מסמן את הסעיפים החשובים ביותר. את השאר אפשר להשלים בפגישה.</li>
-<li><b>בסוף:</b> מורידים קובץ Word, שולחים אותו אלינו במייל, ומוחקים אותו מהמכשיר.</li>
-</ul><p><button id="clr2" type="button">מחק את הטיוטה שלי עכשיו</button></p></div>
-<details class="intro"><summary>מהו אבחון נוירופסיכולוגי?</summary><p>אבחון נוירופסיכולוגי ממפה את היכולות הקוגניטיביות והרגשיות־התנהגותיות שלך, בהשוואה לרמה המצופה מבני אותו גיל ובהתייחס להיסטוריה האישית שלך. הוא עוזר להבין את מקור הקשיים ולהתאים להם המלצות.</p></details>
-<details class="intro"><summary>כיצד האבחון מתבצע?</summary><ul><li><b>ריאיון קליני:</b> כשעה. מטרתו היכרות, הבנת הקשיים הנוכחיים והערכת התפקוד לפני שהתחילו הקשיים.</li><li><b>מטלות אבחון:</b> סדרת מטלות הבוחנות תפקוד קוגניטיבי ורגשי, חלקן בדף ובעיפרון וחלקן ממוחשבות.</li><li><b>משך ותדירות:</b> 3–4 פגישות של כשלוש שעות כל אחת, פגישה אחת בשבוע בערך, עם הפסקות לפי הצורך.</li><li><b>דוח ומשוב:</b> דוח מפורט שצפוי להישלח גם לגורם המפנה, ופגישת משוב של כשעה.</li></ul></details>
-<details class="intro"><summary>הנחיות לקראת האבחון</summary><p>כמה צעדים קטנים לפני הפגישה יעזרו לנו לראות אותך במיטבך, וכך התוצאות והמלצות יתאימו בדיוק לך.</p><ul><li><b>שינה טובה בלילה שלפני:</b> מוח רענן נותן תמונה אמיתית של היכולות שלך.</li><li><b>תרופות קבועות:</b> ממשיכים ליטול אותן כרגיל, כדי שנראה אותך כמו בחיי היום-יום, אלא אם הרופא המטפל הנחה אחרת.</li><li><b>תרופות לקשב וריכוז:</b> אם אתם נוטלים תרופות לטיפול בקשב וריכוז, עדכנו את המאבחן מראש. נתייעץ יחד איך לנהוג ביום האבחון, כדי שנקבל תמונה מדויקת ככל האפשר.</li><li><b>יממה בלי אלכוהול וקנאביס:</b> כך התוצאות ישקפו את היכולות האמיתיות שלך.</li><li><b>מאמץ מרבי:</b> ההשקעה שלך היא מה שהופך את התוצאות למדויקות. אם יש עייפות, כאב או אי נוחות, תגידו לנו. אפשר לקחת הפסקה בכל שלב, וזה לגמרי בסדר.</li><li><b>לא חייבים להגיע לבד:</b> אם קשה לספר על הקשיים, אפשר להגיע עם בן משפחה או אדם קרוב. הוא יכול לעזור לנו לראות את התמונה המלאה.</li></ul></details>
-<details class="intro"><summary>מה להביא לפגישה?</summary><p>כדי שנכיר אותך באמת, כדאי להביא:</p><ul><li><b>תעודה מזהה.</b></li><li><b>אוכל ושתייה:</b> הפגישה נמשכת כשלוש שעות, ומי שאכל טוב מתרכז טוב יותר.</li><li><b>משקפיים או מכשיר שמיעה,</b> אם משתמשים, כדי שתראו ותשמעו בצורה הטובה ביותר.</li></ul><p><b>מסמכים רפואיים:</b> אלה היחידים החשובים באמת: סיכומי אשפוז, מסמכים נוירולוגיים או פסיכיאטריים, אבחונים קודמים ורשימת תרופות עדכנית. עדיף לשלוח אותם אלינו לפני הפגישה, כדי שנוכל להתכונן. אין צורך בקורות חיים או בתעודות, כי את הסיפור שלך נשמע ממך.</p></details>
+<li><b>אפשר לדלג</b> על כל שאלה, או לסמן בסעיף ״אשלים סעיף זה בפגישה״.</li>
+<li><b>אפשר לעצור ולהמשיך.</b> הטיוטה נשמרת רק במכשיר שלכם ונמחקת אוטומטית 7 ימים אחרי העדכון האחרון.</li>
+<li><b>אין חובה למלא את השאלון</b> כדי להשתתף באבחון. אם משהו מלחיץ, מציף או ארוך מדי, אפשר לעצור, ובמקסימום נעבור על זה יחד בפגישה.</li>
+<li><b>הפרטיות שלכם:</b> המידע לא נשלח לשום מקום. רק אתם מחליטים אם להוריד קובץ ולשלוח אותו אלינו.</li>
+<li><b>בסוף:</b> מורידים קובץ Word, שולחים אותו אלינו במייל, ומוחקים אותו מהמכשיר.</li></ul>
+<p><button id="clr2" type="button">מחק את הטיוטה שלי עכשיו</button></p></div>
+<div class="cv-sec"><h2>מה מחכה לכם בשאלון</h2><p class="sd"><span id="cnt"></span> סעיפים. אפשר ללחוץ על כל סעיף כדי להתחיל ממנו. הסעיפים עם ★ הם החשובים ביותר, ואת השאר אפשר להשלים גם בפגישה.</p><div class="rm" id="rm"></div></div>
+<button class="p" id="go1" type="button">מתחילים</button>
+</div>
 <div id="form"></div>
 <div id="pv"></div>
 <div id="end"><div class="bar"><button class="p" id="wd" type="button">הורד קובץ Word</button><button id="pdf">הדפס או שמור כ-PDF</button><button id="clr">נקה הכול</button></div>
@@ -300,12 +320,17 @@ function pv(){const d=document.getElementById('pv');d.innerHTML='';const t=tl();
  d.append($('div',{className:'note',textContent:t?'כך ייראה ציר הזמן ב-PDF. אם הסדר לא נכון, בדקו שהשנים נכתבו כמספרים, למשל 2012-2015. אפשר גם בערך.':'ציר הזמן יופיע כאן כשתמלאו את סעיף ציר הזמן.'}));if(t)d.append(t)}
 let cur=0;const chips=D.map((d,i)=>{const b=$('button',{type:'button',title:d[0]});b.onclick=()=>show(i);document.getElementById('mn').append(b);return b});
 const SH={'רקע בילדות':'ילדות','היסטוריה רפואית':'רפואי','ציר זמן: לימודים, שירות ותעסוקה':'ציר זמן','שינה ושימוש בחומרים':'שינה וחומרים','קשיי חשיבה ורגש':'חשיבה ורגש','רצונות ושאיפות':'שאיפות'},SHORT=D.map(d=>{const n=d[0].replace(/^\d+\.\s*/,'');return SH[n]||n});
+const BR={'פרטים אישיים':'פרטים בסיסיים ורקע','סיבת הפנייה':'מה הביא אתכם, ומה תרצו להבין','ילדות':'ההתפתחות והלימודים בצעירות','רפואי':'מצבים, תרופות ואבחונים קודמים','ציר זמן':'לימודים, שירות ועבודה לאורך השנים','שינה וחומרים':'שינה, אלכוהול ועוד','כאב':'אם יש כאב שמפריע','חשיבה ורגש':'הקשיים שאתם מרגישים ביום-יום','תפקוד יומיומי':'איך מסתדרים בפעולות היום-יום','שאיפות':'מה חשוב לכם להשיג','הצהרה':'אישור קצר לסיום'};
+function wipe(){try{localStorage.removeItem(SK)}catch(e){}uid=0;render();show(0);pv();document.getElementById('dr').style.display='none'}
+function arm(b,msg,fn){const t=b.textContent;let on=0,tm;b.onclick=()=>{if(!on){on=1;b.textContent=msg;b.classList.add('warn');tm=setTimeout(()=>{on=0;b.textContent=t;b.classList.remove('warn')},4000)}else{clearTimeout(tm);on=0;b.textContent=t;b.classList.remove('warn');fn()}}}
+function start(i){document.body.classList.remove('cv');show(i)}
+function buildCover(){const r=document.getElementById('rm');r.innerHTML='';D.forEach((d,i)=>{const b=$('button',{type:'button'},[$('b',{textContent:(i+1)+(KEY[i]?'★':'')+' '+SHORT[i]}),$('small',{textContent:BR[SHORT[i]]||''})]);b.onclick=()=>start(i);r.append(b)});document.getElementById('cnt').textContent=D.length}
 function prog(){const t=D.map((_,i)=>[...form.children].filter(e=>e.dataset.s==i).some(e=>[...e.querySelectorAll('input,select,textarea')].some(x=>(x.type=='checkbox'||x.type=='radio')?x.checked:x.value)));
  const n=t.filter(Boolean).length;document.getElementById('pf').style.width=n/D.length*100+'%';
  document.getElementById('ptxt').textContent='סעיף '+(cur+1)+' מתוך '+D.length+', מולאו '+n;
  chips.forEach((c,i)=>{c.textContent='';c.append($('span',{textContent:(t[i]?'✓ ':'')+(i+1)+(KEY[i]?'★':'')}),$('span',{className:'t',textContent:SHORT[i]}));c.classList.toggle('on',i==cur);c.classList.toggle('dn',t[i]);if(i==cur&&c.scrollIntoView)c.scrollIntoView({inline:'center',block:'nearest'})})}
 function show(i){cur=i;const L=D.length-1;[...form.children].forEach(e=>e.classList.toggle('on',e.dataset.s==i));
- document.querySelectorAll('.intro').forEach(e=>e.style.display=i==0?'':'none');
+ 
  document.getElementById('pv').style.display=(i==TL||i==L)?'':'none';document.getElementById('end').style.display=i==L?'':'none';
  document.getElementById('prv').disabled=i==0;document.getElementById('nxt').style.display=i==L?'none':'';prog();setTh();scrollTo(0,0)}
 const SK='q1',touched=i=>[...form.children].filter(e=>e.dataset.s==i).some(e=>[...e.querySelectorAll('input,select,textarea')].some(x=>(x.type=='checkbox'||x.type=='radio')?x.checked:x.value));
@@ -322,7 +347,11 @@ function restore(){try{const j=localStorage.getItem(SK);if(!j)return 0;const d=J
  return d.cur||0}catch(e){return 0}}
 const upd=()=>{vis();pv();prog();save()};form.addEventListener('input',upd);form.addEventListener('change',upd);
 document.getElementById('prv').onclick=()=>show(cur-1);document.getElementById('nxt').onclick=()=>{const o=cur,had=touched(o);show(o+1);if(had)toast('כל הכבוד על סעיף '+(o+1)+'!')};
-const r0=restore();vis();pv();show(r0);
+const dft=(()=>{try{const d=JSON.parse(localStorage.getItem(SK)||'null');return d&&d.exp>Date.now()?d:null}catch(e){return null}})(),r0=restore();vis();pv();show(r0);buildCover();
+if(dft)document.getElementById('dr').style.display='';
+document.getElementById('drc').onclick=()=>start(r0);
+document.getElementById('go0').onclick=document.getElementById('go1').onclick=()=>start(0);
+arm(document.getElementById('dr2'),'לחצו שוב למחיקה והתחלה מחדש',()=>{wipe();start(0);toast('הטיוטה נמחקה, אפשר להתחיל מחדש',4000)});
 const BX=b=>b?'☑':'☐',bd=t=>$('b',{textContent:t}),ln=v=>$('div',{className:'ln',textContent:v||''});
 const fr=(l,v,ta)=>$('div',{className:'fr'+(ta?' ta':'')},[bd(l+':'),ln(v)]);
 function doc(out){
@@ -382,10 +411,11 @@ document.getElementById('wd').onclick=()=>{const m=missing(),nm=(val(qf('שם מ
 document.getElementById('go').onclick=()=>{document.getElementById('dlg').style.display='none';window.print()};
 document.getElementById('no').onclick=()=>{document.getElementById('dlg').style.display='none'};
 document.getElementById('clr').onclick=()=>{if(confirm('למחוק את כל התשובות?')){try{localStorage.removeItem(SK)}catch(e){}uid=0;render();show(0);pv()}};
-document.getElementById('clr2').onclick=document.getElementById('clr').onclick;
+arm(document.getElementById('clr2'),'לחצו שוב לאישור המחיקה',()=>{wipe();toast('הטיוטה נמחקה',4000)});
 let fzn=0;document.getElementById('fz').onclick=()=>{fzn=(fzn+1)%3;document.documentElement.style.fontSize=[100,115,130][fzn]+'%';setTh()};document.getElementById('hc').onclick=()=>document.body.classList.toggle('hc');
 function setTh(){document.documentElement.style.setProperty('--th',document.getElementById('top').offsetHeight+'px')}
 setTh();addEventListener('resize',setTh);
+document.getElementById('hm').onclick=()=>{document.body.classList.add('cv');scrollTo(0,0)};
 </script>
 </body>
 </html>
