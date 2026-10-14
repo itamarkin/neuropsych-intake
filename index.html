@@ -119,6 +119,7 @@ body.cardmode .q.acc.cs .acch{pointer-events:none}body.cardmode .q.cs .sk{displa
 .kr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:4px 0}.kr input{width:4.2em;text-align:center;margin:0}.kr span{color:var(--mut);font-size:.92rem}
 .more{background:none;border:0;padding:0;margin:4px 0 8px}.more summary{cursor:pointer;color:var(--acc);text-decoration:underline;padding:6px 0;font-weight:400}.more .bar{margin-top:6px}
 .danger{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;margin:28px 0 8px;padding:12px 14px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}.danger button{margin:0;color:#9a3412;border-color:#e2b8a3;background:#fff}
+.docv p.flag,#out p.flag{background:#fff4ec;border:1px solid #f0c9ad;border-radius:6px;padding:6px 10px;font-weight:700;color:#8a3f12}
 #out{display:none}
 @media print{
  #out .pbk{break-before:page}#out h1.parta{font-size:13pt}#out .sumb{background:none}
@@ -723,6 +724,8 @@ function doc(out){
   })})}
 const VER='1.2, אוקטובר 2026',MIS=['שם מלא','טלפון','הסיבה העיקרית להגעה לאבחון'];
 const missing=()=>MIS.filter(l=>!val(qf(l)));
+const MAR={'רווק/ה':['רווק','רווקה'],'נשוי/אה':['נשוי','נשואה'],'גרוש/ה':['גרוש','גרושה'],'אלמן/ה':['אלמן','אלמנה'],'ידוע/ה בציבור':['ידוע בציבור','ידועה בציבור'],'פרוד/ה':['פרוד','פרודה']};
+const gmar=(v,sx)=>v&&MAR[v]?(sx=='זכר'?MAR[v][0]:sx=='נקבה'?MAR[v][1]:v):v;
 function ageOf(){const v=val(qf('תאריך לידה')),m=v.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/),y=BY();if(!y)return '';const n=new Date();let a=n.getFullYear()-y;if(m&&(n.getMonth()+1<+m[2]||(n.getMonth()+1==+m[2]&&n.getDate()<+m[1])))a--;return a}
 function summary(out){
  const box=$('div',{className:'sumb'}),H=t=>box.append($('h3',{textContent:t})),P=t=>{if(t)box.append($('p',{textContent:t}))},S=l=>sels(l),V=l=>val(qf(l)),Jn=a=>a.filter(Boolean).join(', ');
@@ -731,8 +734,35 @@ function summary(out){
  const no=v=>!v||['אין אף אחד','לא','לא יודע/ת','אין'].includes(v);
  // who
  const nm=V('שם מלא'),sx=S('מין')[0],f=sx=='נקבה',ag=ageOf(),fam=who();
- P(Jn([nm,ag&&((f?'בת ':sx=='זכר'?'בן ':'גיל ')+ag),S('יד דומיננטית')[0]&&('יד דומיננטית: '+S('יד דומיננטית')[0]),Jn([S('מצב משפחתי')[0],V('שנת נישואים')&&'נישואים '+V('שנת נישואים'),V('שנת גירושים')&&'גירושים '+V('שנת גירושים')]),kidsText()&&'ילדים: '+kidsText()]).replace(/(.+)/,'$1.'));
- if(fam.m)P('השאלון מולא '+(fam.m=='f'?'על ידי בן משפחה או אדם קרוב':'במילוי משותף')+(V('אם לא המאובחן/ת: שם וקרבה')?' ('+V('אם לא המאובחן/ת: שם וקרבה')+')':'')+'.');
+ P(Jn([nm,ag&&((f?'בת ':sx=='זכר'?'בן ':'גיל ')+ag),S('יד דומיננטית')[0]&&('יד דומיננטית: '+S('יד דומיננטית')[0]),Jn([gmar(S('מצב משפחתי')[0],sx),V('שנת נישואים')&&'נישואים '+V('שנת נישואים'),V('שנת גירושים')&&'גירושים '+V('שנת גירושים')]),kidsText()&&'ילדים: '+kidsText()]).replace(/(.+)/,'$1.'));
+ const G_=(m,w,n)=>f?w:sx=='זכר'?m:n,yr4_=v=>{const m=String(v||'').match(/\d{4}/);return m?+m[0]:0},andJ=a=>a.length<2?a.join(''):a.slice(0,-1).join(', ')+' ו'+a[a.length-1];
+ // medical conditions with years (used in the opening and in the medical table)
+ const MC=[];MEDY.forEach(l=>{const q=qf(l);if(!q||!q._e||hid(q))return;const Y={},cb=[...q._e.querySelectorAll('input[type=checkbox]')];q._e.querySelectorAll('.oyw').forEach(x=>{const v=x.querySelector('input').value.trim();if(v)Y[x._o]=v});
+  S(l).filter(o=>!no(o)).forEach(o=>{let t=o;if(o=='אחר'){const d=[...q._e.querySelectorAll('input[type=text]')].find(x=>x._i===cb[q.o.indexOf('אחר')]&&!x.classList.contains('oy'));t=d&&d.value?d.value:'אחר'}MC.push({a:l,t,y:Y[o]||'',n:yr4_(Y[o])})})});
+ // flags for the clinician
+ const keep=D.map((d,i)=>d._k&&d._k.querySelector('input').checked?d[0].replace(/^\d+\.\s*/,''):'').filter(Boolean),FL=[];
+ if(fam.m)FL.push('מולא '+(fam.m=='f'?'על ידי בן משפחה או אדם קרוב':'במילוי משותף')+(V('אם לא המאובחן/ת: שם וקרבה')?' ('+V('אם לא המאובחן/ת: שם וקרבה')+')':''));
+ if(V('אם מולא בסיוע אחר: שם וקרבה'))FL.push('מולא בסיוע: '+V('אם מולא בסיוע אחר: שם וקרבה'));if(keep.length)FL.push('להשלמה בפגישה: '+keep.join(', '));
+ if(FL.length)box.prepend($('p',{className:'flag',textContent:FL.join('. ')+'.'}));
+ // work
+ const WK=tcards().filter(o=>tfull(o)&&o.ty=='עבודה'&&!/^לא /.test(o.kd)).sort((a,b)=>(+a.y1||0)-(+b.y1||0)),lw=WK[WK.length-1],st=S('מצב תעסוקתי כיום')[0],WT=[];
+ if(lw){const yy=yfmt(lw,TT['עבודה']),wh=J(lw.rl&&'כ'+lw.rl,lw.nm&&'ב'+lw.nm).replace(', ',' ')+(/^משרה|^עצמאי/.test(lw.kd||'')?', '+lw.kd:'');WT.push((lw.now?G_('עובד','עובדת','עובד/ת'):G_('עבד','עבדה','עבד/ה'))+(wh?' '+wh:'')+(yy?' ('+yy+')':''))}
+ if(!(lw&&lw.now)&&st){const nw=V('אם לא עובד/ת: ממתי ומדוע');WT.push(st=='לא עובד/ת'?'כיום לא '+G_('עובד','עובדת','עובד/ת')+(nw?' ('+nw+')':''):st=='פנסיונר/ית'?'כיום '+G_('פנסיונר','פנסיונרית','פנסיונר/ית'):st=='סטודנט/ית'?'כיום '+G_('סטודנט','סטודנטית','סטודנט/ית'):'')}
+ P(WT.filter(Boolean).join('. ').replace(/(.+)/,'$1.'));
+ // referral sentence, then background conditions
+ const SN={'מצב רוח, חרדה והתנהגות':'מצב רוח','קשב וריכוז':'קשב','תחושה וחושים':'תחושה','ראייה מרחבית':'ראייה מרחבית'},
+  DOM=ALL().filter(q=>q.k=='g'&&q.s===S4&&q._e&&!q._e.querySelector('.skip').checked).map(q=>({l:SN[q.l]||q.l,c:[...q._e.querySelectorAll('.row.gi')].filter(r=>['לעתים קרובות','כמעט תמיד'].includes(r.querySelector('input[type=hidden]').value)).length})).filter(x=>x.c).sort((a,b)=>b.c-a.c).slice(0,3).map(x=>x.l);
+ const oa=yr4_(V('בערך מתי (שנה, אפשר בערך)')),how=S('הקשיים הופיעו בבת אחת או בהדרגה?')[0],cz=MC.filter(m=>oa&&m.n==oa&&m.a!='נפשי'&&!/מיגרנות/.test(m.t)),cs=S('מה לדעתכם גרם לקשיים שבגללם פניתם לאבחון, או הקדים אותם?').filter(o=>!no(o)),qs_=V('מה הייתם רוצים שהאבחון יענה עליו?');
+ const BAD_E=['נשר/ה','שחרור מוקדם','פוטר/ה','עזב/ה בגלל קשיים או בריאות','הפסיק/ה'],BAD_H=['קשה','קשה מאוד','מתחת לממוצע'],PRE=[],POST=[];
+ tdata().R.filter(r=>!r.one&&!r.nil&&TT[r.ty]).forEach(r=>{const why=[BAD_E.includes(r.en)&&r.en,BAD_H.includes(r.hw)&&(PFX[r.C.hl]||'')+r.hw,r.so=='קשה'&&'חברתית: קשה',r.df&&'קשיים: '+r.df.split('|').join(', '),/חזרה על כיתה/.test(r.sp||'')&&'חזרה על כיתה'].filter(Boolean);
+  if(!why.length)return;const t=r.ty+(r.cells[0]?' ('+r.cells[0].replace(/ \(גיל.*\)$/,'')+')':'')+': '+why.join(', ');(oa&&r.a&&r.a<oa&&(r.b||r.a)<oa?PRE:POST).push(t)});
+ let RS=G_('פנה','פנתה','פנה/תה')+' לאבחון בעקבות '+(DOM.length?'קשיים בתחומי '+andJ(DOM):'הקשיים שתוארו');
+ if(how||oa)RS+=' שהופיעו'+(how=='בבת אחת, אחרי אירוע'?' בבת אחת':how=='בהדרגה'?' בהדרגה':'')+(oa?' ב-'+oa:'');
+ if(cz.length)RS+=', לאחר '+andJ(cz.map(m=>m.t));else if(cs.length)RS+=' (גורם משוער: '+cs.join(', ')+')';
+ RS+='.';if(qs_)RS+=' במטרה לברר: '+qs_.replace(/[.\s]+$/,'')+'.';
+ const BG=MC.filter(m=>!cz.includes(m)).sort((a,b)=>(a.n||9999)-(b.n||9999));if(BG.length)RS+=' ברקע: '+BG.map(m=>m.t+(m.y?' ('+m.y+')':'')).join(', ')+'.';
+ if(oa&&PRE.length)RS+=' קשיים קודמים: '+PRE.join('; ')+'.';
+ P(RS);
  H('רקע ושפה');
  const sib=V('מספר אחים ואחיות (לא כולל אותך)'),bo=V('במקום ה-כמה את/ה בין האחים? (1 = הבכור/ה)');
  KV([['שפת אם',Jn(S('שפת אם'))],['שליטה בעברית',Jn(['דיבור','קריאה','כתיבה'].map(k=>{const v=S('שליטה בעברית: '+k)[0];return v&&k+' '+v}))],['ארץ לידה ועלייה',Jn([V('ארץ לידה'),V('תאריך עלייה (אם רלוונטי)')&&'עלייה: '+V('תאריך עלייה (אם רלוונטי)')])],['שפת לימוד בבית הספר',V('באיזו שפה למדת בבית הספר? (למשל עברית, רוסית, ערבית, אנגלית)')],
@@ -741,13 +771,16 @@ function summary(out){
  P(V('הסיבה העיקרית להגעה לאבחון'));
  KV([['שאלת ההפניה',V('מה הייתם רוצים שהאבחון יענה עליו?')],['גורם מפנה',Jn(S('גורם מפנה'))],['עובד/ת שיקום',Jn([V('שם עובד/ת השיקום'),V('טלפון עובד/ת השיקום')])],
   ['תחילת הקשיים',Jn([S('מתי התחילו הקשיים שבגללם פנית לאבחון?')[0],V('בערך מתי (שנה, אפשר בערך)'),S('הקשיים הופיעו בבת אחת או בהדרגה?')[0]])],['גורם משוער',Jn(S('מה לדעתכם גרם לקשיים שבגללם פניתם לאבחון, או הקדים אותם?'))],['נסיבות סביב ההתחלה',V('אירוע או נסיבות סביב ההתחלה')],
-  ['מהלך',S('מהלך הקשיים')[0]],['תפקוד לפני הקשיים',S('התפקוד לפני שהתחילו הקשיים')[0]],['ניסיונות קודמים',S('ניסיונות קודמים לטפל בקשיים').includes('כן')?(V('אם כן: מה נוסה')||'כן'):''],
-  ['הליכים ונכות',Jn([S('הליך מתנהל (תביעה, ועדה, ערר)').includes('כן')&&'הליך מתנהל',S('מוכר/ת עם אחוזי נכות').includes('כן')&&Jn(['נכות '+(V('כמה אחוזי נכות')?V('כמה אחוזי נכות')+'%':''),Jn(S('אחוזי הנכות הוכרו על ידי')),V('על מה הוכרו (סוג הליקוי)')])])],['רקע פלילי',Jn(S('רקע פלילי').filter(o=>!no(o)))]]);
+  ['מהלך',S('מהלך הקשיים')[0]],['תפקוד לפני הקשיים',S('התפקוד לפני שהתחילו הקשיים')[0]],[oa?'השפעה על התפקוד':'קשיים במסלול החיים',(oa?POST:[...PRE,...POST]).join('; ')],['ניסיונות קודמים',S('ניסיונות קודמים לטפל בקשיים').includes('כן')?(V('אם כן: מה נוסה')||'כן'):''],
+  ['הליכים ונכות',Jn([S('הליך מתנהל (תביעה, ועדה, ערר)').includes('כן')&&'הליך מתנהל',S('מוכר/ת עם אחוזי נכות').includes('כן')&&Jn(['נכות'+(V('כמה אחוזי נכות')?' '+V('כמה אחוזי נכות').replace(/%/g,'')+'%':''),Jn(S('אחוזי הנכות הוכרו על ידי')),V('על מה הוכרו (סוג הליקוי)')])])],['רקע פלילי',Jn(S('רקע פלילי').filter(o=>!no(o)))],
+  [oa?'קשיים קודמים':'',PRE.join('; ')]]);
  H('רקע רפואי');
- const MR=[];MEDY.forEach(l=>{const q=qf(l),Y={};if(q&&q._e)q._e.querySelectorAll('.oyw').forEach(x=>{const v=x.querySelector('input').value.trim();if(v)Y[x._o]=v});S(l).filter(o=>!no(o)).forEach(o=>MR.push([l,o+(o=='אחר'&&q._e?(()=>{const cb=[...q._e.querySelectorAll('input[type=checkbox]')][q.o.indexOf('אחר')],d=[...q._e.querySelectorAll('input[type=text]')].find(x=>x._i===cb&&!x.classList.contains('oy'));return d&&d.value?': '+d.value:''})():''),Y[o]||'']));const d=V(l+': פירוט');if(d)MR.push([l,'פירוט: '+d,''])});
- const ed=S('הפרעת אכילה (אנורקסיה, בולימיה, אכילה בולמוסית או כל הפרעת אכילה אחרת)')[0];if(ed&&ed!='לא')MR.push(['נפשי','הפרעת אכילה ('+ed+')',V('הפרעת אכילה: מאיזו שנה, ופירוט אם רוצים')]);
- const tp=S('טיפול נפשי')[0];if(tp&&tp!='לא')MR.push(['נפשי','טיפול נפשי '+tp+(S('סוג הטיפול').length?': '+Jn(S('סוג הטיפול')):''),V('טיפול: מתי ופירוט')]);
- if(!TB(['תחום','מצב','שנה'],MR))P('לא סומנו מצבים רפואיים.');
+ const MX=MC.map(m=>({...m,d:''})),ed=S('הפרעת אכילה (אנורקסיה, בולימיה, אכילה בולמוסית או כל הפרעת אכילה אחרת)')[0],edt=V('הפרעת אכילה: מאיזו שנה, ופירוט אם רוצים'),tp=S('טיפול נפשי')[0];
+ if(ed&&ed!='לא')MX.push({a:'נפשי',t:'הפרעת אכילה ('+ed+')',y:yr4_(edt)?String(yr4_(edt)):'',n:yr4_(edt),d:edt});
+ if(tp&&tp!='לא'){const tt=V('טיפול: מתי ופירוט');MX.push({a:'נפשי',t:'טיפול נפשי '+tp+(S('סוג הטיפול').length?': '+Jn(S('סוג הטיפול')):''),y:yr4_(tt)?String(yr4_(tt)):'',n:yr4_(tt),d:tt})}
+ MX.sort((a,b)=>(b.n||-1)-(a.n||-1));
+ MEDY.forEach(l=>{const d=V(l+': פירוט');if(!d)return;const r=MX.find(m=>m.a==l&&!m.d);if(r)r.d=d;else MX.push({a:l,t:'',y:'',n:0,d})});
+ if(!TB(['שנה','תחום','מצב','פירוט'],MX.map(m=>[m.y,m.a,m.t,m.d])))P('לא סומנו מצבים רפואיים.');
  const md=qf('תרופות'),MD=md&&md._e&&!hid(md)?[...md._e.querySelectorAll('.row')].map(r=>[...r.children].filter(c=>c.tagName!='BUTTON').map(c=>c.tagName=='DIV'?c.querySelector('input').value:c.value)).filter(r=>r.some(Boolean)):[];
  if(MD.length){box.append($('p',{},[bd('תרופות קבועות')]));TB(['תרופה','מינון','סיבה','מתי התחילה','שימוש'],MD)}else if(S('האם את/ה נוטל/ת תרופות באופן קבוע?')[0]=='לא')P('תרופות קבועות: אין.');
  if(/ריטלין|קונצרטה|אדרל|ויוונס|סטרטרה|אטומוקסטין|מתילפנידאט|ritalin|concerta|adderall|vyvanse|strattera|methylphenidate|atomoxetine/i.test(MD.flat().join(' ')))box.append($('p',{className:'warn'},[bd('שימו לב: '),document.createTextNode('ייתכן שנוטל/ת תרופה לקשב וריכוז. מומלץ לתאם לפני האבחון.')]));
@@ -755,7 +788,7 @@ function summary(out){
  H('מסלול חיים');
  const TD=tdata(),T=tl();if(T)box.append(T);else P('ציר הזמן לא מולא.');
  KV([['בגרות',Jn([S('בגרות')[0],V('ממוצע בגרות')])],['התאמות',Jn([Jn(S('התאמות בבחינות או בלימודים')),S('באילו מסגרות היו ההתאמות?').length&&'ב'+Jn(S('באילו מסגרות היו ההתאמות?'))])],['פסיכומטרי',V('ציון פסיכומטרי')||S('פסיכומטרי')[0]],['פרופיל צבאי',V('פרופיל צבאי')],['חשיפה בשירות',S('חשיפה').length?'לאירועי לחימה או לאירוע קשה (יידון בריאיון)':''],['מצב תעסוקתי כיום',Jn([S('מצב תעסוקתי כיום')[0],V('אם לא עובד/ת: ממתי ומדוע')])],
-  ['נקודות לבדיקה',TD.R.filter(r=>r.ty!='אירוע משמעותי'&&(['נשר/ה','שחרור מוקדם','פוטר/ה','עזב/ה בגלל קשיים או בריאות','הפסיק/ה'].includes(r.en)||['קשה','קשה מאוד','מתחת לממוצע'].includes(r.hw)||r.so=='קשה'||r.df||/חזרה על כיתה/.test(r.sp))).map(r=>r.cells[1]+' ('+r.cells[0]+')').join('; ')],['שנים ללא תחנה',TD.G.map(gtx).join(', ')]]);
+  ['שנים ללא תחנה',TD.G.map(gtx).join(', ')]]);
  H('שינה, חומרים וכאב');
  const SU=ALL().filter(q=>q.k=='s').map(q=>{const [a,b,c]=q._e.querySelectorAll('input');return a.value&&a.value!='מעולם לא'?[q.l,a.value,b.value,c.value]:null}).filter(Boolean);
  KV([['שינה',Jn([S('שעות שינה בלילה')[0]&&S('שעות שינה בלילה')[0]+' שעות',S('איכות שינה')[0]&&'איכות '+S('איכות שינה')[0],S('עייפות ביום')[0]&&'עייפות ביום: '+S('עייפות ביום')[0]])],['בעיות שינה',Jn(S('בעיות שינה').filter(o=>!no(o)))],
